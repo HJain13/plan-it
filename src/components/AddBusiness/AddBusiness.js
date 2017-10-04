@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../../css/App.css';
 
-class App extends Component {
+class AddBusiness extends Component {
   render() {
     return (
       <div className="App">
@@ -17,4 +17,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default AddBusiness;

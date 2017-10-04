@@ -3,12 +3,15 @@ import Home from './components/Home/Home';
 import AddBusiness from './components/AddBusiness/AddBusiness';
 import StaffDetails from './components/StaffDetails/StaffDetails';
 import ViewPackage from './components/ViewPackage/ViewPackage';
+import Header from './components/Header/Header';
 import { Route } from 'react-router-dom';
 import './css/App.css';
+import './css/bulma.min.css';
 
 class App extends Component {
   render() {
     return (
+      <Header />
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">PlanIt!</h1>
