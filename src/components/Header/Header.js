@@ -7,18 +7,16 @@ class Header extends Component {
     return (
       <nav className="navbar is-transparent">
         <div className="navbar-brand">
-          <a className="navbar-item" href="http://bulma.io">
-            <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
-          </a>
+          <a className="navbar-item" href="/"><strong>PlanIt</strong></a>
 
           <a className="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
-            <span className="icon" style="color: #333;">
+            <span className="icon">
               <i className="fa fa-lg fa-github"></i>
             </span>
           </a>
 
           <a className="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
-            <span className="icon" style="color: #55acee;">
+            <span className="icon">
               <i className="fa fa-lg fa-twitter"></i>
             </span>
           </a>
@@ -62,12 +60,12 @@ class Header extends Component {
 
           <div className="navbar-end">
             <a className="navbar-item is-hidden-desktop-only" href="https://github.com/jgthms/bulma" target="_blank">
-              <span className="icon" style="color: #333;">
+              <span className="icon">
                 <i className="fa fa-lg fa-github"></i>
               </span>
             </a>
             <a className="navbar-item is-hidden-desktop-only" href="https://twitter.com/jgthms" target="_blank">
-              <span className="icon" style="color: #55acee;">
+              <span className="icon">
                 <i className="fa fa-lg fa-twitter"></i>
               </span>
             </a>
