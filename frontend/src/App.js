@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Home from './components/Home/Home';
 import AddBusiness from './components/AddBusiness/AddBusiness';
 import AddItem from './components/AddItem/AddItem';
+import Admin from './components/Admin/Admin';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import StaffDetails from './components/StaffDetails/StaffDetails';
@@ -17,6 +18,7 @@ class App extends Component {
       <div className="App">
         <Route exact={true} path="/" component={Home} />
         <Route path='/add-item' component={AddItem} />
+        <Route path='/admin' component={Admin} />
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
         <Route path='/index' component={IndexItem} />

@@ -2,7 +2,34 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../../css/App.css';
 
+var Welcome; 
+if(localStorage.name!=='') {
+  Welcome = <LoggedIn />;
+}
+
+function logout(event) {
+  event.preventDefault();
+  localStorage.isLoggedIn="false";
+  localStorage.name="";
+  this.props.history.push('/');    
+}
+
+
+function LoggedIn(props) {
+  return (
+    <div>
+      <span className="navbar-item">Welcome {localStorage.name}</span>
+      <span className="navbar-item"><a onClick={this.logout}>Logout</a></span>    
+    </div>
+  );
+}
+
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.logout = logout.bind(this);
+  }
+
   render() {
     return (
       <nav className="navbar is-transparent">
@@ -27,6 +54,7 @@ class Header extends Component {
                 <i className="fa fa-lg fa-github"></i>
               </span>
             </a>
+            {Welcome}
             {/* <div className="navbar-item">
               <div className="field is-grouped">
                 <p className="control">

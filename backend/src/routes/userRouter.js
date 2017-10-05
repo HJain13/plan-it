@@ -18,7 +18,7 @@ userRouter.route('/add/post').post(function (req, res) {
 });
 
 userRouter.route('/auth').post(function (req, res) {
-  User.find(function (err, itms){
+  User.findOne({'user.email': req.body.user.email, 'user.pass': req.body.user.pass}, 'user', function (err, itms) {
     if(err){
       console.log(err);
     }

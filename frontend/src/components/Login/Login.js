@@ -15,7 +15,7 @@ class Login extends Component {
     };
     this.findUserService = new UserService();
     this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -29,8 +29,7 @@ class Login extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.findUserService.searchData(this.state.user);
-    this.props.history.push('/');
+    this.findUserService.login(this.state.user);
   }
 
   render() {
@@ -67,7 +66,7 @@ class Login extends Component {
                   <div className="column is-6 is-offset-3">
                     <div className="field">
                       <p className="control has-icons-left has-icons-right">
-                        <input onChange={this.handleChange} className="input" type="email" placeholder="Email"/>
+                        <input onChange={this.handleChange} name="email" className="input" type="email" placeholder="Email"/>
                         <span className="icon is-small is-left">
                           <i className="fa fa-envelope"></i>
                         </span>
@@ -78,7 +77,7 @@ class Login extends Component {
                     </div>
                     <div className="field">
                       <p className="control has-icons-left">
-                        <input onChange={this.handleChange} className="input" type="password" placeholder="Password"/>
+                        <input onChange={this.handleChange} name="pass" className="input" type="password" placeholder="Password"/>
                         <span className="icon is-small is-left">
                           <i className="fa fa-lock"></i>
                         </span>
@@ -86,7 +85,7 @@ class Login extends Component {
                     </div>
                     <div className="field">
                       <p className="control">
-                        <button className="button is-success">
+                        <button onClick={this.handleSubmit} className="button is-success">
                           Login
                         </button>
                       </p>
