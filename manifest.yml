@@ -1,0 +1,4 @@
+applications:
+- name: plan-it
+  random-route: true
+  memory: 128M

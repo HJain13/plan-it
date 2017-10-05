@@ -3,33 +3,38 @@ import { Link } from 'react-router-dom';
 import '../../css/App.css';
 
 var Welcome; 
-if(localStorage.name!=='') {
+if(localStorage.name!==null && localStorage.name!=='') {
   Welcome = <LoggedIn />;
+}
+else {
+  Welcome = <LoggedOff />;
+}
+function LoggedIn(props) {
+  return (
+    <div className="navbar-item">
+      <span>Welcome {localStorage.userType!=='admin' ? localStorage.name:'Admin'},</span> &nbsp;
+      <span><a onClick={logout}>Logout</a></span>    
+    </div>
+  );
+}
+
+function LoggedOff(props) {
+  return (
+    <div className="navbar-item">
+      <Link to="/login">Login</Link>
+    </div>
+  );
 }
 
 function logout(event) {
   event.preventDefault();
   localStorage.isLoggedIn="false";
   localStorage.name="";
-  this.props.history.push('/');    
+  window.location = "/login"
 }
 
-
-function LoggedIn(props) {
-  return (
-    <div>
-      <span className="navbar-item">Welcome {localStorage.name}</span>
-      <span className="navbar-item"><a onClick={this.logout}>Logout</a></span>    
-    </div>
-  );
-}
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.logout = logout.bind(this);
-  }
-
   render() {
     return (
       <nav className="navbar is-transparent">

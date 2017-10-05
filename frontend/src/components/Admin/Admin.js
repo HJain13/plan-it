@@ -2,18 +2,25 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../../css/App.css';
 import Header from '../Header/Header';
+import UserService from '../UserService';
 
 class Admin extends Component {
+	constructor(props) {
+    super(props);
+    this.adminUserService = new UserService();
+  }
   render() {
 		console.log(localStorage.isLoggedIn);
-		if (localStorage.isLoggedIn === 'true'){
+		if (localStorage.isLoggedIn === 'yes'){
 			return (
 				<div className="App">
 					<Header />
 					<div className="hero is-light">
 						<div className="hero-body">
 							<p className="App-intro">
-								<Link to="/view-package">View Packages</Link>
+								<div className="box">
+									<Link to="/user-index">View Users</Link>
+								</div>
 							</p>
 						</div>
 					</div>        
@@ -21,7 +28,7 @@ class Admin extends Component {
 			);	
 		}
 		else {
-			this.props.history.push('/login');
+			window.location = '/login';
 			return(null);
 		}
   }

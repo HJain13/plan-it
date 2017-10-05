@@ -7,7 +7,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import StaffDetails from './components/StaffDetails/StaffDetails';
 import ViewPackage from './components/ViewPackage/ViewPackage';
-import IndexItem from './components/IndexItem/IndexItem';
+import UserIndex from './components/UserIndex/UserIndex';
 import { Route } from 'react-router-dom';
 import './css/App.css';
 import './css/bulma.min.css';
@@ -21,7 +21,7 @@ class App extends Component {
         <Route path='/admin' component={Admin} />
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
-        <Route path='/index' component={IndexItem} />
+        <Route path='/user-index' component={UserIndex} />
         <Route path="/add-verify-business" component={AddBusiness} />
         <Route path="/staff-details" component={StaffDetails} />
         <Route path="/view-package" component={ViewPackage} />

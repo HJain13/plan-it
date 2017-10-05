@@ -13,7 +13,8 @@ class Register extends Component {
         email: '',
         pass: '',
         repass: '',            
-        phone_no: ''
+        phone_no: '',
+        u_type: 'business',
       },
       match_error: false
     };

@@ -2,7 +2,7 @@ import axios from 'axios';
 class ItemService {
 
   sendData(data) {
-    axios.post('http://localhost:4200/items/add/post', {
+    axios.post('https://plan-it.au-syd.mybluemix.net/items/add/post', {
     item: data
   })
   .then(function (response) {
