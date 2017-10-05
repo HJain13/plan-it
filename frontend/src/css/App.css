@@ -7,7 +7,6 @@
   border-bottom: 50px solid white;
   background-color: darkmagenta;
   color: whitesmoke;
-  padding: 20px;
 }
 .is-sandwich .title {
   color: white;
@@ -20,4 +19,8 @@
   height: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.is-padded {
+  padding: 20px;
 }

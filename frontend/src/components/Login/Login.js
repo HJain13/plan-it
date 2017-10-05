@@ -10,8 +10,8 @@ class Login extends Component {
         <Header/>
         <br/>
         <div className="columns is-gapless">
-          <div className="column is-4">
-            <div className="is-sandwich">
+          <div className="column is-4 is-sandwich">
+            <div className="is-padded">
               <div className="title is-1 has-text-weight-light">
                 I'm New Here
               </div>

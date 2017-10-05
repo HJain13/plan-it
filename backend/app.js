@@ -7,7 +7,7 @@ var cors = require('cors');
 
 // Mongoose connection with mongodb
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://admin:swe2017@ds147544.mlab.com:47544/plan-it')
+mongoose.connect('mongodb://localhost:27017/plan-it')
     .then(() => { // if all is ok we will be here
       console.log('Start');
     })
@@ -16,8 +16,11 @@ mongoose.connect('mongodb://admin:swe2017@ds147544.mlab.com:47544/plan-it')
         process.exit(1);
     });
 
+    // mongodb://admin:swe2017@ds147544.mlab.com:47544/plan-it
+
 // Required application specific custom router module
 var itemRouter = require('./src/routes/itemRouter');
+var userRouter = require('./src/routes/userRouter');
 
 // Use middlewares to set view engine and post json data to the server
 app.use(express.static('public'));
@@ -26,6 +29,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use('/items', itemRouter);
+app.use('/users', userRouter);
 
 // Start the server
 app.listen(port, function(){
