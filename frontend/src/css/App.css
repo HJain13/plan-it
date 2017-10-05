@@ -2,16 +2,22 @@
   text-align: center;
 }
 
-.App-header {
-  background-color: #222;
+.is-sandwich {
+  border-top: 50px solid white;
+  border-bottom: 50px solid white;
+  background-color: darkmagenta;
+  color: whitesmoke;
   padding: 20px;
+}
+.is-sandwich .title {
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
+.is-over {
+  display: flex;
+  position: relative;
+  z-index: 999;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
