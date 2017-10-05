@@ -9,6 +9,9 @@ class Home extends Component {
       <div className="App">
         <Header />        
         <p className="App-intro">
+        <Link to="/login">Login/Register</Link>
+          <br />
+          <br />          
           <Link to="/add-item">Add Item</Link>
           <br />
           <br />

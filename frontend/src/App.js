@@ -3,6 +3,7 @@ import Home from './components/Home/Home';
 import AddBusiness from './components/AddBusiness/AddBusiness';
 import AddItem from './components/AddItem/AddItem';
 import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 import StaffDetails from './components/StaffDetails/StaffDetails';
 import ViewPackage from './components/ViewPackage/ViewPackage';
 import IndexItem from './components/IndexItem/IndexItem';
@@ -17,6 +18,7 @@ class App extends Component {
         <Route exact={true} path="/" component={Home} />
         <Route path='/add-item' component={AddItem} />
         <Route path='/login' component={Login} />
+        <Route path='/register' component={Register} />
         <Route path='/index' component={IndexItem} />
         <Route path="/add-verify-business" component={AddBusiness} />
         <Route path="/staff-details" component={StaffDetails} />

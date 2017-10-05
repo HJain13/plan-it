@@ -3,7 +3,7 @@ import '../../css/App.css';
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
 
-class Login extends Component {
+class Register extends Component {
   render() {
     return (
       <div className="App">
@@ -13,7 +13,7 @@ class Login extends Component {
           <div className="column is-4">
             <div className="is-sandwich">
               <div className="title is-1 has-text-weight-light">
-                I'm New Here
+                I'm Already Registered
               </div>
               <br/>
               <p>
@@ -23,7 +23,7 @@ class Login extends Component {
                 Up!!
               </p>
               <br/>
-              <Link to="/register" className="button is-warning is-medium">Sign Up!</Link>
+              <Link to="/login" className="button is-warning is-medium">Login</Link>              
               <br/>
             </div>
           </div>
@@ -31,7 +31,7 @@ class Login extends Component {
             <div className="box is-over">
               <div className="is-vcentered">
                 <div className="title is-1 has-text-weight-light">
-                  Login
+                  Sign Up
                 </div>
                 <br/>
                 <div className="columns">
@@ -58,7 +58,7 @@ class Login extends Component {
                     <div className="field">
                       <p className="control">
                         <button className="button is-success">
-                          Login
+                          Register
                         </button>
                       </p>
                     </div>
@@ -74,4 +74,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Register;
