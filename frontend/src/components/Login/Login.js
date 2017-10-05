@@ -2,8 +2,37 @@ import React, {Component} from 'react';
 import '../../css/App.css';
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
+import UserService from '../UserService';
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {
+        email: '',
+        pass: ''
+      }
+    };
+    this.findUserService = new UserService();
+    this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    const field = event.target.name;
+    const user = this.state.user;
+    user[field] = event.target.value;
+    this.setState({
+      user
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    this.findUserService.searchData(this.state.user);
+    this.props.history.push('/');
+  }
+
   render() {
     return (
       <div className="App">
@@ -38,7 +67,7 @@ class Login extends Component {
                   <div className="column is-6 is-offset-3">
                     <div className="field">
                       <p className="control has-icons-left has-icons-right">
-                        <input className="input" type="email" placeholder="Email"/>
+                        <input onChange={this.handleChange} className="input" type="email" placeholder="Email"/>
                         <span className="icon is-small is-left">
                           <i className="fa fa-envelope"></i>
                         </span>
@@ -49,7 +78,7 @@ class Login extends Component {
                     </div>
                     <div className="field">
                       <p className="control has-icons-left">
-                        <input className="input" type="password" placeholder="Password"/>
+                        <input onChange={this.handleChange} className="input" type="password" placeholder="Password"/>
                         <span className="icon is-small is-left">
                           <i className="fa fa-lock"></i>
                         </span>

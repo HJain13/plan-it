@@ -14,7 +14,8 @@ class Register extends Component {
         pass: '',
         repass: '',            
         phone_no: ''
-      }
+      },
+      match_error: false
     };
     this.addUserService = new UserService();
     this.handleChange = this.handleChange.bind(this);
@@ -23,6 +24,11 @@ class Register extends Component {
 
   handleChange(event) {
     const field = event.target.name;
+    if (field === 'pass' || field === 'repass') {
+      if  (this.state.user.pass!==this.state.user.repass && this.state.user.repass!=='') {
+        this.setState({match_error: true});
+      }
+    }
     const user = this.state.user;
     user[field] = event.target.value;
     this.setState({
@@ -32,8 +38,13 @@ class Register extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.addUserService.sendData(this.state);
-    this.props.history.push('/');
+    if (this.state.user.name!==''&&this.state.user.email!==''&&this.state.user.pass!==''&&this.state.user.pass===this.state.user.repass&&this.state.user.phone_no!=='') {
+      this.addUserService.sendData(this.state.user);
+      this.props.history.push('/');
+    }
+    else {
+      alert("Some Fields Are Empty and/or Passwords Don't Match!!")
+    }
   }
 
   render() {
@@ -129,9 +140,7 @@ class Register extends Component {
                       <div className="field-body">
                         <div className="field">
                           <div className="control">
-                            <button className="button is-primary" onSubmit={this.handleSubmit}>
-                              Register
-                            </button>
+                            <button className="button is-primary" onClick={this.handleSubmit}>Register</button>
                           </div>
                         </div>
                       </div>

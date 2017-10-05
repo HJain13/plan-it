@@ -3,14 +3,16 @@ class UserService {
   sendData(data) {
     axios.post('http://localhost:4200/users/add/post', {
     user: data
-  })
-  .then(function (response) {
+  }).then(function (response) {
       console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+    }).catch(function (error) {
+        console.log(error);
+      });
   }
+
+  searchData(data) {
+  }
+
 }
 
 export default UserService;

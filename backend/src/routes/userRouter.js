@@ -17,6 +17,18 @@ userRouter.route('/add/post').post(function (req, res) {
     });
 });
 
+userRouter.route('/auth').post(function (req, res) {
+  User.find(function (err, itms){
+    if(err){
+      console.log(err);
+    }
+    else {
+      res.json(itms);
+    }
+  });
+});
+
+
 // Defined get data(index or listing) route
 userRouter.route('/').get(function (req, res) {
   User.find(function (err, itms){
