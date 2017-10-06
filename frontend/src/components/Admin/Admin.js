@@ -21,6 +21,9 @@ class Admin extends Component {
 								<div className="box">
 									<Link to="/user-index">View Users</Link>
 								</div>
+								<div className="box">
+									<Link to="/business-approval">Approve Business</Link>
+								</div>								
 							</p>
 						</div>
 					</div>        

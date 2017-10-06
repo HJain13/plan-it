@@ -28,6 +28,18 @@ userRouter.route('/auth').post(function (req, res) {
   });
 });
 
+userRouter.route('/findByEmail').get(function (req, res) {
+  User.findOne({'user.email': req.body.user.email}, 'user', function (err, itms) {
+    if(err){
+      console.log(err);
+    }
+    else {
+      if(itms=="null") res.json("false");      
+      else res.json("true");
+    }
+  });
+});
+
 
 // Defined get data(index or listing) route
 userRouter.route('/').get(function (req, res) {

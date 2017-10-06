@@ -30,6 +30,17 @@ class Login extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.findUserService.login(this.state.user);
+    if (localStorage.isLoggedIn === 'yes'){
+      if (localStorage.userType === 'admin') {
+        window.location = '/admin';
+      }
+      else if (localStorage.userType === 'business'){
+        window.location = '/business';
+      }
+      else {
+        return (null)
+      }
+    }    
   }
 
   render() {
@@ -37,7 +48,12 @@ class Login extends Component {
       if (localStorage.userType === 'admin') {
         window.location = '/admin';
       }
-      return (null);
+      else if (localStorage.userType === 'business'){
+        window.location = '/business';
+      }
+      else {
+        return (null)
+      }
     }
     else {
       return (

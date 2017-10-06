@@ -1,9 +1,9 @@
 import axios from 'axios';
-var baseUrl ='https://plan-it.au-syd.mybluemix.net';
+var baseUrl = 'https://plan-it.au-syd.mybluemix.net';
 class UserService {
   sendData(data) {
     axios
-      .post(baseUrl+'/users/add/post', {user: data})
+      .post(baseUrl + '/users/add/post', {user: data})
       .then(function (response) {
         console.log(response);
       })
@@ -14,20 +14,34 @@ class UserService {
 
   login(data) {
     axios
-      .post(baseUrl+'/users/auth', {user: data})
+      .post(baseUrl + '/users/auth', {user: data})
       .then(function (response) {
         console.log(response);
-        if (response !== null) { 
+        if (response !== null) {
           // console.log(response.data.user.name);
           localStorage.setItem("name", response.data.user.name);
           localStorage.setItem("isLoggedIn", "yes");
           if (response.data.user.u_type !== 'business' || response.data.user.u_type !== 'user') {
-            localStorage.setItem("userType", "admin");          
-          }
-          else if (response.data.user.u_type === 'business' ) {
-            localStorage.setItem("userType", "business");                      
+            localStorage.setItem("userType", "admin");
+          } else if (response.data.user.u_type === 'business') {
+            localStorage.setItem("userType", "business");
           }
         }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  checkUser(data) {
+    axios
+      .post(baseUrl + '/users/findByEmail', {user: data})
+      .then(function (response) {
+        console.log(response);
+        if (response === "true") {
+          return(true);
+        }
+        else return(true);
       })
       .catch(function (error) {
         console.log(error);
@@ -37,16 +51,15 @@ class UserService {
   getUsers() {
     var results;
     axios
-      .get(baseUrl+'/users/')
+      .get(baseUrl + '/users/')
       .then(function (response) {
         results = response;
       })
       .catch(function (error) {
         console.log(error);
       });
-    return(results);
+    return (results);
   }
-  
 
 }
 

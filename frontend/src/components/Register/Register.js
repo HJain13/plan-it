@@ -4,6 +4,22 @@ import {Link} from 'react-router-dom';
 import Header from '../Header/Header';
 import UserService from '../UserService';
 
+function passUnmatch() {
+  return (
+    <div className="navbar-item">
+      <p class="help is-danger">Passwords Don't Match!!</p> 
+    </div>
+  );
+}
+
+function alreadyExists() {
+  return (
+    <div className="navbar-item">
+      <p class="help is-danger">Email already in use!!</p> 
+    </div>
+  );
+}
+
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +32,8 @@ class Register extends Component {
         phone_no: '',
         u_type: 'business',
       },
-      match_error: false
+      match_error: false,
+      old_email_error: false
     };
     this.addUserService = new UserService();
     this.handleChange = this.handleChange.bind(this);
@@ -40,6 +57,7 @@ class Register extends Component {
   handleSubmit(event) {
     event.preventDefault();
     if (this.state.user.name!==''&&this.state.user.email!==''&&this.state.user.pass!==''&&this.state.user.pass===this.state.user.repass&&this.state.user.phone_no!=='') {
+      this.setState({old_email_error:this.addUserService.checkUser(this.state.user.email)});
       this.addUserService.sendData(this.state.user);
       this.props.history.push('/');
     }
@@ -99,13 +117,14 @@ class Register extends Component {
                           </p>
                         </div>
                       </div>
+                      { old===true ? <alreadyExists /> : null}
                     </div>
 
                     <div className="field is-horizontal">
                       <div className="field-body">
                         <div className="field">
                           <p className="control is-expanded has-icons-left">
-                            <input className="input" type="text" placeholder="Password" onChange={this.handleChange} name="pass" value={this.state.user.pass} />
+                            <input className="input" type="password" placeholder="Password" onChange={this.handleChange} name="pass" value={this.state.user.pass} />
                             <span className="icon is-small is-left">
                               <i className="fa fa-key"></i>
                             </span>
@@ -113,13 +132,15 @@ class Register extends Component {
                         </div>
                         <div className="field">
                           <p className="control is-expanded has-icons-left">
-                            <input className="input" type="email" placeholder="Confirm Password" onChange={this.handleChange} name="repass" value={this.state.user.repass}/>
+                            <input className="input" type="password" placeholder="Confirm Password" onChange={this.handleChange} name="repass" value={this.state.user.repass}/>
                             <span className="icon is-small is-left">
                               <i className="fa fa-key"></i>
                             </span>
                           </p>
                         </div>
+                        { match_error===true ? <passUnmatch /> : null}
                       </div>
+                      
                     </div>
 
                     <div className="field is-horizontal">
