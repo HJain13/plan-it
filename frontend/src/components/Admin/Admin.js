@@ -10,21 +10,18 @@ class Admin extends Component {
     this.adminUserService = new UserService();
   }
   render() {
-		console.log(localStorage.isLoggedIn);
-		if (localStorage.isLoggedIn === 'yes'){
+		if (localStorage.isLoggedIn === 'yes' && localStorage.userType === 'admin'){
 			return (
 				<div className="App">
-					<Header />
+					<Header location={this.props.location} />
 					<div className="hero is-light">
 						<div className="hero-body">
-							<p className="App-intro">
-								<div className="box">
-									<Link to="/user-index">View Users</Link>
-								</div>
-								<div className="box">
-									<Link to="/business-approval">Approve Business</Link>
-								</div>								
-							</p>
+							<div className="box">
+								<Link to="/user-index">View Users</Link>
+							</div>
+							<div className="box">
+								<Link to="/business-index">Approve Business</Link>
+							</div>								
 						</div>
 					</div>        
 				</div>

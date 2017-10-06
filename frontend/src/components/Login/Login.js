@@ -4,6 +4,18 @@ import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
 import UserService from '../UserService';
 
+function FieldsEmpty() {
+  return (
+    <p className="help is-danger">Some Fields are Empty!!</p> 
+  );
+}
+
+function WrongEPass() {
+  return (
+    <p className="help is-danger">Wrong Username/Password!!</p> 
+  );
+}
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +23,9 @@ class Login extends Component {
       user: {
         email: '',
         pass: ''
-      }
+      },
+      field_empty: false,
+      wrong_credentials: false
     };
     this.findUserService = new UserService();
     this.handleChange = this.handleChange.bind(this);
@@ -28,19 +42,22 @@ class Login extends Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
-    this.findUserService.login(this.state.user);
-    if (localStorage.isLoggedIn === 'yes'){
-      if (localStorage.userType === 'admin') {
-        window.location = '/admin';
-      }
-      else if (localStorage.userType === 'business'){
-        window.location = '/business';
+    event.preventDefault();  
+    if (this.state.user.email===''||this.state.user.pass==='') {
+      this.setState({field_empty: true});   
+    }
+    else {
+      this.setState({field_empty: false}); 
+      var check = this.findUserService.login(this.state.user);
+      if (check === true) {
+        // this.setState({ wrong_credentials: false });
+        console.log("check is true");        
       }
       else {
-        return (null)
+        // this.setState({ wrong_credentials: true });
+        console.log("check is false");
       }
-    }    
+    }
   }
 
   render() {
@@ -58,7 +75,7 @@ class Login extends Component {
     else {
       return (
         <div className="App">
-          <Header/>
+          <Header location={this.props.location} />
           <br/>
           <div className="columns is-gapless">
             <div className="column is-4 is-sandwich">
@@ -105,6 +122,7 @@ class Login extends Component {
                             <i className="fa fa-lock"></i>
                           </span>
                         </p>
+                        { this.state.field_empty === true ? <FieldsEmpty /> : null}                        
                       </div>
                       <div className="field">
                         <p className="control">
@@ -112,6 +130,7 @@ class Login extends Component {
                             Login
                           </button>
                         </p>
+                        { this.state.wrong_credentials === true ? <WrongEPass /> : null}         
                       </div>
                     </div>
                   </div>

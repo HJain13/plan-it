@@ -18,10 +18,11 @@ function LoggedIn(props) {
   );
 }
 
+localStorage.planitLocation="";
 function LoggedOff(props) {
   return (
     <div className="navbar-item">
-      <Link to="/login">Login</Link>
+      {localStorage.planitLocation==='/login' ? null:<Link to="/login">Login</Link> }
     </div>
   );
 }
@@ -30,12 +31,14 @@ function logout(event) {
   event.preventDefault();
   localStorage.isLoggedIn="false";
   localStorage.name="";
+  localStorage.userType="";
   window.location = "/login"
 }
 
 
 class Header extends Component {
   render() {
+    localStorage.planitLocation=this.props.location.pathname;
     return (
       <nav className="navbar is-transparent">
         <div className="navbar-brand">

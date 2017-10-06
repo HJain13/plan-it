@@ -4,19 +4,15 @@ import {Link} from 'react-router-dom';
 import Header from '../Header/Header';
 import UserService from '../UserService';
 
-function passUnmatch() {
+function PassUnmatch() {
   return (
-    <div className="navbar-item">
-      <p class="help is-danger">Passwords Don't Match!!</p> 
-    </div>
+    <p class="help is-danger">Passwords Don't Match!!</p> 
   );
 }
 
-function alreadyExists() {
+function AlreadyExists() {
   return (
-    <div className="navbar-item">
-      <p class="help is-danger">Email already in use!!</p> 
-    </div>
+    <p class="help is-danger">Email already in use!!</p> 
   );
 }
 
@@ -31,6 +27,7 @@ class Register extends Component {
         repass: '',            
         phone_no: '',
         u_type: 'business',
+        approved: false,
       },
       match_error: false,
       old_email_error: false
@@ -42,16 +39,19 @@ class Register extends Component {
 
   handleChange(event) {
     const field = event.target.name;
-    if (field === 'pass' || field === 'repass') {
-      if  (this.state.user.pass!==this.state.user.repass && this.state.user.repass!=='') {
-        this.setState({match_error: true});
-      }
-    }
     const user = this.state.user;
     user[field] = event.target.value;
     this.setState({
       user
     });
+    if (field === 'pass' || field === 'repass') {
+      if  (this.state.user.pass!==this.state.user.repass && this.state.user.repass!=='') {
+        this.setState({match_error: true});
+      }
+      else {
+        this.setState({match_error: false});        
+      }
+    }
   }
 
   handleSubmit(event) {
@@ -67,9 +67,10 @@ class Register extends Component {
   }
 
   render() {
+    console.log(this.state.match_error);
     return (
       <div className="App">
-        <Header/>
+        <Header location={this.props.location} />
         <br/>
         <div className="columns is-gapless">
           <div className="column is-4 is-sandwich">
@@ -117,9 +118,10 @@ class Register extends Component {
                           </p>
                         </div>
                       </div>
-                      { old===true ? <alreadyExists /> : null}
+                      { this.state.old_email_error === true ? <AlreadyExists /> : null}
                     </div>
 
+                    { this.state.match_error === true ? <PassUnmatch /> : null} 
                     <div className="field is-horizontal">
                       <div className="field-body">
                         <div className="field">
@@ -138,9 +140,7 @@ class Register extends Component {
                             </span>
                           </p>
                         </div>
-                        { match_error===true ? <passUnmatch /> : null}
                       </div>
-                      
                     </div>
 
                     <div className="field is-horizontal">

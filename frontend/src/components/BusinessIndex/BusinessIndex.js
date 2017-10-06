@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import UserService from '../UserService';
 import axios from 'axios';
 import Header from '../Header/Header';
-import TableRow from '../TableRow';
+import TableRowBusiness from '../TableRowBusiness';
 
 var baseUrl = 'https://plan-it.au-syd.mybluemix.net';
 
-class UserIndex extends Component {
+class BusinessIndex extends Component {
 
   constructor(props) {
     super(props);
@@ -17,29 +17,31 @@ class UserIndex extends Component {
         pass: '',
         repass: '',
         phone_no: '',
-        u_type: 'business'
+        u_type: 'business',
+        approved: false
       },
       items: ''
     };
-    this.addUserService = new UserService();
+    this.addBusinessService = new UserService();
   }
   componentWillMount() {
     axios
-      .get(baseUrl + '/users')
+      .get(baseUrl + '/businesses')
       .then(response => {
-        this.setState({users: response.data});
+        this.setState({businesses: response.data});
       })
       .catch(function (error) {
         console.log(error);
       })
   }
   tabRow() {
-    if (this.state.users instanceof Array) {
+    if (this.state.businesses instanceof Array) {
       return this
         .state
-        .users
+        .businesses
         .map(function (object, i) {
-          return <TableRow obj={object} key={i}/>;
+          return <TableRowBusiness obj={object} key={i}/>;
+
         })
     }
   }
@@ -55,10 +57,11 @@ class UserIndex extends Component {
                 <table className="table is-striped">
                   <thead>
                     <tr>
-                      <td>User ID</td>
+                      <td>Business ID</td>
                       <td>Name</td>
                       <td>Email</td>
                       <td>Phone No.</td>
+                      <td>Is Approved</td>
                     </tr>
                   </thead>
                   <tbody>
@@ -80,4 +83,4 @@ class UserIndex extends Component {
   }
 }
 
-export default UserIndex;
+export default BusinessIndex;

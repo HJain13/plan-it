@@ -1,9 +1,9 @@
 import axios from 'axios';
 var baseUrl = 'https://plan-it.au-syd.mybluemix.net';
-class UserService {
+class BusinessService {
   sendData(data) {
     axios
-      .post(baseUrl + '/users/add/post', {user: data})
+      .post(baseUrl + '/businesses/add/post', {user: data})
       .then(function (response) {
         console.log(response);
       })
@@ -14,7 +14,7 @@ class UserService {
 
   login(data) {
     axios
-      .post(baseUrl + '/users/auth', {user: data})
+      .post(baseUrl + '/businesses/auth', {user: data})
       .then(response => {
         var result;
         if (response.data !== null) {
@@ -34,9 +34,9 @@ class UserService {
       });
   }
 
-  checkUser(data) {
+  checkBusiness(data) {
     axios
-      .post(baseUrl + '/users/findByEmail', {user: data})
+      .post(baseUrl + '/businesses/findByEmail', {user: data})
       .then(function (response) {
         console.log(response);
         if (response === "true") {
@@ -52,7 +52,7 @@ class UserService {
   getUsers() {
     var results;
     axios
-      .get(baseUrl + '/users/')
+      .get(baseUrl + '/businesses/')
       .then(function (response) {
         results = response;
       })
@@ -64,4 +64,4 @@ class UserService {
 
 }
 
-export default UserService;
+export default BusinessService;

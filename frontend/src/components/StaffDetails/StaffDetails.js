@@ -7,7 +7,7 @@ class StaffDetails extends Component {
   render() {
     return (
       <div className="App">
-        <Header />  
+        <Header location={this.props.location} />
         <p className="App-intro">
           <Link to="/">Back</Link>
           <br />

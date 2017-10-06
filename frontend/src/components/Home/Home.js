@@ -1,28 +1,35 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
 import '../../css/App.css';
 import Header from '../Header/Header';
 
 class Home extends Component {
   render() {
     return (
-      <div className="App">
-        <Header />        
-        <p className="App-intro">
-        <Link to="/login">Login/Register</Link>
-          <br />
-          <br />          
-          <Link to="/add-item">Add Item</Link>
-          <br />
-          <br />
-          <Link to="/add-verify-business">Add/Verify Business</Link>
-          <br />
-          <br />
-          <Link to="/staff-details">Maintaining Staff Details</Link>
-          <br />
-          <br />
-          <Link to="/view-package">View Packages</Link>
-        </p>
+      <div>
+        <Header location={this.props.location}/>
+        <div className="section">
+          <div className="container">
+            <div className="columns">
+              <div className="column is-8 is-offset-2">
+                <div className="box">
+                  <div className="title is-1 has-has-text-light">
+                    Testing Method
+                  </div>
+                  <div className="content has-text-left">
+                    <ul>
+                      <li>Login From Top Right</li>
+                      <li>use credentials:
+                        <br/>
+                        <strong>username:</strong>&nbsp;himeshjain13@gmail.com
+                        <br/><strong>password:</strong>&nbsp;741852963
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
