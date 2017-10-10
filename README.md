@@ -8,7 +8,7 @@ SWE Project for V Semester
 
     * [MongoDB](https://www.mongodb.com/download-center?jmp=nav#community) 
 
-2. Run the following scripts in the root project folder
+2. Run the following scripts in the root project folder as well as frontend folder
 
     * `npm install`
 
@@ -16,18 +16,12 @@ SWE Project for V Semester
 
     * `npm install -g nodemon`    //Optional
 
-3. Run the following scripts in the front-end folder (Read package.json)
-   ```
-   npm run build
-   ```
 
-4. Run the project from the root project folder by:
+3. Run the project from the root project folder
 
-    * `nodemon`        (or)
-
-    * `npm start`      (or)
-
-    * `npm app.js`
+    ```
+    npm run full
+    ``` 
 
 
 # Project Tasks
@@ -35,5 +29,5 @@ SWE Project for V Semester
 - Sprint 1
 
     - [ ] SignUp and Login
-    - 
+    - [ ]
 

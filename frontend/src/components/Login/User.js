@@ -139,12 +139,10 @@ class UserLogin extends Component {
             </div>
             <div className="column is-1 is-sandwich"></div>
           </div>
-          <div className="section">
-            <div className="container">
-              <div className="box">
-                <Link to="/login/business">Business Login</Link>
-              </div>
-            </div>  
+          <div className="hero is-light">
+            <div className="hero-body">
+              <Link to="/businessLogin" className="button is-large">Business Login</Link>
+            </div>
           </div>
         </div>
       );

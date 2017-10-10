@@ -85,10 +85,7 @@ class BusinessLogin extends Component {
                 </div>
                 <br/>
                 <p>
-                  We are here to enhance user experience in travel and dining by saving user’s
-                  time on choosing and booking their preferred choice, while providing more
-                  exposure and customers to local dining and housing businesses. Interested? Sign
-                  Up!!
+                  Interested in making your business get a new wave of Customers? Sign Up!!
                 </p>
                 <br/>
                 <Link to="/register" className="button is-warning is-medium">Sign Up!</Link>
@@ -99,7 +96,7 @@ class BusinessLogin extends Component {
               <div className="box is-over">
                 <div className="is-vcentered">
                   <div className="title is-1 has-text-weight-light">
-                    Login
+                    Business Login
                   </div>
                   <br/>
                   <div className="columns">
@@ -139,6 +136,11 @@ class BusinessLogin extends Component {
             </div>
             <div className="column is-1 is-sandwich"></div>
           </div>
+          <div className="hero is-light">
+            <div className="hero-body">
+              <Link to="/login" className="button is-large">User Login</Link>
+            </div>
+          </div>          
         </div>
       );
     }

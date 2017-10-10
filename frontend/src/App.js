@@ -24,9 +24,9 @@ class App extends Component {
         <Route path='/add-item' component={AddItem} />
         <Route path='/admin' component={Admin} />
         <Route path='/business' component={Business} />
-        <Route path='/login' component={UserLogin} />
-        <Route path='/login/business' component={BusinessLogin} />
-        <Route path='/login/admin' component={AdminLogin} />
+        <Route path='/businessLogin' component={BusinessLogin} />
+        <Route path='/adminLogin' component={AdminLogin} />
+        <Route path='/login/' component={UserLogin} />
         <Route path='/register' component={Register} />
         <Route path='/user-index' component={UserIndex} />
         <Route path='/business-index' component={BusinessIndex} />
