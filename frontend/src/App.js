@@ -7,7 +7,7 @@ import Business from './components/Business/Business';
 import UserLogin from './components/Login/User';
 import BusinessLogin from './components/Login/Business';
 import AdminLogin from './components/Login/Admin';
-import Register from './components/Register/Register';
+import BusinessRegister from './components/Register/Business';
 import StaffDetails from './components/StaffDetails/StaffDetails';
 import ViewPackage from './components/ViewPackage/ViewPackage';
 import UserIndex from './components/UserIndex/UserIndex';
@@ -28,7 +28,7 @@ class App extends Component {
           <Route path='/login/business' component={BusinessLogin} />
           <Route path='/login/admin' component={AdminLogin} />
           <Route path='/login/' component={UserLogin} />
-          <Route path='/register' component={Register} />
+          <Route path='/register/business' component={BusinessRegister} />
           <Route path='/user-index' component={UserIndex} />
           <Route path='/business-index' component={BusinessIndex} />
           <Route path="/add-verify-business" component={AddBusiness} />
