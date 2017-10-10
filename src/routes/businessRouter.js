@@ -37,6 +37,7 @@ businessRouter.route('/').get(function (req, res) {
       console.log(err);
     }
     else {
+      console.log("Hey");
       res.json(itms);
     }
   });
@@ -49,6 +50,18 @@ businessRouter.route('/edit/:id').get(function (req, res) {
       res.json(business);
   });
 });
+
+businessRouter.route('/auth').post(function (req, res) {
+  Business.findOne({'business.email': req.body.business.email, 'business.pass': req.body.business.pass}, 'business', function (err, itms) {
+    if(err){
+      console.log(err);
+    }
+    else {
+      res.json(itms);
+    }
+  });
+});
+
 
 //  Defined update route
 businessRouter.route('/update/:id').post(function (req, res) {

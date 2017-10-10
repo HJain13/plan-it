@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import UserService from '../UserService';
+import BusinessService from '../BusinessService';
 import axios from 'axios';
 import Header from '../Header/Header';
 import TableRowBusiness from '../TableRowBusiness';
@@ -11,18 +11,22 @@ class BusinessIndex extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {
+      business: {
         name: '',
+        m_name: '',
+        btype: '',
         email: '',
         pass: '',
         repass: '',
+        b_ac_no: '',
+        address: '',
         phone_no: '',
         u_type: 'business',
         approved: false
       },
       items: ''
     };
-    this.addBusinessService = new UserService();
+    this.addBusinessService = new BusinessService();
   }
   componentWillMount() {
     axios

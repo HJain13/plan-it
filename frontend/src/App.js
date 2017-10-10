@@ -3,7 +3,10 @@ import Home from './components/Home/Home';
 import AddBusiness from './components/AddBusiness/AddBusiness';
 import AddItem from './components/AddItem/AddItem';
 import Admin from './components/Admin/Admin';
-import Login from './components/Login/Login';
+import Business from './components/Business/Business';
+import UserLogin from './components/Login/User';
+import BusinessLogin from './components/Login/Business';
+import AdminLogin from './components/Login/Admin';
 import Register from './components/Register/Register';
 import StaffDetails from './components/StaffDetails/StaffDetails';
 import ViewPackage from './components/ViewPackage/ViewPackage';
@@ -20,7 +23,10 @@ class App extends Component {
         <Route exact={true} path="/" component={Home} />
         <Route path='/add-item' component={AddItem} />
         <Route path='/admin' component={Admin} />
-        <Route path='/login' component={Login} />
+        <Route path='/business' component={Business} />
+        <Route path='/login' component={UserLogin} />
+        <Route path='/login/business' component={BusinessLogin} />
+        <Route path='/login/admin' component={AdminLogin} />
         <Route path='/register' component={Register} />
         <Route path='/user-index' component={UserIndex} />
         <Route path='/business-index' component={BusinessIndex} />

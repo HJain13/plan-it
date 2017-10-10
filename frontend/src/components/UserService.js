@@ -1,5 +1,5 @@
 import axios from 'axios';
-var baseUrl = 'https://plan-it.au-syd.mybluemix.net';
+var baseUrl = '';
 class UserService {
   sendData(data) {
     axios
@@ -21,15 +21,10 @@ class UserService {
           console.log(response.data.user.name);
           localStorage.setItem("name", response.data.user.name);
           localStorage.setItem("isLoggedIn", "yes");
-          if (response.data.user.u_type !== 'business' || response.data.user.u_type !== 'user') {
-            localStorage.setItem("userType", "admin");
-          } else if (response.data.user.u_type === 'business') {
-            localStorage.setItem("userType", "business");
-          }
-          result = true;
+          localStorage.setItem("userType", "user");
         }
         console.log(result);
-        window.location = '/login';
+        window.location = '/login'
         return(result);              
       });
   }

@@ -1,9 +1,9 @@
 import axios from 'axios';
-var baseUrl = 'https://plan-it.au-syd.mybluemix.net';
+var baseUrl = '';
 class BusinessService {
   sendData(data) {
     axios
-      .post(baseUrl + '/businesses/add/post', {user: data})
+      .post(baseUrl + '/businesses/add/post', {business: data})
       .then(function (response) {
         console.log(response);
       })
@@ -14,18 +14,14 @@ class BusinessService {
 
   login(data) {
     axios
-      .post(baseUrl + '/businesses/auth', {user: data})
+      .post(baseUrl + '/businesses/auth', {business: data})
       .then(response => {
         var result;
         if (response.data !== null) {
-          console.log(response.data.user.name);
-          localStorage.setItem("name", response.data.user.name);
+          console.log(response.data.business.name);
+          localStorage.setItem("name", response.data.business.name);
           localStorage.setItem("isLoggedIn", "yes");
-          if (response.data.user.u_type !== 'business' || response.data.user.u_type !== 'user') {
-            localStorage.setItem("userType", "admin");
-          } else if (response.data.user.u_type === 'business') {
-            localStorage.setItem("userType", "business");
-          }
+          localStorage.setItem("userType", "business");
           result = true;
         }
         console.log(result);
@@ -36,7 +32,7 @@ class BusinessService {
 
   checkBusiness(data) {
     axios
-      .post(baseUrl + '/businesses/findByEmail', {user: data})
+      .post(baseUrl + '/businesses/findByEmail', {business: data})
       .then(function (response) {
         console.log(response);
         if (response === "true") {
@@ -49,7 +45,7 @@ class BusinessService {
       });
   }
 
-  getUsers() {
+  getBusinesses() {
     var results;
     axios
       .get(baseUrl + '/businesses/')

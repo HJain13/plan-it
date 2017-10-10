@@ -30,6 +30,7 @@ mongoose.connect(mongoUrl)
     // Required application specific custom router module
     var itemRouter = require('./src/routes/itemRouter');
     var userRouter = require('./src/routes/userRouter');
+    var businessRouter = require('./src/routes/businessRouter');
     
     // Use middlewares to set view engine and post json data to the server
     app.use(cors());
@@ -38,8 +39,9 @@ mongoose.connect(mongoUrl)
     
     app.use('/items', itemRouter);
     app.use('/users', userRouter);
+    app.use('/businesses', businessRouter);
     app.use(express.static(path.join(__dirname, 'frontend/build')));
-    
+
     const port = process.env.PORT || 3000;
     // Start the server
     app.listen(port, function(){

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import '../../css/App.css';
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
-import UserService from '../UserService';
+import BusinessService from '../BusinessService';
 
 function FieldsEmpty() {
   return (
@@ -16,7 +16,7 @@ function WrongEPass() {
   );
 }
 
-class Login extends Component {
+class BusinessLogin extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,7 +27,7 @@ class Login extends Component {
       field_empty: false,
       wrong_credentials: false
     };
-    this.findUserService = new UserService();
+    this.findUserService = new BusinessService();
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -145,4 +145,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default BusinessLogin;
