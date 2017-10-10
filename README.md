@@ -29,5 +29,5 @@ SWE Project for V Semester
 - Sprint 1
 
     - [ ] SignUp and Login
-    - [ ]
+    - [ ] Approving Businesses by Admin
 

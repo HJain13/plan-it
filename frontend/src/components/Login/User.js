@@ -141,7 +141,7 @@ class UserLogin extends Component {
           </div>
           <div className="hero is-light">
             <div className="hero-body">
-              <Link to="/businessLogin" className="button is-large">Business Login</Link>
+              <Link to="/login/business" className="button is-large">Business Login</Link>
             </div>
           </div>
         </div>

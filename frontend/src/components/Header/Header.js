@@ -22,7 +22,7 @@ localStorage.planitLocation="";
 function LoggedOff(props) {
   return (
     <div className="navbar-item">
-      {localStorage.planitLocation==='/login' ? null:<Link to="/login">Login</Link> }
+      {localStorage.planitLocation==='/login' || localStorage.planitLocation==='/login/admin' || localStorage.planitLocation==='/login/business' ? null:<Link to="/login">Login</Link> }
     </div>
   );
 }
