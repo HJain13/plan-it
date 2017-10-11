@@ -10,40 +10,41 @@ require('dotenv').config();
 
 var mongoUrl = '';
 mongoose.Promise = require('bluebird');
-if(process.env.environment === 'development'){
+if (process.env.environment === 'development') {
   mongoUrl = 'mongodb://localhost:27017/plan-it';
-}
-else {
+} else {
   mongoUrl = process.env.mongoUrl;
 }
 mongoose.connect(mongoUrl)
-.then(() => { // if all is ok we will be here
-  console.log('Start');
-})
-    .catch(err => { // if error we will be here
-      console.error('App starting error:', err.stack);
-      process.exit(1);
-    });
-    
-    // mongodb://admin:swe2017@ds147544.mlab.com:47544/plan-it
-    
-    // Required application specific custom router module
-    var itemRouter = require('./src/routes/itemRouter');
-    var userRouter = require('./src/routes/userRouter');
-    var businessRouter = require('./src/routes/businessRouter');
-    
-    // Use middlewares to set view engine and post json data to the server
-    app.use(cors());
-    app.use(bodyParser.urlencoded({extended: true}));
-    app.use(bodyParser.json());
-    
-    app.use('/items', itemRouter);
-    app.use('/users', userRouter);
-    app.use('/businesses', businessRouter);
-    app.use(express.static(path.join(__dirname, 'frontend/build')));
+  .then(() => { // if all is ok we will be here
+    console.log('Start');
+  })
+  .catch(err => { // if error we will be here
+    console.error('App starting error:', err.stack);
+    process.exit(1);
+  });
 
-    const port = process.env.PORT || 3000;
-    // Start the server
-    app.listen(port, function(){
-      console.log('Server is running on Port: ',port);
-    });
+// mongodb://admin:swe2017@ds147544.mlab.com:47544/plan-it
+
+// Required application specific custom router module
+var adminRouter = require('./src/routes/adminRouter');
+var userRouter = require('./src/routes/userRouter');
+var businessRouter = require('./src/routes/businessRouter');
+
+// Use middlewares to set view engine and post json data to the server
+app.use(cors());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
+
+app.use('/api/users', userRouter);
+app.use('/api/businesses', businessRouter);
+app.use('/api/admins', adminRouter);
+app.use(express.static(path.join(__dirname, 'frontend/build')));
+
+const port = process.env.PORT || 3000;
+// Start the server
+app.listen(port, function () {
+  console.log('Server is running on Port: ', port);
+});

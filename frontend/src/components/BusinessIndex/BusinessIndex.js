@@ -4,11 +4,10 @@ import axios from 'axios';
 import Header from '../Header/Header';
 import TableRowBusiness from '../TableRowBusiness';
 
-var baseUrl = 'https://plan-it.au-syd.mybluemix.net';
+var baseUrl = '/api';
 
 class BusinessIndex extends Component {
-
-  constructor(props) {
+ constructor(props) {
     super(props);
     this.state = {
       business: {
@@ -82,7 +81,7 @@ class BusinessIndex extends Component {
       localStorage.isLoggedIn="false";
       localStorage.name="";
       localStorage.userType="";      
-      window.location = "/login"
+      window.location = "/login/admin"
     }
   }
 }

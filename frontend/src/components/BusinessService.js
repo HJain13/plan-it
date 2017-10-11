@@ -1,5 +1,5 @@
 import axios from 'axios';
-var baseUrl = '';
+var baseUrl = '/api';
 class BusinessService {
   sendData(data) {
     axios

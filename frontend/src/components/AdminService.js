@@ -1,9 +1,9 @@
 import axios from 'axios';
-var baseUrl = '';
+var baseUrl = '/api';
 class AdminService {
   sendData(data) {
     axios
-      .post(baseUrl + '/admin/add/post', {user: data})
+      .post(baseUrl + '/admins/add/post', {admin: data})
       .then(function (response) {
         console.log(response);
       })
@@ -14,12 +14,12 @@ class AdminService {
 
   login(data) {
     axios
-      .post(baseUrl + '/admin/auth', {user: data})
+      .post(baseUrl + '/admins/auth', {admin: data})
       .then(response => {
         var result;
         if (response.data !== null) {
-          console.log(response.data.user.name);
-          localStorage.setItem("name", response.data.user.name);
+          console.log(response.data.admin.name);
+          localStorage.setItem("name", response.data.admin.name);
           localStorage.setItem("isLoggedIn", "yes");
           localStorage.setItem("userType", "admin");
         }
@@ -31,7 +31,7 @@ class AdminService {
 
   checkUser(data) {
     axios
-      .post(baseUrl + '/admin/findByEmail', {user: data})
+      .post(baseUrl + '/admins/findByEmail', {admin: data})
       .then(function (response) {
         console.log(response);
         if (response === "true") {
@@ -47,7 +47,7 @@ class AdminService {
   getUsers() {
     var results;
     axios
-      .get(baseUrl + '/admin/')
+      .get(baseUrl + '/admins/')
       .then(function (response) {
         results = response;
       })

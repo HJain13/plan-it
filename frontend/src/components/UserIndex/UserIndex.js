@@ -4,7 +4,7 @@ import axios from 'axios';
 import Header from '../Header/Header';
 import TableRow from '../TableRow';
 
-var baseUrl = 'https://plan-it.au-syd.mybluemix.net';
+var baseUrl = '/api';
 
 class UserIndex extends Component {
 
@@ -75,7 +75,7 @@ class UserIndex extends Component {
       localStorage.isLoggedIn="false";
       localStorage.name="";
       localStorage.userType="";      
-      window.location = "/login"
+      window.location = "/login/admin"
     }
   }
 }

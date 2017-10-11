@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import '../../css/App.css';
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
-import BusinessService from '../BusinessService';
+import AdminService from '../AdminService';
 
 function FieldsEmpty() {
   return (
@@ -27,7 +27,7 @@ class Login extends Component {
       field_empty: false,
       wrong_credentials: false
     };
-    this.findUserService = new BusinessService();
+    this.findUserService = new AdminService();
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -79,27 +79,12 @@ class Login extends Component {
           <br/>
           <div className="columns is-gapless">
             <div className="column is-4 is-sandwich">
-              <div className="is-padded">
-                <div className="title is-1 has-text-weight-light">
-                  I'm New Here
-                </div>
-                <br/>
-                <p>
-                  We are here to enhance user experience in travel and dining by saving user’s
-                  time on choosing and booking their preferred choice, while providing more
-                  exposure and customers to local dining and housing businesses. Interested? Sign
-                  Up!!
-                </p>
-                <br/>
-                <Link to="/register" className="button is-warning is-medium">Sign Up!</Link>
-                <br/>
-              </div>
             </div>
             <div className="column is-7">
               <div className="box is-over">
                 <div className="is-vcentered">
                   <div className="title is-1 has-text-weight-light">
-                    Login
+                    Admin Login
                   </div>
                   <br/>
                   <div className="columns">
@@ -142,7 +127,8 @@ class Login extends Component {
           <div className="section">
             <div className="container">
               <div className="box">
-                <Link to="/login/business">Business Login</Link>
+                <Link to="/login/business">Business Login</Link><br/>
+                <Link to="/login">User Login</Link><br/>
               </div>
             </div>  
           </div>

@@ -8,23 +8,20 @@ class TableRowBusiness extends Component {
           {this.props.obj._id}
         </td>
         <td>
-          {this.props.obj.user.name}
+          {this.props.obj.business.name}
         </td>
         <td>
-          {this.props.obj.user.email}
+          {this.props.obj.business.email}
         </td>
         <td>
-          {this.props.obj.user.phone_no}
+          {this.props.obj.business.phone_no}
         </td>
         <td>
-          {this.props.obj.user.approved}
+          {this.props.obj.business.approved}
         </td>        
         <td>
           <button className="button is-primary">Approve</button>
         </td>
-        {/* <td>
-          <button className="button is-danger">Delete</button>
-        </td> */}
       </tr>
     );
   }
