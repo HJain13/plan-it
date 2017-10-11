@@ -88,7 +88,7 @@ class BusinessLogin extends Component {
                   Interested in making your business get a new wave of Customers? Sign Up!!
                 </p>
                 <br/>
-                <Link to="/register" className="button is-warning is-medium">Sign Up!</Link>
+                <Link to="/register/business" className="button is-warning is-medium">Sign Up!</Link>
                 <br/>
               </div>
             </div>

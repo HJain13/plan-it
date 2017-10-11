@@ -86,8 +86,7 @@ class UserLogin extends Component {
                 <br/>
                 <p>
                   We are here to enhance user experience in travel and dining by saving user’s
-                  time on choosing and booking their preferred choice, while providing more
-                  exposure and customers to local dining and housing businesses. Interested? Sign
+                  time on choosing and booking their preferred choice. Interested? Sign
                   Up!!
                 </p>
                 <br/>

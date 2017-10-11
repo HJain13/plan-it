@@ -23,7 +23,7 @@ class Admin extends Component {
 			);	
 		}
 		else {
-			window.location = '/login';
+			window.location = '/login/business';
 			return(null);
 		}
   }

@@ -20,17 +20,13 @@ class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      business: {
+      user: {
         name: '',
-        m_name: '',
-        btype: '',
         email: '',
         pass: '',
         repass: '',
-        b_ac_no: '',
-        address: '',
         phone_no: '',
-        u_type: 'business',
+        u_type: 'user',
         approved: false
       },
       match_error: false,
@@ -43,13 +39,13 @@ class Register extends Component {
 
   handleChange(event) {
     const field = event.target.name;
-    const business = this.state.business;
-    business[field] = event.target.value;
+    const user = this.state.user;
+    user[field] = event.target.value;
     this.setState({
-      business
+      user
     });
     if (field === 'pass' || field === 'repass') {
-      if  (this.state.business.pass!==this.state.business.repass && this.state.business.repass!=='') {
+      if  (this.state.user.pass!==this.state.user.repass && this.state.user.repass!=='') {
         this.setState({match_error: true});
       }
       else {
@@ -60,9 +56,9 @@ class Register extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if (this.state.business.name!==''&&this.state.business.address!==''&&this.state.business.m_name!==''&&this.state.business.b_ac_no!==''&&this.state.business.email!==''&&this.state.business.pass!==''&&this.state.business.pass===this.state.business.repass&&this.state.business.phone_no!=='') {
-      this.setState({old_email_error:this.addUserService.checkBusiness(this.state.business.email)});
-      this.addUserService.sendData(this.state.business);
+    if (this.state.user.name!==''&&this.state.user.email!==''&&this.state.user.pass!==''&&this.state.user.pass===this.state.user.repass&&this.state.user.phone_no!=='') {
+      this.setState({old_email_error:this.addUserService.checkBusiness(this.state.user.email)});
+      this.addUserService.sendData(this.state.user);
       this.props.history.push('/');
     }
     else {
@@ -83,7 +79,7 @@ class Register extends Component {
               </div>
               <br/>
               <p>
-                We are here to enhance business experience in travel and dining by saving user’s
+                We are here to enhance user experience in travel and dining by saving user’s
                 time on choosing and booking their preferred choice, while providing more
                 exposure and customers to You. Interested? Sign Up!!
               </p>
@@ -101,19 +97,11 @@ class Register extends Component {
                       Sign Up
                     </div>
                     <br/>
-                    <div className="field">
-                      <p className="control is-expanded has-icons-left">
-                        <input className="input" type="text" placeholder="Business Name" onChange={this.handleChange} name="name" value={this.state.business.name} />
-                        <span className="icon is-small is-left">
-                          <i className="fa fa-briefcase"></i>
-                        </span>
-                      </p>
-                    </div>
                     <div className="field is-horizontal">
                       <div className="field-body">
                         <div className="field">
                           <p className="control is-expanded has-icons-left">
-                            <input className="input" type="text" placeholder="Name" onChange={this.handleChange} name="m_name" value={this.state.business.m_name} />
+                            <input className="input" type="text" placeholder="Name" onChange={this.handleChange} name="m_name" value={this.state.user.m_name} />
                             <span className="icon is-small is-left">
                               <i className="fa fa-user"></i>
                             </span>
@@ -121,7 +109,7 @@ class Register extends Component {
                         </div>
                         <div className="field">
                           <p className="control is-expanded has-icons-left">
-                            <input className="input" type="email" placeholder="Email" onChange={this.handleChange} name="email" value={this.state.business.email}/>
+                            <input className="input" type="email" placeholder="Email" onChange={this.handleChange} name="email" value={this.state.user.email}/>
                             <span className="icon is-small is-left">
                               <i className="fa fa-envelope"></i>
                             </span>
@@ -130,23 +118,12 @@ class Register extends Component {
                       </div>
                       { this.state.old_email_error === true ? <AlreadyExists /> : null}
                     </div>
-                    <div className="field">
-                      <div className="control">
-                        <div className="select is-fullwidth">
-                          <select value={this.state.business.btype} name="btype" onChange={this.handleChange}>
-                            <option value="dining">Dining Business</option>
-                            <option value="activity_center">Activity Center</option>
-                            <option value="travel">Travel Business</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
                     { this.state.match_error === true ? <PassUnmatch /> : null} 
                     <div className="field is-horizontal">
                       <div className="field-body">
                         <div className="field">
                           <p className="control is-expanded has-icons-left">
-                            <input className="input" type="password" placeholder="Password" onChange={this.handleChange} name="pass" value={this.state.business.pass} />
+                            <input className="input" type="password" placeholder="Password" onChange={this.handleChange} name="pass" value={this.state.user.pass} />
                             <span className="icon is-small is-left">
                               <i className="fa fa-key"></i>
                             </span>
@@ -154,7 +131,7 @@ class Register extends Component {
                         </div>
                         <div className="field">
                           <p className="control is-expanded has-icons-left">
-                            <input className="input" type="password" placeholder="Confirm Password" onChange={this.handleChange} name="repass" value={this.state.business.repass}/>
+                            <input className="input" type="password" placeholder="Confirm Password" onChange={this.handleChange} name="repass" value={this.state.user.repass}/>
                             <span className="icon is-small is-left">
                               <i className="fa fa-key"></i>
                             </span>
@@ -171,28 +148,12 @@ class Register extends Component {
                               <a className="button is-static">+91</a>
                             </p>
                             <p className="control is-expanded">
-                              <input className="input" type="tel" placeholder="Your phone number" onChange={this.handleChange} name="phone_no" value={this.state.business.phone_no}/></p>
+                              <input className="input" type="tel" placeholder="Your phone number" onChange={this.handleChange} name="phone_no" value={this.state.user.phone_no}/></p>
                           </div>
                           <p className="help">Do not enter the first zero</p>
                         </div>
                       </div>
-                    </div>
-                    <div className="field">
-                      <p className="control is-expanded has-icons-left">
-                        <input className="input" type="text" placeholder="Address" onChange={this.handleChange} name="address" value={this.state.business.address} />
-                        <span className="icon is-small is-left">
-                          <i className="fa fa-address-card-o"></i>
-                        </span>
-                      </p>
-                    </div>
-                    <div className="field">
-                      <p className="control is-expanded has-icons-left">
-                        <input className="input" type="text" placeholder="Bank Account No" onChange={this.handleChange} name="b_ac_no" value={this.state.business.b_ac_no} />
-                        <span className="icon is-small is-left">
-                          <i className="fa fa-credit-card"></i>
-                        </span>
-                      </p>
-                    </div>                    
+                    </div>                 
                     <div className="field is-horizontal">
                       <div className="field-body">
                         <div className="field">

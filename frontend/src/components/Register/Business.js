@@ -88,7 +88,7 @@ class BusinessRegister extends Component {
                 exposure and customers to You. Interested? Sign Up!!
               </p>
               <br/>
-              <Link to="/login" className="button is-warning is-medium">Login</Link>
+              <Link to="/login/business" className="button is-warning is-medium">Login</Link>
               <br/>
             </div>
           </div>
