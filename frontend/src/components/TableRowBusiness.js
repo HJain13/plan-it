@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 class TableRowBusiness extends Component {
   render() {
@@ -20,7 +21,7 @@ class TableRowBusiness extends Component {
           {this.props.obj.business.approved}
         </td>        
         <td>
-          <button className="button is-primary">Approve</button>
+          <Link to={"/approve/"+this.props.obj._id} className="btn btn-primary">Approve</Link>
         </td>
       </tr>
     );

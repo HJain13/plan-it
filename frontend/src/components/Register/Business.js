@@ -31,7 +31,7 @@ class BusinessRegister extends Component {
         address: '',
         phone_no: '',
         u_type: 'business',
-        approved: false
+        approved: 'false'
       },
       match_error: false,
       old_email_error: false

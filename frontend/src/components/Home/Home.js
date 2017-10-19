@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../../css/App.css';
+import {Link} from 'react-router-dom';
 import Header from '../Header/Header';
 
 class Home extends Component {
@@ -18,10 +19,11 @@ class Home extends Component {
                   <div className="content has-text-left">
                     <ul>
                       <li>Login From Top Right</li>
-                      <li>use credentials:
+                      <li><Link to="/login/admin">Admin Login</Link><br/>
+                        use credentials:
                         <br/>
                         <strong>username:</strong>&nbsp;himeshjain13@gmail.com
-                        <br/><strong>password:</strong>&nbsp;741852963
+                        <br/><strong>password:</strong>&nbsp;qwerty
                       </li>
                     </ul>
                   </div>

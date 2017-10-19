@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Home from './components/Home/Home';
 import AddBusiness from './components/AddBusiness/AddBusiness';
-// import AddItem from './components/AddItem/AddItem';
 import Admin from './components/Admin/Admin';
+import ApproveBusiness from './components/ApproveBusiness/ApproveBusiness';
 import Business from './components/Business/Business';
 import UserLogin from './components/Login/User';
 import BusinessLogin from './components/Login/Business';
@@ -25,6 +25,7 @@ class App extends Component {
           <Route exact={true} path="/" component={Home} />
           {/* <Route path='/add-item' component={AddItem} /> */}
           <Route path='/admin' component={Admin} />
+          <Route path='/approve/:id' component={ApproveBusiness} />
           <Route path='/business' component={Business} />
           <Route path='/login/business' component={BusinessLogin} />
           <Route path='/login/admin' component={AdminLogin} />

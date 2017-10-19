@@ -170,6 +170,11 @@ class Register extends Component {
           </div>
         <div className="column is-1 is-sandwich"></div>
         </div>
+        <div className="hero is-light">
+          <div className="hero-body">
+            <Link to="/register/business" className="button is-large">Business Login</Link>
+          </div>
+        </div>        
       </div>
     );
   }

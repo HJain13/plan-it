@@ -65,14 +65,13 @@ businessRouter.route('/auth').post(function (req, res) {
 
 //  Defined update route
 businessRouter.route('/update/:id').post(function (req, res) {
-  Business.findById(req.params.id, function(err, business) {
-    if (!business)
+  Business.findById(req.params.id, function(err, businessFound) {
+    if (!businessFound)
       return next(new Error('Could not load Document'));
     else {
       // do your updates here
-      business.business = req.body.business;
-
-      business.save().then(business => {
+      businessFound.business = req.body.business;
+      businessFound.save().then(business => {
           res.json('Update complete');
       })
       .catch(err => {

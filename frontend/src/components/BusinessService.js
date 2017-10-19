@@ -58,6 +58,14 @@ class BusinessService {
     return (results);
   }
 
+  updateData(data, id){
+    axios.post(baseUrl + '/businesses/update/'+id, {
+      business: data
+    })
+    .then(res => this.setState({ business: res.data }))
+    .catch(err => console.log(err))
+  }
+
 }
 
 export default BusinessService;

@@ -21,9 +21,10 @@ class BusinessIndex extends Component {
         address: '',
         phone_no: '',
         u_type: 'business',
-        approved: false
+        approved: 'false'
       },
-      items: ''
+      items: '',
+      isLoading: true
     };
     this.addBusinessService = new BusinessService();
   }
@@ -36,6 +37,8 @@ class BusinessIndex extends Component {
       .catch(function (error) {
         console.log(error);
       })
+    
+    this.setState({isLoading: false}); 
   }
   tabRow() {
     if (this.state.businesses instanceof Array) {
@@ -51,31 +54,36 @@ class BusinessIndex extends Component {
 
   render() {
     if (localStorage.isLoggedIn === 'yes' && localStorage.userType === 'admin') {
-      return (
-        <div>
-          <Header location={this.props.location} />
-          <div className="hero is-light">
-            <div className="hero-body">
-              <div className="container has-text-centered">
-                <table className="table is-striped">
-                  <thead>
-                    <tr>
-                      <td>Business ID</td>
-                      <td>Name</td>
-                      <td>Email</td>
-                      <td>Phone No.</td>
-                      <td>Is Approved</td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {this.tabRow()}
-                  </tbody>
-                </table>
+      if(this.state.isLoading) {
+
+      }
+      else {
+        return (
+          <div>
+            <Header location={this.props.location} />
+            <div className="hero is-light">
+              <div className="hero-body">
+                <div className="container has-text-centered">
+                  <table className="table is-striped">
+                    <thead>
+                      <tr>
+                        <td>Business ID</td>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Phone No.</td>
+                        <td>Is Approved</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {this.tabRow()}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      );
+        );
+      }
     }
     else {
       localStorage.isLoggedIn="false";
