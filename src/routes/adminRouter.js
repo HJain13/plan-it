@@ -2,10 +2,10 @@ var express = require('express');
 var app = express();
 var adminRouter = express.Router();
 
-// Require Admin model in our routes module
+// Adding Admin model in our routes module
 var Admin = require('../models/Admin');
 
-// Defined store route
+// Defined Route for adding Admins with Data passed as an object in POST request
 adminRouter.route('/add/post').post(function (req, res) {
   var admin = new Admin(req.body);
       admin.save()
@@ -17,12 +17,14 @@ adminRouter.route('/add/post').post(function (req, res) {
     });
 });
 
+// Defined Route for finding if an Admin exists with Email passed as an GET request
 adminRouter.route('/findByEmail').get(function (req, res) {
   Admin.findOne({'admin.email': req.body.admin.email}, 'admin', function (err, itms) {
     if(err){
       console.log(err);
     }
     else {
+      // Response is Boolean 
       if(itms=="null") res.json("false");      
       else res.json("true");
     }
@@ -30,7 +32,7 @@ adminRouter.route('/findByEmail').get(function (req, res) {
 });
 
 
-// Defined get data(index or listing) route
+// Defined Route for listing all Admins that exist in DB on GET request
 adminRouter.route('/').get(function (req, res) {
   Admin.find(function (err, itms){
     if(err){
@@ -43,7 +45,7 @@ adminRouter.route('/').get(function (req, res) {
   });
 });
 
-// Defined edit route
+// Defined Route for editing details of pre-exisiting Admin exists with changes passed as an GET request
 adminRouter.route('/edit/:id').get(function (req, res) {
   var id = req.params.id;
   Admin.findById(id, function (err, admin){
@@ -51,6 +53,7 @@ adminRouter.route('/edit/:id').get(function (req, res) {
   });
 });
 
+// Defined Route for authenticating Login for Admin portal with Email & Password passed as an POST request
 adminRouter.route('/auth').post(function (req, res) {
   Admin.findOne({'admin.email': req.body.admin.email, 'admin.pass': req.body.admin.pass}, 'admin', function (err, itms) {
     if(err){
@@ -62,8 +65,7 @@ adminRouter.route('/auth').post(function (req, res) {
   });
 });
 
-
-//  Defined update route
+// Defined Route for updating Admin on POST request
 adminRouter.route('/update/:id').post(function (req, res) {
   Admin.findById(req.params.id, function(err, admin) {
     if (!admin)

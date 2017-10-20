@@ -1,10 +1,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-// Define collection and schema for Items
+// Define Collection and Schema for Admins (equivalent to New table and Table Structure in SQL based DB)
 var Admin = new Schema({
   admin: {
-    type: Object
+    //JSON Object
+    type: Object 
   },
 
 },{
@@ -12,3 +13,4 @@ var Admin = new Schema({
 });
 
 module.exports = mongoose.model('Admin', Admin);
+

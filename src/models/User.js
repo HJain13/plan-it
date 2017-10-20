@@ -1,9 +1,10 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-// Define collection and schema for Items
+// Define Collection and Schema for Users (equivalent to New table and Table Structure in SQL based DB)
 var User = new Schema({
   user: {
+    //JSON Object
     type: Object
   },
 

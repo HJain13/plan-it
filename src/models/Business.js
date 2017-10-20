@@ -1,9 +1,10 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-// Define collection and schema for Items
+// Define Collection and Schema for Businesses (equivalent to New table and Table Structure in SQL based DB)
 var Business = new Schema({
   business: {
+    //JSON Object
     type: Object
   },
 

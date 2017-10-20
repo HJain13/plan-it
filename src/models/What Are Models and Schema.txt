@@ -1,0 +1,9 @@
+==================Schema==================
+* A representation of a plan or theory in the form of an outline or model.
+* http://mongoosejs.com/docs/guide.html
+
+==================Model===================
+* Structure of Database
+* Has some predefined functions attached (Like CRUD)
+* http://mongoosejs.com/docs/models.html
+
