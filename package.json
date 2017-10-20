@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "full-install": "npm install && cd frontend && npm install",
     "start": "node app.js",
-    "full": "echo \"Switching Directory & Building\" && cd frontend && npm install && npm run build && echo \"Switching Back and Running App\" && cd .. && node app.js"
+    "full": "echo \"Switching Directory & Building\" && cd frontend && npm run build && echo \"Switching Back and Running App\" && cd .. && node app.js"
   },
   "author": "HJain13",
   "license": "ISC",

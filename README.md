@@ -10,14 +10,15 @@ SWE Project for V Semester
 
 2. Run the following scripts in the root project folder as well as frontend folder
 
-    * `npm install`
+    * `npm full-install`
 
     * `npm install --save express-session`    //Optional
 
     * `npm install -g nodemon`    //Optional
 
+3. Take `.env.txt` from `config` folder and paste it into root folder as `.env`
 
-3. Run the project from the root project folder
+4. Run the project from the root project folder
 
     ```
     npm run full
@@ -29,5 +30,5 @@ SWE Project for V Semester
 - Sprint 1
 
     - [x] SignUp and Login
-    - [ ] Approving Businesses by Admin
+    - [x] Approving Businesses by Admin
 
