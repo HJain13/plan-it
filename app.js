@@ -6,8 +6,7 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 require('dotenv').config();
 
-// Mongoose connection with mongodb
-
+// Setting up config for MongoDB (requires .env file in root folder to work in Development)
 var mongoUrl = '';
 mongoose.Promise = require('bluebird');
 if (process.env.environment === 'development') {
@@ -15,18 +14,18 @@ if (process.env.environment === 'development') {
 } else {
   mongoUrl = process.env.mongoUrl;
 }
+
+// Mongoose connection with MongoDB
 mongoose.connect(mongoUrl)
-  .then(() => { // if all is ok we will be here
+  .then(() => {
     console.log('Start');
   })
-  .catch(err => { // if error we will be here
+  .catch(err => {
     console.error('App starting error:', err.stack);
     process.exit(1);
   });
 
-// mongodb://admin:swe2017@ds147544.mlab.com:47544/plan-it
-
-// Required application specific custom router module
+// Required Routers to create API Routes
 var adminRouter = require('./src/routes/adminRouter');
 var userRouter = require('./src/routes/userRouter');
 var businessRouter = require('./src/routes/businessRouter');
@@ -38,12 +37,17 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+// Setting up Initial Routes
 app.use('/api/users', userRouter);
 app.use('/api/businesses', businessRouter);
 app.use('/api/admins', adminRouter);
+
+// Handling routing to React's Internal Router if the Path doesn't match above routes
 app.use(express.static(path.join(__dirname, 'frontend/build')));
 
+// Defining PORT to start server on (requires .env file in root folder to work in Development)
 const port = process.env.PORT || 3000;
+
 // Start the server
 app.listen(port, function () {
   console.log('Server is running on Port: ', port);

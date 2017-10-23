@@ -14,16 +14,19 @@ import ViewPackage from './components/ViewPackage/ViewPackage';
 import UserIndex from './components/UserIndex/UserIndex';
 import BusinessIndex from './components/BusinessIndex/BusinessIndex';
 import { Route, Switch } from 'react-router-dom';
+
+//Importing App Specific Css
 import './css/App.css';
+// Importing Bulma CSS Framework
 import './css/bulma.min.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        {/* Using Switch so that Only One Path gets rendered at a Time */}
         <Switch>
           <Route exact={true} path="/" component={Home} />
-          {/* <Route path='/add-item' component={AddItem} /> */}
           <Route path='/admin' component={Admin} />
           <Route path='/approve/:id' component={ApproveBusiness} />
           <Route path='/business' component={Business} />

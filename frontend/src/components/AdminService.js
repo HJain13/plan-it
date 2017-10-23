@@ -1,6 +1,9 @@
 import axios from 'axios';
 var baseUrl = '/api';
+
 class AdminService {
+
+  //Sending Request for Adding Admin
   sendData(data) {
     axios
       .post(baseUrl + '/admins/add/post', {admin: data})
@@ -12,6 +15,7 @@ class AdminService {
       });
   }
 
+  //Checking Credential using API and Redirecting accordingly (Used in Login)
   login(data) {
     axios
       .post(baseUrl + '/admins/auth', {admin: data})
@@ -29,6 +33,7 @@ class AdminService {
       });
   }
 
+  //Checking if a User with a particular Email exists (Used in Registeration for avoiding 2 accounts with same email)
   checkUser(data) {
     axios
       .post(baseUrl + '/admins/findByEmail', {admin: data})
@@ -44,6 +49,7 @@ class AdminService {
       });
   }
 
+  //Getting list of all admins in DB (To be Used in AdminIndex page)
   getUsers() {
     var results;
     axios

@@ -5,12 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+
+    "explain-full-install": "echo \"Installs Node Module for FrontEnd (React) as well as Backend (Express)\"",
     "full-install": "npm install && cd frontend && npm install",
+
     "start": "node app.js",
+
+    "explain-start-frontend": "echo \"Starting FrontEnd only\"",
+    "start-frontend": "cd frontend && npm start",
+
+    "explain-full":"echo \"Compiling FrontEnd and Starting Backend Server",
     "full": "echo \"Switching Directory & Building\" && cd frontend && npm run build && echo \"Switching Back and Running App\" && cd .. && node app.js"
   },
   "author": "HJain13",
-  "license": "ISC",
+  "license": "",
   "dependencies": {
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
