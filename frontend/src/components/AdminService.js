@@ -17,18 +17,18 @@ class AdminService {
 
   //Checking Credential using API and Redirecting accordingly (Used in Login)
   login(data) {
+    var result;
     axios
       .post(baseUrl + '/admins/auth', {admin: data})
       .then(response => {
-        var result;
         if (response.data !== null) {
           console.log(response.data.admin.name);
           localStorage.setItem("name", response.data.admin.name);
           localStorage.setItem("isLoggedIn", "yes");
           localStorage.setItem("userType", "admin");
+          result = true;
         }
-        console.log(result);
-        window.location = '/login'
+        window.location = '/login/Admin'
         return(result);              
       });
   }

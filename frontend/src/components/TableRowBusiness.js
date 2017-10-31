@@ -21,7 +21,7 @@ class TableRowBusiness extends Component {
           {this.props.obj.business.approved}
         </td>        
         <td>
-          <Link to={"/approve/"+this.props.obj._id} className="btn btn-primary">Approve</Link>
+          <Link to={"/approve/"+this.props.obj._id} className="button is-primary">Approve</Link>
         </td>
       </tr>
     );

@@ -10,6 +10,14 @@ function FieldsEmpty() {
   );
 }
 
+function IsLoading() {
+  return (
+    <div className="is-material-progress">
+      <div className="indeterminate"></div>
+    </div>
+  );
+}
+
 function WrongEPass() {
   return (
     <p className="help is-danger">Wrong Username/Password!!</p> 
@@ -25,6 +33,7 @@ class UserLogin extends Component {
         pass: ''
       },
       field_empty: false,
+      is_loading: false,      
       wrong_credentials: false
     };
     this.findUserService = new UserService();
@@ -47,6 +56,7 @@ class UserLogin extends Component {
       this.setState({field_empty: true});   
     }
     else {
+      this.setState({is_loading: true});
       this.setState({field_empty: false}); 
       var check = this.findUserService.login(this.state.user);
       if (check === true) {
@@ -75,6 +85,7 @@ class UserLogin extends Component {
     else {
       return (
         <div className="App">
+          { this.state.is_loading && <IsLoading /> }
           <Header location={this.props.location} />
           <br/>
           <div className="columns is-gapless">
@@ -121,15 +132,13 @@ class UserLogin extends Component {
                             <i className="fa fa-lock"></i>
                           </span>
                         </p>
-                        { this.state.field_empty === true ? <FieldsEmpty /> : null}                        
+                        { this.state.field_empty && <FieldsEmpty />}                        
                       </div>
                       <div className="field">
                         <p className="control">
-                          <button onClick={this.handleSubmit} className="button is-success">
-                            Login
-                          </button>
+                          <button onClick={this.handleSubmit} className="button is-success is-expanded">Login</button>
                         </p>
-                        { this.state.wrong_credentials === true ? <WrongEPass /> : null}         
+                        { this.state.wrong_credentials && <WrongEPass />}         
                       </div>
                     </div>
                   </div>
@@ -140,7 +149,12 @@ class UserLogin extends Component {
           </div>
           <div className="hero is-light">
             <div className="hero-body">
-              <Link to="/login/business" className="button is-large">Business Login</Link>
+            <span className="title is-3 has-text-weight-light">
+              Have A Business?
+            </span>&nbsp;&nbsp;&nbsp;
+            <span className="title is-3 has-text-weight-light">
+              <Link to="/login/business" className="button is-warning">Login</Link>
+            </span>          
             </div>
           </div>
         </div>

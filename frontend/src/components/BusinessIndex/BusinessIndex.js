@@ -72,6 +72,7 @@ class BusinessIndex extends Component {
                         <td>Email</td>
                         <td>Phone No.</td>
                         <td>Is Approved</td>
+                        <td></td>
                       </tr>
                     </thead>
                     <tbody>

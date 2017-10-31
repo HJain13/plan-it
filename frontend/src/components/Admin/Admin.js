@@ -16,12 +16,16 @@ class Admin extends Component {
 					<Header location={this.props.location} />
 					<div className="hero is-light">
 						<div className="hero-body">
-							<div className="box">
-								<Link to="/user-index">View Users</Link>
+							<div className="columns">
+								<div className="column is-6 is-offset-3">
+									<div className="box">
+										<Link to="/user-index">View Users</Link>
+									</div>
+									<div className="box">
+										<Link to="/business-index">Approve Business</Link>
+									</div>																	
+								</div>
 							</div>
-							<div className="box">
-								<Link to="/business-index">Approve Business</Link>
-							</div>								
 						</div>
 					</div>        
 				</div>

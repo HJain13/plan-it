@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../../css/App.css';
 import Header from '../Header/Header';
 
-class Admin extends Component {
+class Business extends Component {
   render() {
 		if (localStorage.isLoggedIn === 'yes' && localStorage.userType === 'business'){
 			return (
@@ -29,4 +29,4 @@ class Admin extends Component {
   }
 }
 
-export default Admin;
+export default Business;

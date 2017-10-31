@@ -76,7 +76,7 @@
 }
 
 /* Progress Bar */
-.progress {
+.is-material-progress {
   position: relative;
   height: 4px;
   display: block;
@@ -84,10 +84,9 @@
   background-color: #00ac9a;
   border-radius: 2px;
   background-clip: padding-box;
-  margin: 0.5rem 0 1rem 0;
   overflow: hidden;
 }
-.progress .determinate {
+.is-material-progress .determinate {
   position: absolute;
   background-color: inherit;
   top: 0;
@@ -95,10 +94,10 @@
   background-color: #004e46;
   transition: width 0.3s linear;
 }
-.progress .indeterminate {
+.is-material-progress .indeterminate {
   background-color: #004e46;
 }
-.progress .indeterminate:before {
+.is-material-progress .indeterminate:before {
   content: '';
   position: absolute;
   background-color: inherit;
@@ -108,7 +107,7 @@
   will-change: left, right;
   animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
 }
-.progress .indeterminate:after {
+.is-material-progress .indeterminate:after {
   content: '';
   position: absolute;
   background-color: inherit;

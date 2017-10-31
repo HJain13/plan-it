@@ -10,6 +10,14 @@ function FieldsEmpty() {
   );
 }
 
+function IsLoading() {
+  return (
+    <div className="is-material-progress">
+      <div className="indeterminate"></div>
+    </div>
+  );
+}
+
 function WrongEPass() {
   return (
     <p className="help is-danger">Wrong Username/Password!!</p> 
@@ -25,6 +33,7 @@ class BusinessLogin extends Component {
         pass: ''
       },
       field_empty: false,
+      is_loading: false,      
       wrong_credentials: false
     };
     this.findUserService = new BusinessService();
@@ -42,6 +51,7 @@ class BusinessLogin extends Component {
   }
 
   handleSubmit(event) {
+    this.setState({is_loading: true});    
     event.preventDefault();  
     if (this.state.user.email===''||this.state.user.pass==='') {
       this.setState({field_empty: true});   
@@ -75,6 +85,7 @@ class BusinessLogin extends Component {
     else {
       return (
         <div className="App">
+          { this.state.is_loading && <IsLoading /> }
           <Header location={this.props.location} />
           <br/>
           <div className="columns is-gapless">

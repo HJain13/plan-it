@@ -44,7 +44,9 @@ app.use('/api/admins', adminRouter);
 
 // Handling routing to React's Internal Router if the Path doesn't match above routes
 app.use(express.static(path.join(__dirname, 'frontend/build')));
-
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
+});
 // Defining PORT to start server on (requires .env file in root folder to work in Development)
 const port = process.env.PORT || 3000;
 
