@@ -13,6 +13,7 @@ import StaffDetails from './components/StaffDetails/StaffDetails';
 import ViewPackage from './components/ViewPackage/ViewPackage';
 import UserIndex from './components/UserIndex/UserIndex';
 import BusinessIndex from './components/BusinessIndex/BusinessIndex';
+import AddPackage from './components/Business/AddPackage/AddPackage';
 import { Route, Switch } from 'react-router-dom';
 
 //Importing App Specific Css
@@ -40,6 +41,7 @@ class App extends Component {
           <Route path="/add-verify-business" component={AddBusiness} />
           <Route path="/staff-details" component={StaffDetails} />
           <Route path="/view-package" component={ViewPackage} />
+          <Route path="/add-package" component={AddPackage} />
         </Switch>
       </div>
     );
