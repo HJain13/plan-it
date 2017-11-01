@@ -17,10 +17,12 @@ var mongoUrl = '';
 mongoose.Promise = require('bluebird');
 if (process.env.environment === 'development') {
   mongoUrl = 'mongodb://localhost:27017/plan-it';
-} else {
-  mongoUrl = process.env.mongoUrl;
+} else if (process.env.environment === 'development-riya') {
+  mongoUrl = 'mongodb://localhost:27016/plan-it';
 }
-
+else {
+  mongoUrl = process.env.mongoUrl;  
+}
 // Mongoose connection with MongoDB
 mongoose.connect(mongoUrl, {
   useMongoClient: true,
