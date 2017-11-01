@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
+
 class TableRowBusiness extends Component {
   render() {
+    var disabledClass = "";
+    if(this.props.obj.business.approved){
+      disabledClass = "disabled "
+    }
     return (
       <tr>
         <td>
@@ -21,7 +26,7 @@ class TableRowBusiness extends Component {
           {this.props.obj.business.approved}
         </td>        
         <td>
-          <Link to={"/approve/"+this.props.obj._id} className="button is-primary">Approve</Link>
+          <Link to={"/approve/"+this.props.obj._id} className="button is-primary" {...disabledClass}>Approve</Link>
         </td>
       </tr>
     );

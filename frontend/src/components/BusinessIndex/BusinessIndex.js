@@ -37,14 +37,13 @@ class BusinessIndex extends Component {
     this.addBusinessService = new BusinessService();
   }
   componentWillMount() {
-    axios
-      .get(baseUrl + '/businesses')
-      .then(response => {
-        this.setState({businesses: response.data});
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
+    axios.get(baseUrl + '/businesses')
+    .then(response => {
+      this.setState({businesses: response.data});
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
   }
   tabRow() {
     if (this.state.businesses instanceof Array) {
