@@ -7,7 +7,8 @@ var Package = require('../models/Package');
 
 // Defined store route
 packageRouter.route('/add/post').post(function (req, res) {
-  var package = new Package(req.body);
+  console.log(req.body);
+  var package = new Package(req.body.business, req.body.package);
       package.save()
     .then(package => {
     res.json('Package added successfully');

@@ -19,19 +19,23 @@ else {
 }
 
 // Mongoose connection with MongoDB
-mongoose.connect(mongoUrl)
-  .then(() => {
-    console.log('Start');
-  })
-  .catch(err => {
-    console.error('App starting error:', err.stack);
-    process.exit(1);
-  });
+mongoose.connect(mongoUrl, {
+  useMongoClient: true,
+  promiseLibrary: require('bluebird')
+})
+.then(() => {
+  console.log('Start');
+})
+.catch(err => {
+  console.error('App starting error:', err.stack);
+  process.exit(1);
+});
 
 // Required Routers to create API Routes
 var adminRouter = require('./src/routes/adminRouter');
 var userRouter = require('./src/routes/userRouter');
 var businessRouter = require('./src/routes/businessRouter');
+var packageRouter = require('./src/routes/packageRouter');
 
 // Use middlewares to set view engine and post json data to the server
 app.use(cors());
@@ -44,6 +48,7 @@ app.use(bodyParser.json());
 app.use('/api/users', userRouter);
 app.use('/api/businesses', businessRouter);
 app.use('/api/admins', adminRouter);
+app.use('/api/packages', packageRouter);
 
 // Handling routing to React's Internal Router if the Path doesn't match above routes
 app.use(express.static(path.join(__dirname, 'frontend/build')));
