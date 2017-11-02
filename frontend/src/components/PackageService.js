@@ -1,9 +1,9 @@
 import axios from 'axios';
 var baseUrl = '/api';
 class PackageService {
-  sendData(data1, data2) {
+  sendData(data) {
     axios
-      .post(baseUrl + '/packages/add/post', {business: data1, package: data2})
+      .post(baseUrl + '/packages/add/post', {package: data})
       .then(function (response) {
         console.log(response);
       })

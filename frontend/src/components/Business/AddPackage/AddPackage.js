@@ -18,23 +18,26 @@ class AddPackage extends Component {
 				menu_image: '',
 				specials: [],
 				pictures: [],
-				cost_for_two: ''
+				cost_for_two: '',
+				ptype: 'dining'
 			},
 			Activity_package:{
 				name: '',
-				broucher: '',
+				brochure: '',
 				location: '',
 				activity: {},
-				cost: ''
+				cost: '',
+				ptype: 'activity'
 			},
 			Travel_package:{
-				broucher: '',
+				brochure: '',
 				location: '',
 				activity: {},
 				food_specials: {},
 				duration: '',
 				cost: '',
-				pictures: {}
+				pictures: {},
+				ptype: 'travel'
 			}
 		};
 		this.addUserService = new PackageService();
@@ -47,7 +50,7 @@ class AddPackage extends Component {
 	
 	handleSubmitDining(event) {
     event.preventDefault();
-		this.addUserService.sendData(this.state.business,this.state.Dining_package);
+		this.addUserService.sendData(this.state.Dining_package);
 		this.props.history.push('/business');
   }
 	
@@ -206,7 +209,7 @@ class AddPackage extends Component {
 									</div>
 									<div className="field">
 										<p className="control has-icons-left">
-											<input onChange={this.handleChangeActivity} name="broucher" className="input" type="input" placeholder="Brocher"/>
+											<input onChange={this.handleChangeActivity} name="brochure" className="input" type="input" placeholder="Brocher"/>
 										</p>                    
 									</div>
 									<div className="field">
@@ -234,7 +237,7 @@ class AddPackage extends Component {
 								</div>
 								<div className="field">
 								<p className="control has-icons-left">
-									<input onChange={this.handleChangeTravel} name="broucher" className="input" type="input" placeholder="Brocher"/>
+									<input onChange={this.handleChangeTravel} name="brochure" className="input" type="input" placeholder="Brocher"/>
 								</p>                    
 								</div>
 								<div className="field">

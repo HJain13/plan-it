@@ -6,6 +6,7 @@ require('dotenv').config();
 var Admin = require('./src/models/Admin');
 var Business = require('./src/models/Business');
 var User = require('./src/models/User');
+var Package = require('./src/models/Package');
 
 var count = 0;
 function sleep(ms) {
@@ -159,13 +160,52 @@ mongoose.connect(mongoUrl, {
     });
   }  
 
+  function buildPackage() {
+    count++;
+    return new Promise((resolve, reject) => {
+      console.log('---------------------------------------');
+      console.log('+++ Building Package Table +++');
+      // Removing existing Package Data
+      Package.remove({}, function (err, row) {
+        if (err) {
+          console.log("Collection couldn't be removed" + err);
+          return;
+        }
+        console.log("--- Removing exisiting Package Data ---");
+      })
+      .then(() => {
+        //Adding an Package to System
+        var packages = new Array(2);
+        packages[0] = new Package({"package" : { "b_email": "ldany0@nhs.uk", "cost_for_two" : "399", "pictures" : [ "image1.png", "image.png" ], "specials" : [ "Margarita", "Cheese Burst" ], "menu_image" : "image.png", "combo_name" : "Pizza Fly" }});
+        packages[1] = new Package({"package" : { "b_email": "ldany0@nhs.uk", "cost_for_two" : "449", "pictures" : [ "image1.png", "image.png" ], "specials" : [ "Margarita", "Cheese Burst" ], "menu_image" : "image.png", "combo_name" : "Pizza Fly Expensive" }});    
+        packages.forEach(function (package, index, array) {
+          package.save().then(package => {
+              console.log('+++ Package['+index+'] added successfully +++');
+              count++;
+            })
+            .catch(err => {
+              console.error("Unable to save to database: ", err.stack);
+              process.exit(1);
+            });
+        })
+      })
+      .then(() => {
+        resolve(count);
+      });
+    });
+  }  
+
+
   buildAdmin()
   .then( () => {
     buildBusiness()
     .then( () => {
       buildUser()
-      .then( () => {      
-        mongoose.connection.close();
+      .then( () => {   
+        buildPackage()
+        .then( () => {              
+          mongoose.connection.close();
+        })
       })
     })
   });
