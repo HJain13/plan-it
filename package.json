@@ -1,30 +1,26 @@
 {
-  "name": "plan-it-backend",
-  "version": "0.0.1",
-  "description": "Backend for SWE App",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-
-    "explain-full-install": "echo \"Installs Node Module for FrontEnd (React) as well as Backend (Express)\"",
-    "full-install": "npm install && cd frontend && npm install",
-
-    "start": "node app.js",
-
-    "explain-start-frontend": "echo \"Starting FrontEnd only\"",
-    "start-frontend": "cd frontend && npm start",
-
-    "explain-full":"echo \"Compiling FrontEnd and Starting Backend Server",
-    "full": "echo \"Switching Directory & Building\" && cd frontend && npm run build && echo \"Switching Back and Running App\" && cd .. && node app.js"
-  },
-  "author": "HJain13",
-  "license": "",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "cors": "^2.8.4",
-    "dotenv": "^4.0.0",
-    "express": "^4.16.1",
-    "mongoose": "^4.12.1",
-    "path": "^0.12.7"
-  }
+    "name": "plan-it-backend",
+    "version": "0.0.1",
+    "description": "Backend for SWE App",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "explain-full-install": "echo \"Installs Node Module for FrontEnd (React) as well as Backend (Express)\"",
+        "full-install": "npm install && cd frontend && npm install",
+        "start": "node app.js",
+        "explain-start-frontend": "echo \"Starting FrontEnd only\"",
+        "start-frontend": "cd frontend && npm start",
+        "explain-full": "echo \"Compiling FrontEnd and Starting Backend Server",
+        "full": "echo \"Switching Directory & Building\" && cd frontend && npm run build && echo \"Switching Back and Running App\" && cd .. && node app.js"
+    },
+    "author": "HJain13",
+    "license": "",
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "cors": "^2.8.4",
+        "dotenv": "^4.0.0",
+        "express": "^4.16.1",
+        "mongoose": "^4.12.1",
+        "path": "^0.12.7"
+    }
 }
