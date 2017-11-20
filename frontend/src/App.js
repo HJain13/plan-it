@@ -12,6 +12,7 @@ import UserRegister from './components/Register/User';
 import StaffDetails from './components/StaffDetails/StaffDetails';
 import ViewPackage from './components/ViewPackage/ViewPackage';
 import UserIndex from './components/UserIndex/UserIndex';
+import PackageIndex from './components/PackageIndex/PackageIndex';
 import BusinessIndex from './components/BusinessIndex/BusinessIndex';
 import AddPackage from './components/Business/AddPackage/AddPackage';
 import { Route, Switch } from 'react-router-dom';
@@ -37,6 +38,8 @@ class App extends Component {
           <Route path='/register/business' component={BusinessRegister} />
           <Route path='/register' component={UserRegister} />
           <Route path='/user-index' component={UserIndex} />
+          <Route path='/package-index' component={PackageIndex} />
+          
           <Route path='/business-index' component={BusinessIndex} />
           <Route path="/add-verify-business" component={AddBusiness} />
           <Route path="/staff-details" component={StaffDetails} />

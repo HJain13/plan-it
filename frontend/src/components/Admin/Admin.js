@@ -23,7 +23,10 @@ class Admin extends Component {
 									</div>
 									<div className="box">
 										<Link to="/business-index">Approve Business</Link>
-									</div>																	
+									</div>	
+									<div className="box">
+										<Link to="/package-index">Show Packages</Link>
+									</div>																
 								</div>
 							</div>
 						</div>
