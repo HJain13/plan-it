@@ -176,8 +176,8 @@ mongoose.connect(mongoUrl, {
       .then(() => {
         //Adding an Package to System
         var packages = new Array(2);
-        packages[0] = new Package({"package" : { "b_email": "ldany0@nhs.uk", "cost_for_two" : "399", "pictures" : [ "image1.png", "image.png" ], "specials" : [ "Margarita", "Cheese Burst" ], "menu_image" : "image.png", "combo_name" : "Pizza Fly" }});
-        packages[1] = new Package({"package" : { "b_email": "ldany0@nhs.uk", "cost_for_two" : "449", "pictures" : [ "image1.png", "image.png" ], "specials" : [ "Margarita", "Cheese Burst" ], "menu_image" : "image.png", "combo_name" : "Pizza Fly Expensive" }});    
+        packages[0] = new Package({"package" : {"name": "Lebua Resort", "brochure":"Wubba Lubba Dub Dub", "location":"Jaipur", "activity":"Swimming", "cost":"300", "ptype":"activity"}});
+        packages[1] = new Package({"package" : {"name": "Hotel Ramada", "brochure":"I am in Pain", "location":"Jaipur", "activity":"Swimming", "cost":"400", "ptype":"activity"}});
         packages.forEach(function (package, index, array) {
           package.save().then(package => {
               console.log('+++ Package['+index+'] added successfully +++');

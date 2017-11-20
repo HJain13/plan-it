@@ -71,7 +71,7 @@ class PackageIndex extends Component {
   }
 
   render() {
-    if (localStorage.isLoggedIn === 'yes' && localStorage.userType === 'admin') {
+    if (localStorage.isLoggedIn === 'yes') {
       return (
         <div>
 
@@ -105,7 +105,6 @@ class PackageIndex extends Component {
                       <td>Duration</td>
                       <td>Cost</td>
                       <td>Pictures</td>
-                      <td>Package Type</td>
                     </tr>
                   </thead>
                   <tbody>

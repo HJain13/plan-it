@@ -3,9 +3,8 @@ import React, {Component} from 'react';
 class TableRowPackage extends Component {
   render() {
     return (
+      this.props.obj.package.ptype==='activity'?
         <tr>
-        {this.props.obj.package.ptype==='activity'?
-        <div>
         <td>
           {this.props.obj.package.name}
         </td>
@@ -24,24 +23,8 @@ class TableRowPackage extends Component {
         <td>
           {this.props.obj.package.ptype}
         </td>                
-        </div>:null}
-
-       {/*  {this.props.obj.package.ptype=='dining'?
-        <div>
-        <td>
-          {this.props.obj.package.combo_name}
-        </td>
-        <td>
-          {this.props.obj.package.menu_image}
-        </td>
-        <td>
-          {this.props.obj.package.cost_for_two}
-        </td>
-        <td>
-          {this.props.obj.package.ptype}
-        </td>
-        </div>:null} */}
       </tr>
+        : null
     );
   }
 }
