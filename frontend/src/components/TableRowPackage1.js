@@ -4,7 +4,7 @@ class TableRowPackage extends Component {
   render() {
     return (
         <tr>
-        {this.props.obj.package.ptype===null &&
+        {(this.props.obj.package.ptype!='dining' && this.props.obj.package.ptype!='activity')?
         <div>
         <td>
           {this.props.obj.package.brochure}
@@ -30,7 +30,7 @@ class TableRowPackage extends Component {
         <td>
           {this.props.obj.package.ptype}
         </td>
-        </div>}
+        </div>:null}
 
        {/*  {this.props.obj.package.ptype=='dining'?
         <div>
