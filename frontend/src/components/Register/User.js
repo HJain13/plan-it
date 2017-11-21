@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import '../../css/App.css';
 import {Link} from 'react-router-dom';
 import Header from '../Header/Header';
-import BusinessService from '../BusinessService';
+import UserService from '../UserService';
 
 function PassUnmatch() {
   return (
@@ -26,13 +26,12 @@ class Register extends Component {
         pass: '',
         repass: '',
         phone_no: '',
-        u_type: 'user',
-        approved: false
+        u_type: 'user'
       },
       match_error: false,
       old_email_error: false
     };
-    this.addUserService = new BusinessService();
+    this.addUserService = new UserService();
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -57,7 +56,7 @@ class Register extends Component {
   handleSubmit(event) {
     event.preventDefault();
     if (this.state.user.name!==''&&this.state.user.email!==''&&this.state.user.pass!==''&&this.state.user.pass===this.state.user.repass&&this.state.user.phone_no!=='') {
-      this.setState({old_email_error:this.addUserService.checkBusiness(this.state.user.email)});
+      this.setState({old_email_error:this.addUserService.checkUser(this.state.user.email)});
       this.addUserService.sendData(this.state.user);
       this.props.history.push('/');
     }
@@ -101,7 +100,7 @@ class Register extends Component {
                       <div className="field-body">
                         <div className="field">
                           <p className="control is-expanded has-icons-left">
-                            <input className="input" type="text" placeholder="Name" onChange={this.handleChange} name="m_name" value={this.state.user.m_name} />
+                            <input className="input" type="text" placeholder="Name" onChange={this.handleChange} name="name" value={this.state.user.m_name} />
                             <span className="icon is-small is-left">
                               <i className="fa fa-user"></i>
                             </span>
@@ -172,7 +171,7 @@ class Register extends Component {
         </div>
         <div className="hero is-light">
           <div className="hero-body">
-            <Link to="/register/business" className="button is-large">Business Login</Link>
+            <Link to="/register/business" className="button is-large">Register as a Business</Link>
           </div>
         </div>        
       </div>

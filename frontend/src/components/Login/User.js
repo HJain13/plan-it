@@ -78,6 +78,9 @@ class UserLogin extends Component {
       else if (localStorage.userType === 'business'){
         window.location = '/business';
       }
+      else if (localStorage.userType === 'user'){
+        window.location = '/user';
+      }
       else {
         return (null)
       }

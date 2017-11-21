@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Home from './components/Home/Home';
 import AddBusiness from './components/AddBusiness/AddBusiness';
 import Admin from './components/Admin/Admin';
-import ApproveBusiness from './components/ApproveBusiness/ApproveBusiness';
 import Business from './components/Business/Business';
+import User from './components/User/User';
+import ApproveBusiness from './components/ApproveBusiness/ApproveBusiness';
 import UserLogin from './components/Login/User';
 import BusinessLogin from './components/Login/Business';
 import AdminLogin from './components/Login/Admin';
@@ -30,8 +31,9 @@ class App extends Component {
         <Switch>
           <Route exact={true} path="/" component={Home} />
           <Route path='/admin' component={Admin} />
-          <Route path='/approve/:id' component={ApproveBusiness} />
           <Route path='/business' component={Business} />
+          <Route path='/user' component={User} />
+          <Route path='/approve/:id' component={ApproveBusiness} />
           <Route path='/login/business' component={BusinessLogin} />
           <Route path='/login/admin' component={AdminLogin} />
           <Route path='/login/' component={UserLogin} />

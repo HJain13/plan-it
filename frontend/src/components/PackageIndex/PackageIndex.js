@@ -9,26 +9,55 @@ var baseUrl = '/api';
 
 class PackageIndex extends Component {
 
+  
   constructor(props) {
     super(props);
     this.state = {
-        package:{
-            combo_name: '',
-            menu_image: '',
-            specials: [],
-            cost_for_two: '',
-            ptype: '',
-            brochure: '',
-            location: '',
-            activity: [],
-            cost: '',
-            pictures: [],
-            food_specials: [],
-            duration: '',
-        }
+      package:{
+        combo_name: '',
+        menu_image: '',
+        specials: [],
+        cost_for_two: '',
+        ptype: '',
+        brochure: '',
+        location: '',
+        activity: [],
+        cost: '',
+        pictures: [],
+        food_specials: [],
+        duration: '',
+      },
+      activityIsSelected: false,
+      diningIsSelected: false,
+      travelIsSelected: false
     };
     this.addPackageService = new PackageService();
+    this.selectActivity = this.selectActivity.bind(this);
+    this.selectDining = this.selectDining.bind(this);
+    this.selectTravel = this.selectTravel.bind(this);
   }
+
+  selectActivity(event) {
+    event.preventDefault();
+    this.setState({ activityIsSelected: true });
+    this.setState({ diningIsSelected: false });
+    this.setState({ travelIsSelected: false });
+  }
+
+  selectDining(event) {
+    event.preventDefault();
+    this.setState({ activityIsSelected: false });
+    this.setState({ diningIsSelected: true });
+    this.setState({ travelIsSelected: false });
+  }
+  
+  selectTravel(event) {
+    event.preventDefault();
+    this.setState({ activityIsSelected: false });
+    this.setState({ diningIsSelected: false });
+    this.setState({ travelIsSelected: true });
+  }
+
   componentWillMount() {
     axios
       .get(baseUrl + '/packages')
@@ -79,7 +108,21 @@ class PackageIndex extends Component {
           <div className="hero is-light">
             <div className="hero-body">
               <div className="container has-text-centered">
-              <div className="title">Dining Package</div>
+              <div className="columns">
+                <div className="column is-4">
+                  <button className="dining-button" onClick={this.selectDining}>Dining</button>
+                </div>
+                <div className="column is-4">
+                  <button className="travel-button" onClick={this.selectTravel}>Travel</button>
+                </div>
+                <div className="column is-4">
+                  <button className="activity-button" onClick={this.selectActivity}>Activity</button>
+                </div>
+              </div>
+              <br/>
+              { this.state.diningIsSelected === true ?
+              <div>
+                <div className="title">Dining Package</div>
                 <table className="table is-striped">
                   <thead>
                     <tr>
@@ -94,23 +137,33 @@ class PackageIndex extends Component {
                     {this.tabRow()}
                   </tbody>
                 </table>
-                <div className="title">Travel Package</div>
-                <table className="table is-striped">
-                  <thead>
-                    <tr>
-                      <td>Brochure</td>
-                      <td>Location</td>
-                      <td>Activity</td>
-                      <td>Food</td>
-                      <td>Duration</td>
-                      <td>Cost</td>
-                      <td>Pictures</td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {this.tabRow1()}
-                  </tbody>
-                </table>
+                <br/>
+              </div>
+              : null }
+              { this.state.travelIsSelected === true ?
+                <div>
+                  <div className="title">Travel Package</div>
+                  <table className="table is-striped">
+                    <thead>
+                      <tr>
+                        <td>Brochure</td>
+                        <td>Location</td>
+                        <td>Activity</td>
+                        <td>Food</td>
+                        <td>Duration</td>
+                        <td>Cost</td>
+                        <td>Pictures</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {this.tabRow1()}
+                    </tbody>
+                  </table>
+                  <br/>
+                </div>
+              : null }
+              { this.state.activityIsSelected === true ?
+              <div>              
                 <div className="title">Activity Package</div>
                 <table className="table is-striped">
                   <thead>
@@ -128,10 +181,12 @@ class PackageIndex extends Component {
                     {this.tabRow2()}
                   </tbody>
                 </table>                
-              </div>
+              </div> 
+            :null }
             </div>
           </div>
         </div>
+      </div>
       );
     }
     else {

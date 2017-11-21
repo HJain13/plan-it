@@ -202,3 +202,29 @@
     right: -8%;
   }
 }
+
+.dining-button, .activity-button, .travel-button {
+  width: 300px;
+  height: 300px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  background-image: url("https://i.imgur.com/FagAk3m.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.dining-button:focus, .activity-button:focus, .travel-button:focus {
+  outline:0;
+  transform: scale(1.1);
+}
+
+.activity-button {
+  background-image: url("https://i.imgur.com/1aOXHAJ.png");
+}
+
+.travel-button {
+  background-image: url("https://i.imgur.com/459VDGR.png");
+}
