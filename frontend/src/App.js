@@ -39,7 +39,6 @@ class App extends Component {
           <Route path='/register' component={UserRegister} />
           <Route path='/user-index' component={UserIndex} />
           <Route path='/package-index' component={PackageIndex} />
-          
           <Route path='/business-index' component={BusinessIndex} />
           <Route path="/add-verify-business" component={AddBusiness} />
           <Route path="/staff-details" component={StaffDetails} />
