@@ -18,7 +18,7 @@ class TableRowPackage extends Component {
           </a>
         </header>
         <div class="card-content">
-          <div class="content">
+          <div class="content ">
           <strong>Brocher: </strong>{this.props.obj.package.brochure} 
           <br />
           <strong>Location: </strong>{this.props.obj.package.location}
@@ -34,7 +34,7 @@ class TableRowPackage extends Component {
           </div>
         </div>
         <footer class="card-footer">
-        <Link to={"/user/buy/"+this.props.obj._id} className="card-footer-item">Buy</Link>
+        <Link to={"/user/buy/"+this.props.obj._id} className="card-footer-item has-text-info">Buy</Link>
         </footer>
       </div>
       </div>

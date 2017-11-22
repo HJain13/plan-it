@@ -14,18 +14,14 @@ class TableRowPackage extends Component {
       </div>
       <div class="card-content">
         <div class="media">
-          <div class="media-left">
-            <figure class="image is-48x48">
-              <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
-            </figure>
-          </div>
-          <div class="media-content">
-            <p class="title is-4">{this.props.obj.package.location}</p>
+
+          <div class="media-content has-text-centered has-text-justified">
+            <p class="title is-4 has-text-weight-bold">{this.props.obj.package.location}</p>
             <p class="subtitle is-6">  {this.props.obj.package.brochure}</p>
           </div>
         </div>
     
-        <div class="content">
+        <div class="content has-text-left">
          <strong>Activity</strong>:{this.props.obj.package.activity} 
          <br />
          <strong>Duration:</strong>{this.props.obj.package.duration} 
@@ -38,7 +34,7 @@ class TableRowPackage extends Component {
         </div>
       </div>
       <footer class="card-footer">
-      <Link to={"/user/buy/"+this.props.obj._id} className="card-footer-item">Buy</Link>
+      <Link to={"/user/buy/"+this.props.obj._id} className="card-footer-item has-text-info">Buy</Link>
         </footer>
     </div>
     </div>

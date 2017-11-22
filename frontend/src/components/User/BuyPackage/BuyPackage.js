@@ -20,6 +20,7 @@ class BuyPackage extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       package: {
+        email:'',
         combo_name: '',
         menu_image: '',
         specials: [],
@@ -32,6 +33,10 @@ class BuyPackage extends Component {
         pictures: [],
         food_specials: [],
         duration: '',
+        phone_no:'',
+        approved:'',
+        combo_name:'',
+        brochure:'',
       },
       pid: '',
       order: {
@@ -87,6 +92,19 @@ class BuyPackage extends Component {
                 <p> {this.state.package.activty} </p>
                 <p> {this.state.package.cost} </p>
               </div>
+            : null }
+
+
+            {this.state.package.ptype ==='dining'?
+            <div>
+            <p>{this.state.package.pictures} </p>
+            <p>{this.state.package.brochure}</p>
+            <p>{this.state.package.combo_name}</p>
+            <p>{this.state.package.specials}</p>
+            <p>{this.state.package.cost_for_two}</p>
+            <p>{this.state.package.menu_image}</p>
+				
+            </div>
             : null }
               <br/>
               <br/>

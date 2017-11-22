@@ -123,7 +123,7 @@ class PackageIndex extends Component {
               { this.state.diningIsSelected === true ?
               <div>
                 <div className="title">Dining Package</div>
-                <table className="table is-striped">
+{/*                 <table className="table is-striped">
                   <thead>
                     <tr>
                       <td>Combo Name</td>
@@ -138,30 +138,16 @@ class PackageIndex extends Component {
                   <tbody>
                     {this.tabRow()}
                   </tbody>
-                </table>
+                </table> */}
+                <div class="columns is-multiline is-mobile">
+                {this.tabRow()}
+           </div>  
                 <br/>
               </div>
               : null }
               { this.state.travelIsSelected === true ?
                 <div>
                   <div className="title">Travel Package</div>
-                  {/* <table className="table is-striped">
-                    <thead>
-                      <tr>
-                        <td>Brochure</td>
-                        <td>Location</td>
-                        <td>Activity</td>
-                        <td>Food</td>
-                        <td>Duration</td>
-                        <td>Cost</td>
-                        <td>Pictures</td>
-                        <td>Buy</td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {this.tabRow1()}
-                    </tbody>
-                  </table> */}
                   <div class="columns is-multiline is-mobile">
                 {this.tabRow1()}
            </div>  
