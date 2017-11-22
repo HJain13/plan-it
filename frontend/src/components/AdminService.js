@@ -24,6 +24,7 @@ class AdminService {
         if (response.data !== null) {
           console.log(response.data.admin.name);
           localStorage.setItem("name", response.data.admin.name);
+          localStorage.setItem("email", response.data.admin.email);
           localStorage.setItem("isLoggedIn", "yes");
           localStorage.setItem("userType", "admin");
           result = true;

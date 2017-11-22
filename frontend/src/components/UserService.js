@@ -20,6 +20,7 @@ class UserService {
         if (response.data !== null) {
           console.log(response.data.user.name);
           localStorage.setItem("name", response.data.user.name);
+          localStorage.setItem("email", response.data.user.email);          
           localStorage.setItem("isLoggedIn", "yes");
           localStorage.setItem("userType", "user");
         }

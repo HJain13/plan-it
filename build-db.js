@@ -176,8 +176,8 @@ mongoose.connect(mongoUrl, {
       .then(() => {
         //Adding an Package to System
         var packages = new Array(2);
-        packages[0] = new Package({"package" : {"name": "Lebua Resort", "brochure":"Wubba Lubba Dub Dub", "location":"Jaipur", "activity":"Swimming", "cost":"300", "ptype":"activity"}});
-        packages[1] = new Package({"package" : {"name": "Hotel Ramada", "brochure":"I am in Pain", "location":"Jaipur", "activity":"Swimming", "cost":"400", "ptype":"activity"}});
+        packages[0] = new Package({"package" : {"name": "Lebua Resort", "brochure":"Wubba Lubba Dub Dub", "location":"Jaipur", "activity":"Swimming", "cost":"300", "bemail":"ldany0@nhs.uk", "ptype":"activity"}});
+        packages[1] = new Package({"package" : {"name": "Hotel Ramada", "brochure":"I am in Pain", "location":"Jaipur", "activity":"Swimming", "cost":"400", "bemail":"ldany0@nhs.uk", "ptype":"activity"}});
         packages[2] = new Package({"package" : {"name": "Hotel Ramada", "brochure":"I am in Pain", "location":"Jaipur", "activity":"Swimming", "cost":"400", "ptype":"travel"}});
         packages[3] = new Package({"package" : {"name": "Hotel Ramada", "brochure":"I am in Pain", "location":"Jaipur", "activity":"Swimming", "cost":"400", "ptype":"travel"}});
         packages[4] = new Package({"package" : {"name": "Hotel Ramada", "brochure":"I am in Pain", "location":"Jaipur", "activity":"Swimming", "cost":"400", "ptype":"dining"}});

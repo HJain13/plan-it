@@ -36,6 +36,7 @@ var adminRouter = require('./src/routes/adminRouter');
 var userRouter = require('./src/routes/userRouter');
 var businessRouter = require('./src/routes/businessRouter');
 var packageRouter = require('./src/routes/packageRouter');
+var orderRouter = require('./src/routes/orderRouter');
 
 // Use middlewares to set view engine and post json data to the server
 app.use(cors());
@@ -49,6 +50,7 @@ app.use('/api/users', userRouter);
 app.use('/api/businesses', businessRouter);
 app.use('/api/admins', adminRouter);
 app.use('/api/packages', packageRouter);
+app.use('/api/orders', orderRouter);
 
 // Handling routing to React's Internal Router if the Path doesn't match above routes
 app.use(express.static(path.join(__dirname, 'frontend/build')));

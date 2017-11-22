@@ -49,6 +49,7 @@ packageRouter.route('/edit/:id').get(function (req, res) {
   var id = req.params.id;
   Package.findById(id, function (err, package){
       res.json(package);
+      // console.log(package);
   });
 });
 

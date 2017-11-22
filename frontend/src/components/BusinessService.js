@@ -20,6 +20,7 @@ class BusinessService {
         if (response.data !== null) {
           console.log(response.data.business.name);
           localStorage.setItem("name", response.data.business.name);
+          localStorage.setItem("email", response.data.business.email);          
           localStorage.setItem("isLoggedIn", "yes");
           localStorage.setItem("userType", "business");
           result = true;

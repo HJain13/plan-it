@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 class TableRowPackage extends Component {
   render() {
@@ -13,6 +14,7 @@ class TableRowPackage extends Component {
           <td> {this.props.obj.package.cost} </td>
           <td> {this.props.obj.package.pictures}</td>
           <td> {this.props.obj.package.ptype} </td>
+          <td> <Link to={"/user/buy/"+this.props.obj._id} className="button is-primary">Buy</Link> </td>
       </tr>
 	: null
     );

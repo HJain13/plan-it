@@ -131,6 +131,7 @@ class PackageIndex extends Component {
                       <td>Specials</td>
                       <td>Cost For Two</td>
                       <td>Package Type</td>
+                      <td>Buy</td>
                     </tr>
                   </thead>
                   <tbody>
@@ -153,6 +154,7 @@ class PackageIndex extends Component {
                         <td>Duration</td>
                         <td>Cost</td>
                         <td>Pictures</td>
+                        <td>Buy</td>
                       </tr>
                     </thead>
                     <tbody>
@@ -174,7 +176,7 @@ class PackageIndex extends Component {
                       <td>Activity</td>
                       <td>Cost</td>
                       <td>Package Type</td>
-                      
+                      <td>Buy</td>
                     </tr>
                   </thead>
                   <tbody>
