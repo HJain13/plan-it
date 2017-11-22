@@ -9,7 +9,7 @@ class TableRowPackage extends Component {
       <div class="card">
       <div class="card-image">
         <figure class="image is-4by3">
-          <img src={this.props.obj.package.pictures} alt="Placeholder image" />
+          <img src={this.props.obj.package.pictures} alt="" />
         </figure>
       </div>
       <div class="card-content">

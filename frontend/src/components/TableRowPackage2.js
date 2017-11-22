@@ -11,10 +11,10 @@ class TableRowPackage extends Component {
           <p class="card-header-title">
          {this.props.obj.package.name}
           </p>
-          <a href="#" class="card-header-icon" aria-label="more options">
-            <span class="icon">
+          <a href="" class="card-header-icon" aria-label="more options">
+            {/* <span class="ic">
               <i class="fa fa-angle-down" aria-hidden="true"></i>
-            </span>
+            </span> */}
           </a>
         </header>
         <div class="card-content">

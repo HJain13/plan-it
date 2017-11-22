@@ -34,9 +34,7 @@ class BuyPackage extends Component {
         food_specials: [],
         duration: '',
         phone_no:'',
-        approved:'',
-        combo_name:'',
-        brochure:'',
+        approved:''
       },
       pid: '',
       order: {
@@ -101,7 +99,7 @@ class BuyPackage extends Component {
             <div class="columns is-mobile is-centered">
                  <div class="column is-half is-narrow">
                      <p class="bd-notification is-info">
-                     <img src= {this.state.package.pictures} />
+                     <img src= {this.state.package.pictures} alt=""/>
                      <p class="title is-4">{this.state.package.combo_name}</p>
                      <p class="subtitle is-6">  {this.state.package.brochure}</p>
                      <p> <strong>Food:</strong>{this.state.package.specials} </p>
@@ -113,22 +111,12 @@ class BuyPackage extends Component {
 
             : null }
               <br/>
-{/* 
-            <div>
-            <p>{this.state.package.pictures} </p>
-            <p>{this.state.package.brochure}</p>
-            <p>{this.state.package.combo_name}</p>
-            <p>{this.state.package.specials}</p>
-            <p>{this.state.package.cost_for_two}</p>
-            <p>{this.state.package.menu_image}</p>
-				
-            </div> */}
 
         { this.state.package.ptype === 'travel' ? 
               <div class="columns is-mobile is-centered">
                  <div class="column is-half is-narrow">
                      <p class="bd-notification is-info">
-                     <img src= {this.state.package.pictures} />
+                     <img src= {this.state.package.pictures} alt=""/>
                      <p class="title is-4">{this.state.package.location}</p>
                      <p class="subtitle is-6">  {this.state.package.brochure}</p>
                      <p> <strong>Food:</strong>{this.state.package.food_specials} </p>

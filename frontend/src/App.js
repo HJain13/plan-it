@@ -7,6 +7,7 @@ import User from './components/User/User';
 import ApproveBusiness from './components/ApproveBusiness/ApproveBusiness';
 import PostComplaint from './components/User/PostComplaint/PostComplaint';
 import BuyPackage from './components/User/BuyPackage/BuyPackage';
+import SwipeBuy from './components/User/SwipeBuy/SwipeBuy';
 import UserLogin from './components/Login/User';
 import BusinessLogin from './components/Login/Business';
 import AdminLogin from './components/Login/Admin';
@@ -34,6 +35,7 @@ class App extends Component {
           <Route exact={true} path="/" component={Home} />
           <Route path='/admin' component={Admin} />
           <Route path='/business' component={Business} />
+          <Route path='/user/swipe-buy' component={SwipeBuy} />
           <Route path='/user/buy/:id' component={BuyPackage} />
           <Route path='/user/post-complaint' component={PostComplaint} />
           <Route path='/user' component={User} />
