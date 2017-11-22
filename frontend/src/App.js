@@ -5,6 +5,7 @@ import Admin from './components/Admin/Admin';
 import Business from './components/Business/Business';
 import User from './components/User/User';
 import ApproveBusiness from './components/ApproveBusiness/ApproveBusiness';
+import PostComplaint from './components/User/PostComplaint/PostComplaint';
 import BuyPackage from './components/User/BuyPackage/BuyPackage';
 import UserLogin from './components/Login/User';
 import BusinessLogin from './components/Login/Business';
@@ -34,6 +35,7 @@ class App extends Component {
           <Route path='/admin' component={Admin} />
           <Route path='/business' component={Business} />
           <Route path='/user/buy/:id' component={BuyPackage} />
+          <Route path='/user/post-complaint' component={PostComplaint} />
           <Route path='/user' component={User} />
           <Route path='/approve/:id' component={ApproveBusiness} />
           <Route path='/login/business' component={BusinessLogin} />
