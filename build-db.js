@@ -168,7 +168,7 @@ mongoose.connect(mongoUrl, {
         var packages = new Array(2);
 
             //Dining
-            packages[5] = new Package({"package": {
+            packages[0] = new Package({"package": {
                                         "p_type": "Dining",
                                         "b_email": "manager@noriel.com",
                                         "p_name": "Burger Shot",
@@ -178,7 +178,7 @@ mongoose.connect(mongoUrl, {
                                         "cost": "250"}
                                       });
 
-            packages[5] = new Package({"package": {
+            packages[1] = new Package({"package": {
                                         "p_type": "Dining",
                                         "b_email": "manager@TomoNow.com",
                                         "p_name": "Eat It!",
@@ -188,7 +188,7 @@ mongoose.connect(mongoUrl, {
                                         "cost": "350"}
                                       });
 
-            packages[5] = new Package({"package": {
+            packages[2] = new Package({"package": {
                                         "p_type": "Dining",
                                         "b_email": "manager@TomoNow.com",
                                         "p_name": "Slingy Shot",
@@ -198,7 +198,7 @@ mongoose.connect(mongoUrl, {
                                         "cost": "500"}
                                       });
                                       
-            packages[5] = new Package({"package": {
+            packages[3] = new Package({"package": {
                                         "p_type": "Dining",
                                         "b_email": "manager@TomoNow.com",
                                         "p_name": "South Attack!",
@@ -208,7 +208,7 @@ mongoose.connect(mongoUrl, {
                                         "cost": "300"}
                                       });
 
-            packages[5] = new Package({"package": {
+            packages[4] = new Package({"package": {
                                         "p_type": "Dining",
                                         "b_email": "manager@Roodel.com",
                                         "p_name": "Modern Desi Delicious",
@@ -217,7 +217,7 @@ mongoose.connect(mongoUrl, {
                                         "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
                                         "cost": "640"}
                                       });
-                                      
+
             //Activity
             packages[5] = new Package({"package": {
                                           "p_type": "Activity",
@@ -229,47 +229,47 @@ mongoose.connect(mongoUrl, {
                                           "cost": "4500"}
                                       });
             
-            packages[5] = new Package({"package": {
+            packages[6] = new Package({"package": {
                                         "p_type": "Activity",
-                                        "b_email": "manager@Kwimbee.com",
-                                        "p_name": "Adventurous Shoot",
+                                        "b_email": "manager@DabZ.com",
+                                        "p_name": "Jump of a Lifetime",
                                         "location": "Jaipur",
-                                        "specials": ["Paragliding","Hiking"],
+                                        "specials": ["Paragliding","Bungee Jumping"],
                                         "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
                                         "cost": "4500"}
                                       });
 
-            packages[5] = new Package({"package": {
+            packages[7] = new Package({"package": {
                                         "p_type": "Activity",
-                                        "b_email": "manager@Kwimbee.com",
-                                        "p_name": "Adventurous Shoot",
+                                        "b_email": "manager@DabZ.com",
+                                        "p_name": "Water Love",
                                         "location": "Jaipur",
-                                        "specials": ["Paragliding","Hiking"],
+                                        "specials": ["Surfing","Swimming"],
                                         "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
                                         "cost": "4500"}
                                       });
             
-            packages[5] = new Package({"package": {
+            packages[8] = new Package({"package": {
                                         "p_type": "Activity",
                                         "b_email": "manager@Kwimbee.com",
-                                        "p_name": "Adventurous Shoot",
+                                        "p_name": "Feel the Nature",
                                         "location": "Jaipur",
-                                        "specials": ["Paragliding","Hiking"],
+                                        "specials": ["Surfing","Hiking"],
                                         "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
                                         "cost": "4500"}
                                       });
             
-            packages[5] = new Package({"package": {
+            packages[9] = new Package({"package": {
                                         "p_type": "Activity",
-                                        "b_email": "manager@Kwimbee.com",
-                                        "p_name": "Adventurous Shoot",
+                                        "b_email": "manager@TomoNow.com",
+                                        "p_name": "Adrenaline Junkie",
                                         "location": "Jaipur",
-                                        "specials": ["Paragliding","Hiking"],
+                                        "specials": ["Paragliding","Bungee Jumping"],
                                         "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
                                         "cost": "4500"}
                                       });
             //Travel
-            packages[5] = new Package({"package": {
+            packages[10] = new Package({"package": {
                                         "p_type": "Activity",
                                         "b_email": "manager@Kwimbee.com",
                                         "p_name": "Adventurous Shoot",
@@ -279,7 +279,7 @@ mongoose.connect(mongoUrl, {
                                         "cost": "4500"}
                                       });
 
-            packages[5] = new Package({"package": {
+            packages[11] = new Package({"package": {
                                         "p_type": "Activity",
                                         "b_email": "manager@Kwimbee.com",
                                         "p_name": "Adventurous Shoot",
@@ -289,7 +289,7 @@ mongoose.connect(mongoUrl, {
                                         "cost": "4500"}
                                       });
 
-            packages[5] = new Package({"package": {
+            packages[12] = new Package({"package": {
                                         "p_type": "Activity",
                                         "b_email": "manager@Kwimbee.com",
                                         "p_name": "Adventurous Shoot",
@@ -299,7 +299,7 @@ mongoose.connect(mongoUrl, {
                                         "cost": "4500"}
                                       });
 
-            packages[5] = new Package({"package": {
+            packages[13] = new Package({"package": {
                                         "p_type": "Activity",
                                         "b_email": "manager@Kwimbee.com",
                                         "p_name": "Adventurous Shoot",
@@ -309,7 +309,7 @@ mongoose.connect(mongoUrl, {
                                         "cost": "4500"}
                                       });
 
-            packages[5] = new Package({"package": {
+            packages[14] = new Package({"package": {
                                         "p_type": "Activity",
                                         "b_email": "manager@Kwimbee.com",
                                         "p_name": "Adventurous Shoot",
