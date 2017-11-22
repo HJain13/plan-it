@@ -16,7 +16,10 @@ class Business extends Component {
 							</div>
 							<div className="box">
 								<Link to="/business/plans">Add Plans for Sale</Link>
-							</div>								
+							</div>		
+							<div className="box">
+								<Link to="/add-package">Add Package</Link>
+							</div>							
 						</div>
 					</div>        
 				</div>

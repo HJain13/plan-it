@@ -166,23 +166,10 @@ class PackageIndex extends Component {
               : null }
               { this.state.activityIsSelected === true ?
               <div>              
-                <div className="title">Activity Package</div>
-                <table className="table is-striped">
-                  <thead>
-                    <tr>
-                      <td>Name</td>
-                      <td>Brochure</td>
-                      <td>Location</td>
-                      <td>Activity</td>
-                      <td>Cost</td>
-                      <td>Package Type</td>
-                      <td>Buy</td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {this.tabRow2()}
-                  </tbody>
-                </table>                
+                <div className="title">Activity Package</div>    
+                <div class="columns is-multiline is-mobile">
+                {this.tabRow2()}
+           </div>        
               </div> 
             :null }
             </div>
