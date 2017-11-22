@@ -6,6 +6,7 @@ require('dotenv').config();
 var Admin = require('./src/models/Admin');
 var Business = require('./src/models/Business');
 var User = require('./src/models/User');
+var Helpline = require('./src/models/Helpline');
 var Package = require('./src/models/Package');
 
 var count = 0;
@@ -70,6 +71,48 @@ mongoose.connect(mongoUrl, {
       resolve(count);
     });
   }
+
+  //=========================================
+  //               Helpline Tasks
+  //=========================================
+  function buildAdmin() {
+    count++;
+    return new Promise((resolve, reject) => {
+      console.log('+++ Building Helpline staff Table +++');
+      // Removing existing helpline staff Data
+      Admin.remove({}, function (err, row) {
+        if (err) {
+          console.log("Collection couldn't be removed" + err);
+          return;
+        }
+        console.log("--- Removing exisiting helpline Data ---");
+      })
+      .then( () => {
+        //Adding an helpline to System
+        var helplines = new Array(2);
+        helplines[0] = new Helpline({"admin": { "phone_no": "7894561203", "repass": "temp1234", "pass": "1234", "email": "15ucs109@lnmiit.ac.in", "name": "Riya Bagaria", "u_type": "helpline"}});
+        helplines[1] = new Helpline({"admin": { "phone_no": "7894561203", "repass": "qwerty", "pass": "qwerty", "email": "15ucs172@lnmiit.ac.in", "name": "Himesh Jain", "u_type": "helpline"}});
+
+        helplines.forEach(function (helpline, index, array) {
+          helpline.save().then(admin => {
+              console.log('+++ Helpline['+index+'] added successfully +++');
+              resolve(helpline);
+              count++;
+            })
+          .catch(err => {
+            console.error("Unable to save to database: ", err.stack);
+          });
+        });
+      })
+      resolve(count);
+    });
+  }
+
+
+
+
+
+
 
   //=========================================
   //               Business Tasks

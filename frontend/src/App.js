@@ -11,6 +11,7 @@ import SwipeBuy from './components/User/SwipeBuy/SwipeBuy';
 import UserLogin from './components/Login/User';
 import BusinessLogin from './components/Login/Business';
 import AdminLogin from './components/Login/Admin';
+import HelplineLogin from './components/Login/HelplineStaff';
 import BusinessRegister from './components/Register/Business';
 import UserRegister from './components/Register/User';
 import StaffDetails from './components/StaffDetails/StaffDetails';
@@ -43,6 +44,7 @@ class App extends Component {
           <Route path='/login/business' component={BusinessLogin} />
           <Route path='/login/admin' component={AdminLogin} />
           <Route path='/login/' component={UserLogin} />
+          <Route path='/login/helpline-staff' component={HelplineLogin} />
           <Route path='/register/business' component={BusinessRegister} />
           <Route path='/register' component={UserRegister} />
           <Route path='/user-index' component={UserIndex} />
