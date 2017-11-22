@@ -88,7 +88,7 @@ mongoose.connect(mongoUrl, {
         console.log("--- Removing exisiting Business Data ---");
       })
       .then(() => {
-        //Adding an Business to System
+        //Adding Businesses to System
         var businesses = new Array(10);
         businesses[0] = new Business({"business": {"name": "Kwimbee", "email": "manager@Kwimbee.com", "password": "abcd1234", "address": "167 Malviya Nagar, Jaipur", "bank_acc": "30218430182121", "manager_name": "Abhishek Agarwal", "phone_no": "+91 9812736452", "approved": "false"}});
         businesses[1] = new Business({"business": {"name": "DabZ", "email": "manager@DabZ.com", "password": "abcd1234", "address": "15/89 Mansarovar, Jaipur", "bank_acc": "19378430182129", "manager_name": "Yash Sharma", "phone_no": "+91 8174623512", "approved": "false"}});
@@ -126,7 +126,7 @@ mongoose.connect(mongoUrl, {
         console.log("--- Removing exisiting User Data ---");
       })
       .then(() => {
-        //Adding an User to System
+        //Adding Users to System
         var users = new Array(10);
         users[0] = new User({"user": {"name": "Chaitanya Maheshwari", "email": "maheshwari@gmail.com", "password": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 9715267283", "age": "22", "gender": "Male"}});
         users[1] = new User({"user": {"name": "Marut Lahoty", "email": "lahoty@gmail.com", "password": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 7763849102", "age": "21", "gender": "Male"}});
@@ -164,7 +164,7 @@ mongoose.connect(mongoUrl, {
         console.log("--- Removing exisiting Package Data ---");
       })
       .then(() => {
-        //Adding an Package to System
+        //Adding Packages to System
         var packages = new Array(2);
 
             //Dining
