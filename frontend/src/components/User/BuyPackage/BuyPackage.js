@@ -96,6 +96,24 @@ class BuyPackage extends Component {
 
 
             {this.state.package.ptype ==='dining'?
+
+
+            <div class="columns is-mobile is-centered">
+                 <div class="column is-half is-narrow">
+                     <p class="bd-notification is-info">
+                     <img src= {this.state.package.pictures} />
+                     <p class="title is-4">{this.state.package.combo_name}</p>
+                     <p class="subtitle is-6">  {this.state.package.brochure}</p>
+                     <p> <strong>Food:</strong>{this.state.package.specials} </p>
+                     <p> <strong>Image:</strong>{this.state.package.menu_image} </p>
+                     <p> <strong>Cost:</strong>{this.state.package.cost_for_two} </p>
+                      </p>
+                  </div>
+              </div>
+
+            : null }
+              <br/>
+{/* 
             <div>
             <p>{this.state.package.pictures} </p>
             <p>{this.state.package.brochure}</p>
@@ -104,9 +122,22 @@ class BuyPackage extends Component {
             <p>{this.state.package.cost_for_two}</p>
             <p>{this.state.package.menu_image}</p>
 				
-            </div>
+            </div> */}
+
+        { this.state.package.ptype === 'travel' ? 
+              <div class="columns is-mobile is-centered">
+                 <div class="column is-half is-narrow">
+                     <p class="bd-notification is-info">
+                     <img src= {this.state.package.pictures} />
+                     <p class="title is-4">{this.state.package.location}</p>
+                     <p class="subtitle is-6">  {this.state.package.brochure}</p>
+                     <p> <strong>Food:</strong>{this.state.package.food_specials} </p>
+                     <p> <strong>Duration:</strong>{this.state.package.duration} </p>
+                     <p> <strong>Cost:</strong>{this.state.package.cost} </p>
+                      </p>
+                  </div>
+              </div>
             : null }
-              <br/>
               <br/>
               <button value="Buy" onClick={this.handleSubmit} className="button is-primary">Buy</button>
             </div>
