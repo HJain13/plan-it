@@ -90,11 +90,11 @@ mongoose.connect(mongoUrl, {
       .then(() => {
         //Adding an Business to System
         var businesses = new Array(10);
-        businesses[0] = new Business({"business": {"name": "Kwimbee", "bemail": "manager@Kwimbee.com", "password": "abcd1234", "address": "167 Malviya Nagar, Jaipur", "bank_acc": "30218430182121", "manager_name": "Abhishek Agarwal", "phone_no": "+91 9812736452", "approved": "false"}});
-        businesses[1] = new Business({"business": {"name": "DabZ", "bemail": "manager@DabZ.com", "password": "abcd1234", "address": "15/89 Mansarovar, Jaipur", "bank_acc": "19378430182129", "manager_name": "Yash Sharma", "phone_no": "+91 8174623512", "approved": "false"}});
-        businesses[2] = new Business({"business": {"name": "Roodel", "bemail": "manager@Roodel.com", "password": "abcd1234", "address": "A012 Shantanu Nagar, Jaipur", "bank_acc": "49188430182123", "manager_name": "Varun Goyal", "phone_no": "+91 8762384712", "approved": "false"}});
-        businesses[3] = new Business({"business": {"name": "Roodel", "bemail": "manager@Roodel.com", "password": "abcd1234", "address": "188/230 Transport Nagar, Jaipur", "bank_acc": "10298430182120", "manager_name": "Avinash Mathur", "phone_no": "+91 9273648162", "approved": "false"}});
-        businesses[4] = new Business({"business": {"name": "TomoNow", "bemail": "manager@TomoNow.com", "password": "abcd1234", "address": "10 Arravali Nagar, Jaipur", "bank_acc": "31294301821232", "manager_name": "Riya Shrivastava", "phone_no": "+91 9876253614", "approved": "false"}});
+        businesses[0] = new Business({"business": {"name": "Kwimbee", "email": "manager@Kwimbee.com", "password": "abcd1234", "address": "167 Malviya Nagar, Jaipur", "bank_acc": "30218430182121", "manager_name": "Abhishek Agarwal", "phone_no": "+91 9812736452", "approved": "false"}});
+        businesses[1] = new Business({"business": {"name": "DabZ", "email": "manager@DabZ.com", "password": "abcd1234", "address": "15/89 Mansarovar, Jaipur", "bank_acc": "19378430182129", "manager_name": "Yash Sharma", "phone_no": "+91 8174623512", "approved": "false"}});
+        businesses[2] = new Business({"business": {"name": "Noriel", "email": "manager@Noriel.com", "password": "abcd1234", "address": "A012 Shantanu Nagar, Jaipur", "bank_acc": "49188430182123", "manager_name": "Varun Goyal", "phone_no": "+91 8762384712", "approved": "false"}});
+        businesses[3] = new Business({"business": {"name": "Roodel", "email": "manager@Roodel.com", "password": "abcd1234", "address": "188/230 Transport Nagar, Jaipur", "bank_acc": "10298430182120", "manager_name": "Avinash Mathur", "phone_no": "+91 9273648162", "approved": "false"}});
+        businesses[4] = new Business({"business": {"name": "TomoNow", "email": "manager@TomoNow.com", "password": "abcd1234", "address": "10 Arravali Nagar, Jaipur", "bank_acc": "31294301821232", "manager_name": "Riya Shrivastava", "phone_no": "+91 9876253614", "approved": "false"}});
         businesses.forEach(function (business, index, array) {
           business.save().then(business => {
               console.log('+++ Business['+index+'] added successfully +++');
@@ -166,25 +166,158 @@ mongoose.connect(mongoUrl, {
       .then(() => {
         //Adding an Package to System
         var packages = new Array(2);
-        packages[0] = new Package({"package" : {"name": "Lebua Resort", "brochure":"Wubba Lubba Dub Dub", "location":"Jaipur", "activity":"Swimming", "cost":"300", "bemail":"ldany0@nhs.uk", "ptype":"activity"}});
-        packages[1] = new Package({"package" : {"name": "Hotel Ramada", "brochure":"I am in Pain", "location":"Jaipur", "activity":"Swimming", "cost":"400", "bemail":"ldany0@nhs.uk", "ptype":"activity"}});
-        packages[2] = new Package({"package" : {"name": "Hotel Ramada", "brochure":"I am in Pain", "location":"Jaipur", "activity":"Swimming","food_specials": [ "fish cury", " thai food" ], "duration":"6 days", "cost":"400", "pictures": [ "https://brightcove04pmdo-a.akamaihd.net/5104226627001/5104226627001_5230061447001_5203619434001-vs.jpg?pubId=5104226627001&videoId=5203619434001" ],"ptype":"travel"}});
-        packages[3] = new Package({"package" : {"name": "Hotel Ramada", "brochure":"I am in Pain", "location":"Jaipur", "activity":"Swimming","food_specials": [ "fish cury", " thai food" ], "duration":"6 days", "cost":"400", "pictures": [ "https://c1.hiqcdn.com/uploadimages/travel/Jaipur_irctc_cover.jpg" ],"ptype":"travel"}});
 
-        packages[4] = new Package({"package" :  { "combo_name": "Chotta packet badda dhamaka", "menu_image":"https://s3-ap-southeast-1.amazonaws.com/magicpin-selfie/customerimages/11386_food_1_app.jpg", "specials": [ "Grilles cheese sandwich", "roasted chicken" ], "pictures":[ "https://drop.ndtv.com/albums/COOKS/pasta-vegetarian/pastaveg_640x480.jpg" ], "cost_for_two": '2500', "ptype": "dining" }});
+            //Dining
+            packages[5] = new Package({"package": {
+                                        "p_type": "Dining",
+                                        "b_email": "manager@noriel.com",
+                                        "p_name": "Burger Shot",
+                                        "location": "Jaipur",
+                                        "specials": ["Burger","Fries", "Cold Drink"],
+                                        "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                        "cost": "250"}
+                                      });
 
-        packages[5] = new Package({ "package":
-          { "combo_name": "fdasfa",
-            "menu_image": "https://static.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg",
-            "specials": [ "dafa" ],
-            "pictures": [ "https://static.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg" ],
-            "cost_for_two": "250",
-            "ptype": "dining" } }
-       );
+            packages[5] = new Package({"package": {
+                                        "p_type": "Dining",
+                                        "b_email": "manager@TomoNow.com",
+                                        "p_name": "Eat It!",
+                                        "location": "Jaipur",
+                                        "specials": ["Pizza", "Cold Drink"],
+                                        "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                        "cost": "350"}
+                                      });
 
-        packages[6] = new Package({ "package":{ "name": "Water water everywhere", "brochure": "Engage your child in the hunt.", "location": "Rishikash", "activity": [ "River Rafting", "treking", " cliff Jumping" ], "cost": "2500", "ptype": "activity" }});
+            packages[5] = new Package({"package": {
+                                        "p_type": "Dining",
+                                        "b_email": "manager@TomoNow.com",
+                                        "p_name": "Slingy Shot",
+                                        "location": "Jaipur",
+                                        "specials": ["Noodles","Pizza", "Cold Drink"],
+                                        "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                        "cost": "500"}
+                                      });
+                                      
+            packages[5] = new Package({"package": {
+                                        "p_type": "Dining",
+                                        "b_email": "manager@TomoNow.com",
+                                        "p_name": "South Attack!",
+                                        "location": "Jaipur",
+                                        "specials": ["Dosa","Noodles","Cold Drink"],
+                                        "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                        "cost": "300"}
+                                      });
 
-         packages[7] = new Package({ "package":{"brochure": "Explore the world","location": "maylasia", "activity": ["Scuba diving", " Aquarium Visit" ], "food_specials": [ "fish cury", " thai food" ], "duration":"6 days", "cost": "50,000",  "pictures": [ "https://img.grouponcdn.com/deal/32pQynDNtNyUVmDgnibucUstWnmN/32-2048x1229/v1/c700x420.jpg" ], "ptype": "travel" } });
+            packages[5] = new Package({"package": {
+                                        "p_type": "Dining",
+                                        "b_email": "manager@Roodel.com",
+                                        "p_name": "Modern Desi Delicious",
+                                        "location": "Jaipur",
+                                        "specials": ["Paneer Butter Masala","Pizza"],
+                                        "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                        "cost": "640"}
+                                      });
+                                      
+            //Activity
+            packages[5] = new Package({"package": {
+                                          "p_type": "Activity",
+                                          "b_email": "manager@Kwimbee.com",
+                                          "p_name": "Adventurous Shoot",
+                                          "location": "Jaipur",
+                                          "specials": ["Paragliding","Hiking"],
+                                          "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                          "cost": "4500"}
+                                      });
+            
+            packages[5] = new Package({"package": {
+                                        "p_type": "Activity",
+                                        "b_email": "manager@Kwimbee.com",
+                                        "p_name": "Adventurous Shoot",
+                                        "location": "Jaipur",
+                                        "specials": ["Paragliding","Hiking"],
+                                        "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                        "cost": "4500"}
+                                      });
+
+            packages[5] = new Package({"package": {
+                                        "p_type": "Activity",
+                                        "b_email": "manager@Kwimbee.com",
+                                        "p_name": "Adventurous Shoot",
+                                        "location": "Jaipur",
+                                        "specials": ["Paragliding","Hiking"],
+                                        "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                        "cost": "4500"}
+                                      });
+            
+            packages[5] = new Package({"package": {
+                                        "p_type": "Activity",
+                                        "b_email": "manager@Kwimbee.com",
+                                        "p_name": "Adventurous Shoot",
+                                        "location": "Jaipur",
+                                        "specials": ["Paragliding","Hiking"],
+                                        "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                        "cost": "4500"}
+                                      });
+            
+            packages[5] = new Package({"package": {
+                                        "p_type": "Activity",
+                                        "b_email": "manager@Kwimbee.com",
+                                        "p_name": "Adventurous Shoot",
+                                        "location": "Jaipur",
+                                        "specials": ["Paragliding","Hiking"],
+                                        "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                        "cost": "4500"}
+                                      });
+            //Travel
+            packages[5] = new Package({"package": {
+                                        "p_type": "Activity",
+                                        "b_email": "manager@Kwimbee.com",
+                                        "p_name": "Adventurous Shoot",
+                                        "location": "Jaipur",
+                                        "specials": ["Paragliding","Hiking"],
+                                        "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                        "cost": "4500"}
+                                      });
+
+            packages[5] = new Package({"package": {
+                                        "p_type": "Activity",
+                                        "b_email": "manager@Kwimbee.com",
+                                        "p_name": "Adventurous Shoot",
+                                        "location": "Jaipur",
+                                        "specials": ["Paragliding","Hiking"],
+                                        "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                        "cost": "4500"}
+                                      });
+
+            packages[5] = new Package({"package": {
+                                        "p_type": "Activity",
+                                        "b_email": "manager@Kwimbee.com",
+                                        "p_name": "Adventurous Shoot",
+                                        "location": "Jaipur",
+                                        "specials": ["Paragliding","Hiking"],
+                                        "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                        "cost": "4500"}
+                                      });
+
+            packages[5] = new Package({"package": {
+                                        "p_type": "Activity",
+                                        "b_email": "manager@Kwimbee.com",
+                                        "p_name": "Adventurous Shoot",
+                                        "location": "Jaipur",
+                                        "specials": ["Paragliding","Hiking"],
+                                        "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                        "cost": "4500"}
+                                      });
+
+            packages[5] = new Package({"package": {
+                                        "p_type": "Activity",
+                                        "b_email": "manager@Kwimbee.com",
+                                        "p_name": "Adventurous Shoot",
+                                        "location": "Jaipur",
+                                        "specials": ["Paragliding","Hiking"],
+                                        "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
+                                        "cost": "4500"}
+                                      });
 
         packages.forEach(function (package, index, array) {
           package.save().then(package => {
