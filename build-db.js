@@ -174,7 +174,7 @@ mongoose.connect(mongoUrl, {
                                         "p_name": "Burger Shot",
                                         "location": "Jaipur",
                                         "specials": ["Burger","Fries", "Cold Drink"],
-                                        "pictures": "https://imgur.com/ArAeQFA",
+                                        "pictures": "https://i.imgur.com/ArAeQFA.jpg",
                                         "cost": "250"}
                                       });
 
@@ -184,7 +184,7 @@ mongoose.connect(mongoUrl, {
                                         "p_name": "Eat It!",
                                         "location": "Jaipur",
                                         "specials": ["Pizza", "Garlic Break", "Cold Drink"],
-                                        "pictures": "https://imgur.com/HxP2O3Q",
+                                        "pictures": "https://i.imgur.com/HxP2O3Q.jpg",
                                         "cost": "350"}
                                       });
 
@@ -194,7 +194,7 @@ mongoose.connect(mongoUrl, {
                                         "p_name": "Slingy Shot",
                                         "location": "Jaipur",
                                         "specials": ["Noodles","Pizza", "Cold Drink"],
-                                        "pictures": "https://imgur.com/CZgX5p7",
+                                        "pictures": "https://i.imgur.com/CZgX5p7.jpg",
                                         "cost": "500"}
                                       });
                                       
@@ -204,7 +204,7 @@ mongoose.connect(mongoUrl, {
                                         "p_name": "South Attack!",
                                         "location": "Jaipur",
                                         "specials": ["Dosa","Noodles","Mocktail"],
-                                        "pictures": "https://imgur.com/ZN4hnv6",
+                                        "pictures": "https://i.imgur.com/ZN4hnv6.jpg",
                                         "cost": "300"}
                                       });
 
@@ -214,7 +214,7 @@ mongoose.connect(mongoUrl, {
                                         "p_name": "Modern Desi Delicious",
                                         "location": "Jaipur",
                                         "specials": ["Paneer Butter Masala", "Naan", "Pizza"],
-                                        "pictures": "https://imgur.com/WY1E01R",
+                                        "pictures": "https://i.imgur.com/WY1E01R.jpg",
                                         "cost": "640"}
                                       });
 
@@ -225,7 +225,7 @@ mongoose.connect(mongoUrl, {
                                           "p_name": "Adventurous Shoot",
                                           "location": "Jaipur",
                                           "specials": ["Paragliding","Hiking"],
-                                          "pictures": "https://imgur.com/0XqIVyy",
+                                          "pictures": "https://i.imgur.com/0XqIVyy.jpg",
                                           "cost": "4500"}
                                       });
             
@@ -235,7 +235,7 @@ mongoose.connect(mongoUrl, {
                                         "p_name": "Jump of a Lifetime",
                                         "location": "Jaipur",
                                         "specials": ["Paragliding","Bungee Jumping"],
-                                        "pictures": "https://imgur.com/NgK9C0F",
+                                        "pictures": "https://i.imgur.com/NgK9C0F.jpg",
                                         "cost": "4500"}
                                       });
 
@@ -245,7 +245,7 @@ mongoose.connect(mongoUrl, {
                                         "p_name": "Water Love",
                                         "location": "Jaipur",
                                         "specials": ["Surfing","Swimming"],
-                                        "pictures": "https://imgur.com/BymcVoS",
+                                        "pictures": "https://i.imgur.com/BymcVoS.jpg",
                                         "cost": "4500"}
                                       });
             
@@ -255,7 +255,7 @@ mongoose.connect(mongoUrl, {
                                         "p_name": "Feel the Nature",
                                         "location": "Jaipur",
                                         "specials": ["Surfing","Hiking"],
-                                        "pictures": "https://imgur.com/Pfp8qtZ",
+                                        "pictures": "https://i.imgur.com/Pfp8qtZ.jpg",
                                         "cost": "4500"}
                                       });
             
@@ -265,7 +265,7 @@ mongoose.connect(mongoUrl, {
                                         "p_name": "Adrenaline Junkie",
                                         "location": "Jaipur",
                                         "specials": ["Swimming","Bungee Jumping"],
-                                        "pictures": "https://imgur.com/bjTQoOw",
+                                        "pictures": "https://i.imgur.com/bjTQoOw.jpg",
                                         "cost": "4500"}
                                       });
             //Travel
@@ -275,7 +275,7 @@ mongoose.connect(mongoUrl, {
                                         "p_name": "Singapore Trip",
                                         "location": "Jaipur",
                                         "specials": ["Paragliding","Bungee Jumping", "Burger", "Noodles"],
-                                        "pictures": "https://imgur.com/QrmYkwH",
+                                        "pictures": "https://i.imgur.com/QrmYkwH.jpg",
                                         "duration": "4 Days",
                                         "cost": "60000"}
                                       });
@@ -286,7 +286,7 @@ mongoose.connect(mongoUrl, {
                                         "p_name": "Rishikesh Trip",
                                         "location": "Jaipur",
                                         "specials": ["Surfing","Swimming", "Dosa"],
-                                        "pictures": "https://imgur.com/lal7kCQ",
+                                        "pictures": "https://i.imgur.com/lal7kCQ.jpg",
                                         "duration": "5 Days",
                                         "cost": "15000"}
                                       });
@@ -297,7 +297,7 @@ mongoose.connect(mongoUrl, {
                                         "p_name": "Paris Trip",
                                         "location": "Jaipur",
                                         "specials": ["Bungee Jumping","Hiking", "Pizza", "Noodles"],
-                                        "pictures": "https://imgur.com/M0pXL2b",
+                                        "pictures": "https://i.imgur.com/M0pXL2b.jpg",
                                         "duration": "3 Days",
                                         "cost": "75000"}
                                       });
@@ -308,7 +308,7 @@ mongoose.connect(mongoUrl, {
                                         "p_name": "Dubai Trip",
                                         "location": "Jaipur",
                                         "specials": ["Paragliding","Hiking", "Burger"],
-                                        "pictures": "https://imgur.com/JyTL2dq",
+                                        "pictures": "https://i.imgur.com/JyTL2dq.jpg",
                                         "duration": "3 Days",
                                         "cost": "30000"}
                                       });
@@ -319,7 +319,7 @@ mongoose.connect(mongoUrl, {
                                         "p_name": "Udaipur Trip",
                                         "location": "Jaipur",
                                         "specials": ["Surfing","Hiking", "Paneer Butter Masala"],
-                                        "pictures": "https://imgur.com/NKUvmnJ",
+                                        "pictures": "https://i.imgur.com/NKUvmnJ.jpg",
                                         "duration": "7 Days",
                                         "cost": "20000"}
                                       });
