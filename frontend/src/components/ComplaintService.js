@@ -3,7 +3,7 @@ var baseUrl = '/api';
 class ComplaintService {
   sendData(data) {
     axios
-      .post(baseUrl + '/complaint/add/post', {order: data})
+      .post(baseUrl + '/complaints/add/post', {order: data})
       .then(function (response) {
         console.log(response);
       })
@@ -14,7 +14,7 @@ class ComplaintService {
 
   checkComplaint(data) {
     axios
-      .post(baseUrl + '/complaint/findByEmail', {order: data})
+      .post(baseUrl + '/complaints/findByEmail', {order: data})
       .then(function (response) {
         console.log(response);
         if (response === "true") {
@@ -30,7 +30,7 @@ class ComplaintService {
   getComplaints() {
     var results;
     axios
-      .get(baseUrl + '/complaint/')
+      .get(baseUrl + '/complaints/')
       .then(function (response) {
         results = response;
       })
@@ -41,7 +41,7 @@ class ComplaintService {
   }
 
   updateData(data, id){
-    axios.post(baseUrl + '/complaint/update/'+id, {
+    axios.post(baseUrl + '/complaints/update/'+id, {
       order: data
     })
     .then(res => this.setState({ order: res.data }))

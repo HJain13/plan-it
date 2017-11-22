@@ -62,35 +62,14 @@ class BusinessIndex extends Component {
       return (
         <div>
           { this.state.is_loading && <IsLoading /> }            
-          <Header location={this.props.location} />
-              
-            <div class="columns is-multiline is-mobile">
-
+          <Header location={this.props.location} />              
+          <div className="section">
+            <div className="container">
+              <div class="columns is-multiline is-mobile">
                 {this.tabRow()}
-
-           </div>
-
-{/*           <div className="hero is-light">
-            <div className="hero-body">
-              <div className="container has-text-centered">
-                <table className="table is-striped">
-                  <thead>
-                    <tr>
-                      <td>Business ID</td>
-                      <td>Name</td>
-                      <td>Email</td>
-                      <td>Phone No.</td>
-                      <td>Is Approved</td>
-                      <td></td>
-                    </tr>
-                  </thead>
-                  <tbody> 
-                    {this.tabRow()}
-                </tbody>
-                </table>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
       );
     }

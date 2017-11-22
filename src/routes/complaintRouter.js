@@ -38,7 +38,7 @@ complaintRouter.route('/').get(function (req, res) {
       console.log(err);
     }
     else {
-      console.log("Hey");
+      //console.log("Hey");
       res.json(itms);
     }
   });
@@ -49,7 +49,7 @@ complaintRouter.route('/edit/:id').get(function (req, res) {
   var id = req.params.id;
   Complaint.findById(id, function (err, complaint){
       res.json(complaint);
-      console.log(complaint);
+      //console.log(complaint);
   });
 });
 

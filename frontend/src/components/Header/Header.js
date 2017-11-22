@@ -40,7 +40,7 @@ class Header extends Component {
   render() {
     localStorage.planitLocation=this.props.location.pathname;
     return (
-      <nav className="navbar is-transparent">
+      <nav className="navbar is-black">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item"><strong>PlanIt</strong></Link>
           <a className="navbar-item is-hidden-desktop" href="https://github.com/HJain13/plan-it" target="_blank" rel="noopener noreferrer">

@@ -49,7 +49,7 @@ orderRouter.route('/edit/:id').get(function (req, res) {
   var id = req.params.id;
   Order.findById(id, function (err, order){
       res.json(order);
-      console.log(order);
+      //console.log(order);
   });
 });
 
