@@ -128,11 +128,11 @@ mongoose.connect(mongoUrl, {
       .then(() => {
         //Adding an User to System
         var users = new Array(10);
-        users[0] = new User({"user": {"name": "Chaitanya Maheshwari", "email": "manager@Vinder.com", "password": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "bank_acc": "49498430182123", "manager_name": "Vatsla Singh", "phone_no": "+91 9166002847", "approved": "false"}});
-        users[1] = new User({"user": {"name": "BlogXS","m_name": "Dale Cheson","btype": "activity","email": "dcheson1@yale.edu","pass": "2JHqUekvru","repass": "2JHqUekvru","b_ac_no": "30218430182123","address": "7441 Dunning Plaza","phone_no": "+48 660 537 1950","u_type": "user","approved": "true"}});
-        users[2] = new User({"user": {"name": "Brainbox","m_name": "Janka Haddrill","btype": "dining","email": "jhaddrill2@comcast.net","pass": "doMzfM","repass": "doMzfM","b_ac_no": "5602222542010328","address": "022 Warrior Point","phone_no": "+1 917 175 8259","u_type": "user","approved": "false"}});
-        users[3] = new User({"user": {"name": "Kwimbee","m_name": "Xymenes Bygate","btype": "activity","email": "xbygate3@aol.com","pass": "5inim3bqw1","repass": "5inim3bqw1","b_ac_no": "3544128315024915","address": "92068 8th Road","phone_no": "+93 753 919 6792","u_type": "user","approved": "true"}});
-        users[4] = new User({"user": {"name": "DabZ", "m_name": "Darcey Delouch", "btype": "activity", "email": "ddelouch4@i2i.jp", "pass": "8uLWWRo9dB", "repass": "8uLWWRo9dB", "b_ac_no": "5134519731265630", "address": "256 Pleasure Court", "phone_no": "+230 763 465 1805", "u_type": "user", "approved": "true"}});
+        users[0] = new User({"user": {"name": "Chaitanya Maheshwari", "email": "maheshwari@gmail.com", "password": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 9715267283", "age": "22", "gender": "Male"}});
+        users[1] = new User({"user": {"name": "Marut Lahoty", "email": "lahoty@gmail.com", "password": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 7763849102", "age": "21", "gender": "Male"}});
+        users[2] = new User({"user": {"name": "Namish Narayan", "email": "narayan@gmail.com", "password": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 8876941323", "age": "22", "gender": "Male"}});
+        users[3] = new User({"user": {"name": "Vishal Jadoun", "email": "jadoun@gmail.com", "password": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 9746500091", "age": "20", "gender": "Male"}});
+        users[4] = new User({"user": {"name": "Akash Negi", "email": "negi@gmail.com", "password": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 9746543256", "age": "18", "gender": "Male"}});
         users.forEach(function (user, index, array) {
           user.save().then(user => {
               console.log('+++ User['+index+'] added successfully +++');
