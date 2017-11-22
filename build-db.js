@@ -270,7 +270,7 @@ mongoose.connect(mongoUrl, {
                                       });
             //Travel
             packages[10] = new Package({"package": {
-                                        "p_type": "Activity",
+                                        "p_type": "Travel",
                                         "b_email": "manager@Kwimbee.com",
                                         "p_name": "Singapore Trip",
                                         "location": "Jaipur",
@@ -281,7 +281,7 @@ mongoose.connect(mongoUrl, {
                                       });
 
             packages[11] = new Package({"package": {
-                                        "p_type": "Activity",
+                                        "p_type": "Travel",
                                         "b_email": "manager@Kwimbee.com",
                                         "p_name": "Rishikesh Trip",
                                         "location": "Jaipur",
@@ -292,7 +292,7 @@ mongoose.connect(mongoUrl, {
                                       });
 
             packages[12] = new Package({"package": {
-                                        "p_type": "Activity",
+                                        "p_type": "Travel",
                                         "b_email": "manager@DabZ.com",
                                         "p_name": "Paris Trip",
                                         "location": "Jaipur",
@@ -303,7 +303,7 @@ mongoose.connect(mongoUrl, {
                                       });
 
             packages[13] = new Package({"package": {
-                                        "p_type": "Activity",
+                                        "p_type": "Travel",
                                         "b_email": "manager@DabZ.com",
                                         "p_name": "Dubai Trip",
                                         "location": "Jaipur",
@@ -314,7 +314,7 @@ mongoose.connect(mongoUrl, {
                                       });
 
             packages[14] = new Package({"package": {
-                                        "p_type": "Activity",
+                                        "p_type": "Travel",
                                         "b_email": "manager@Noriel.com",
                                         "p_name": "Udaipur Trip",
                                         "location": "Jaipur",
