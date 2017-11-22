@@ -272,51 +272,56 @@ mongoose.connect(mongoUrl, {
             packages[10] = new Package({"package": {
                                         "p_type": "Activity",
                                         "b_email": "manager@Kwimbee.com",
-                                        "p_name": "Adventurous Shoot",
+                                        "p_name": "Singapore Trip",
                                         "location": "Jaipur",
-                                        "specials": ["Paragliding","Hiking"],
+                                        "specials": ["Paragliding","Bungee Jumping", "Burger", "Noodles"],
                                         "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
-                                        "cost": "4500"}
+                                        "duration": "4 Days",
+                                        "cost": "60000"}
                                       });
 
             packages[11] = new Package({"package": {
                                         "p_type": "Activity",
                                         "b_email": "manager@Kwimbee.com",
-                                        "p_name": "Adventurous Shoot",
+                                        "p_name": "Rishikesh Trip",
                                         "location": "Jaipur",
-                                        "specials": ["Paragliding","Hiking"],
+                                        "specials": ["Surfing","Swimming", "Dosa"],
                                         "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
-                                        "cost": "4500"}
+                                        "duration": "5 Days",
+                                        "cost": "15000"}
                                       });
 
             packages[12] = new Package({"package": {
                                         "p_type": "Activity",
-                                        "b_email": "manager@Kwimbee.com",
-                                        "p_name": "Adventurous Shoot",
+                                        "b_email": "manager@DabZ.com",
+                                        "p_name": "Paris Trip",
                                         "location": "Jaipur",
-                                        "specials": ["Paragliding","Hiking"],
+                                        "specials": ["Bungee Jumping","Hiking", "Pizza", "Noodles"],
                                         "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
-                                        "cost": "4500"}
+                                        "duration": "3 Days",
+                                        "cost": "75000"}
                                       });
 
             packages[13] = new Package({"package": {
                                         "p_type": "Activity",
-                                        "b_email": "manager@Kwimbee.com",
-                                        "p_name": "Adventurous Shoot",
+                                        "b_email": "manager@DabZ.com",
+                                        "p_name": "Dubai Trip",
                                         "location": "Jaipur",
-                                        "specials": ["Paragliding","Hiking"],
+                                        "specials": ["Paragliding","Hiking", "Burger"],
                                         "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
-                                        "cost": "4500"}
+                                        "duration": "3 Days",
+                                        "cost": "30000"}
                                       });
 
             packages[14] = new Package({"package": {
                                         "p_type": "Activity",
-                                        "b_email": "manager@Kwimbee.com",
-                                        "p_name": "Adventurous Shoot",
+                                        "b_email": "manager@Noriel.com",
+                                        "p_name": "Udaipur Trip",
                                         "location": "Jaipur",
-                                        "specials": ["Paragliding","Hiking"],
+                                        "specials": ["Surfing","Hiking", "Paneer Butter Masala"],
                                         "pictures": ["asdfasdf.jpg", "asdfasdfasdf.jpeg"],
-                                        "cost": "4500"}
+                                        "duration": "7 Days",
+                                        "cost": "20000"}
                                       });
 
         packages.forEach(function (package, index, array) {
