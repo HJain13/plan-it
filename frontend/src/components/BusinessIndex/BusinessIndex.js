@@ -63,7 +63,14 @@ class BusinessIndex extends Component {
         <div>
           { this.state.is_loading && <IsLoading /> }            
           <Header location={this.props.location} />
-          <div className="hero is-light">
+              
+            <div class="columns is-multiline is-mobile">
+
+                {this.tabRow()}
+
+           </div>
+
+{/*           <div className="hero is-light">
             <div className="hero-body">
               <div className="container has-text-centered">
                 <table className="table is-striped">
@@ -77,13 +84,13 @@ class BusinessIndex extends Component {
                       <td></td>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody> 
                     {this.tabRow()}
-                  </tbody>
+                </tbody>
                 </table>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       );
     }
