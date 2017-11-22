@@ -209,6 +209,16 @@ class AddPackage extends Component {
 													</span>
 											</p>                    
 										</div>
+										<div className="field">
+											<p className="control has-icons-left">
+												<input onChange={this.handleChangeDining} name="cost_for_two" className="input" type="input" placeholder="Cost For Two"/>
+												<span class="icon is-small is-left">
+														<i class="fa fa-camera"></i>
+													</span>
+											</p>                    
+										</div>
+
+
                     <div className="field is-horizontal">
                       <div className="field-body">
                         <div className="field">

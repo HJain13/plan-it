@@ -9,6 +9,7 @@ class TableRowPackage extends Component {
 				<td> {this.props.obj.package.combo_name} </td>
 				<td> <img src={this.props.obj.package.menu_image} /> </td>
 				<td> {this.props.obj.package.specials} </td>
+				<td> <img src={this.props.obj.package.pictures} /></td>
  				<td> {this.props.obj.package.cost_for_two} </td>
 				<td> {this.props.obj.package.ptype} </td>
 				<td> <Link to={"/user/buy/"+this.props.obj._id} className="button is-primary">Buy</Link> </td>
