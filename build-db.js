@@ -25,6 +25,7 @@ if (process.env.environment === 'development') {
 else {
   mongoUrl = process.env.mongoUrl;
 }
+
 // Mongoose connection with MongoDB
 mongoose.connect(mongoUrl, {
   useMongoClient: true,
@@ -75,12 +76,12 @@ mongoose.connect(mongoUrl, {
   //=========================================
   //               Helpline Tasks
   //=========================================
-  function buildAdmin() {
+  function buildHelpline() {
     count++;
     return new Promise((resolve, reject) => {
       console.log('+++ Building Helpline staff Table +++');
       // Removing existing helpline staff Data
-      Admin.remove({}, function (err, row) {
+      Helpline.remove({}, function (err, row) {
         if (err) {
           console.log("Collection couldn't be removed" + err);
           return;
@@ -90,11 +91,11 @@ mongoose.connect(mongoUrl, {
       .then( () => {
         //Adding an helpline to System
         var helplines = new Array(2);
-        helplines[0] = new Helpline({"admin": { "phone_no": "7894561203", "repass": "temp1234", "pass": "1234", "email": "15ucs109@lnmiit.ac.in", "name": "Riya Bagaria", "u_type": "helpline"}});
-        helplines[1] = new Helpline({"admin": { "phone_no": "7894561203", "repass": "qwerty", "pass": "qwerty", "email": "15ucs172@lnmiit.ac.in", "name": "Himesh Jain", "u_type": "helpline"}});
+        helplines[0] = new Helpline({"helpline": { "phone_no": "7894561203", "repass": "temp1234", "pass": "1234", "email": "15ucs109@lnmiit.ac.in", "name": "Riya Bagaria", "u_type": "helpline"}});
+        helplines[1] = new Helpline({"helpline": { "phone_no": "7894561203", "repass": "qwerty", "pass": "qwerty", "email": "15ucs172@lnmiit.ac.in", "name": "Himesh Jain", "u_type": "helpline"}});
 
         helplines.forEach(function (helpline, index, array) {
-          helpline.save().then(admin => {
+          helpline.save().then(helpline => {
               console.log('+++ Helpline['+index+'] added successfully +++');
               resolve(helpline);
               count++;
@@ -393,7 +394,7 @@ mongoose.connect(mongoUrl, {
       .then( () => {
         buildPackage()
         .then( () => {
-          mongoose.connection.close();
+          buildHelpline()
         })
       })
     })

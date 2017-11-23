@@ -42,7 +42,7 @@ class Header extends Component {
     return (
       <nav className="navbar is-black">
         <div className="navbar-brand">
-          <Link to="/" className="navbar-item"><strong>PlanIt</strong></Link>
+          <Link to="/login" className="navbar-item"><strong>PlanIt</strong></Link>
           <a className="navbar-item is-hidden-desktop" href="https://github.com/HJain13/plan-it" target="_blank" rel="noopener noreferrer">
             <span className="icon">
               <i className="fa fa-lg fa-github"></i>
