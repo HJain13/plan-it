@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../../css/App.css';
 var baseUrl = '/api';
+var swiped = true;
 
 class PackageRecommender extends Component 
 {
@@ -32,10 +33,10 @@ class PackageRecommender extends Component
     
   render() 
   {
-    var current_p = this.state.packages;
     var package_stack = [];
     var best_match = [];
-    console.log(localStorage.choice);
+    var final_packages = [];
+
     if (this.state.packages instanceof Array) 
     {
       this
@@ -67,7 +68,7 @@ class PackageRecommender extends Component
               choice4 = "Hiking";
               choice5 = "Bungee Jumping";
             }
-            else
+            else if (localStorage.choice === "travel")
             {
               chosen_shit = localStorage.t_choice1[0] + localStorage.t_choice2[0] + localStorage.t_choice3[0] + localStorage.t_choice4[0] + localStorage.t_choice5[0];
               choice1 = "Singapore";
@@ -79,10 +80,11 @@ class PackageRecommender extends Component
 
             //Narrowing Down Search
             var item_1, item_2, item_3, item_4, item_5;
-            
+
             //0 True
             if (chosen_shit === "fffff")
             {
+              swiped = false;
               console.log("\nNothing Chosen!");
             }
 
@@ -521,6 +523,22 @@ class PackageRecommender extends Component
         })
     }
 
+    if (best_match.length > 1)
+    {
+      final_packages.push(best_match.pop());
+      final_packages.push(best_match.pop());
+    }
+    else if (best_match.length == 1)
+    {
+      final_packages.push(best_match.pop());
+      final_packages.push(package_stack.pop());
+    }
+    else
+    {
+      final_packages.push(package_stack.pop());
+      final_packages.push(package_stack.pop());
+    }
+
     console.log("Best Match: " + best_match + "\n\nPackage Stack: " + package_stack);
 
     return (
@@ -529,7 +547,37 @@ class PackageRecommender extends Component
         { 
           localStorage.choice
         }
+        <div class="card">      
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src={final_packages[0].pictures} alt="" />
+            </figure>
+           </div>
+
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content has-text-centered has-text-justified">
+                <p class="title is-4 has-text-weight-bold">{final_packages[0].name}</p>
+                <p class="subtitle is-6">  {final_packages[0].location}</p>
+              </div>
+            </div>
+          
+            <div class="content has-text-left">
+              <strong>Dining</strong>:{final_packages[0].activity} 
+              <br />
+              <strong>Duration:</strong>{final_packages[0].duration} 
+              <br />         
+              <strong>Cost:</strong>{final_packages[0].cost} 
+              <br />
+            </div>
+          </div>
+
+          <footer class="card-footer">
+            <Link to={"/user/buy/"+this.props.obj._id} className="card-footer-item has-text-info">Buy</Link>
+          </footer>
+        </div>
       </div>
+      
     );
   }
 }
