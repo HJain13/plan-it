@@ -40,7 +40,8 @@ class BuyPackage extends Component {
       order: {
         uemail: '',
         bemail: '',
-        pid: ''
+        pid: '',
+        cost: ''
       },
       is_loading: false
     };

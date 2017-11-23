@@ -3,6 +3,7 @@ import Home from './components/Home/Home';
 import AddBusiness from './components/AddBusiness/AddBusiness';
 import Admin from './components/Admin/Admin';
 import Business from './components/Business/Business';
+import OrderIndex from './components/OrderIndex/OrderIndex';
 import User from './components/User/User';
 import ApproveBusiness from './components/ApproveBusiness/ApproveBusiness';
 import PackageRecommender from './components/PackageRecommender/PackageRecommender';
@@ -36,6 +37,7 @@ class App extends Component {
         <Switch>
           <Route exact={true} path="/" component={Home} />
           <Route path='/admin' component={Admin} />
+          <Route path='/business/orders-index' component={OrderIndex} />
           <Route path='/business' component={Business} />
           <Route path='/user/swipe-buy' component={SwipeBuy} />
           <Route path='/user/buy/:id' component={BuyPackage} />
