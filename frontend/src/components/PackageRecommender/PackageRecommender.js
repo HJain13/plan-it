@@ -79,11 +79,47 @@ class PackageRecommender extends Component
 
             //Narrowing Down Search
             var item_1, item_2, item_3, item_4, item_5;
-
+            //0 True
+            if (chosen_shit === "fffff")
+            {
+              console.log("\nNothing Chosen!");
+            }
             //1 True
-            if (chosen_shit === "tffff")
+            else if (chosen_shit === "tffff")
             {
               item_1 = object.package.specials.indexOf(choice1);
+              if (item_1>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "ftfff")
+            {
+              item_1 = object.package.specials.indexOf(choice2);
+              if (item_1>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "fftff")
+            {
+              item_1 = object.package.specials.indexOf(choice3);
+              if (item_1>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "ffftf")
+            {
+              item_1 = object.package.specials.indexOf(choice4);
+              if (item_1>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "fffft")
+            {
+              item_1 = object.package.specials.indexOf(choice5);
               if (item_1>-1)
               {
                 package_stack.push(object.package);
@@ -97,6 +133,142 @@ class PackageRecommender extends Component
               item_2 = object.package.specials.indexOf(choice2);
 
               console.log ("\n" + choice1 + " " + choice2 + " :: " + item_1 + " " + item_2)
+              if (item_1>-1 && item_2>-1)
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "tftff")
+            {
+              item_1 = object.package.specials.indexOf(choice1);
+              item_2 = object.package.specials.indexOf(choice3);
+
+              console.log ("\n" + choice1 + " " + choice3 + " :: " + item_1 + " " + item_2)
+              if (item_1>-1 && item_2>-1)
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "tfftf")
+            {
+              item_1 = object.package.specials.indexOf(choice1);
+              item_2 = object.package.specials.indexOf(choice4);
+
+              console.log ("\n" + choice1 + " " + choice4 + " :: " + item_1 + " " + item_2)
+              if (item_1>-1 && item_2>-1)
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "tffft")
+            {
+              item_1 = object.package.specials.indexOf(choice1);
+              item_2 = object.package.specials.indexOf(choice5);
+
+              console.log ("\n" + choice1 + " " + choice5 + " :: " + item_1 + " " + item_2)
+              if (item_1>-1 && item_2>-1)
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+
+            else if (chosen_shit === "fttff")
+            {
+              item_1 = object.package.specials.indexOf(choice2);
+              item_2 = object.package.specials.indexOf(choice3);
+
+              console.log ("\n" + choice2 + " " + choice3 + " :: " + item_1 + " " + item_2)
+              if (item_1>-1 && item_2>-1)
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "ftftf")
+            {
+              item_1 = object.package.specials.indexOf(choice2);
+              item_2 = object.package.specials.indexOf(choice4);
+
+              console.log ("\n" + choice2 + " " + choice4 + " :: " + item_1 + " " + item_2)
+              if (item_1>-1 && item_2>-1)
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "ftfft")
+            {
+              item_1 = object.package.specials.indexOf(choice2);
+              item_2 = object.package.specials.indexOf(choice5);
+
+              console.log ("\n" + choice2 + " " + choice5 + " :: " + item_1 + " " + item_2)
+              if (item_1>-1 && item_2>-1)
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "ffttf")
+            {
+              item_1 = object.package.specials.indexOf(choice3);
+              item_2 = object.package.specials.indexOf(choice4);
+
+              console.log ("\n" + choice3 + " " + choice4 + " :: " + item_1 + " " + item_2)
+              if (item_1>-1 && item_2>-1)
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "fftft")
+            {
+              item_1 = object.package.specials.indexOf(choice3);
+              item_2 = object.package.specials.indexOf(choice5);
+
+              console.log ("\n" + choice3 + " " + choice5 + " :: " + item_1 + " " + item_2)
+              if (item_1>-1 && item_2>-1)
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "ffftt")
+            {
+              item_1 = object.package.specials.indexOf(choice4);
+              item_2 = object.package.specials.indexOf(choice5);
+
+              console.log ("\n" + choice4 + " " + choice5 + " :: " + item_1 + " " + item_2)
               if (item_1>-1 && item_2>-1)
               {
                 best_match.push(object.package);
