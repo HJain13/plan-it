@@ -3,6 +3,8 @@ import PackageService from '../PackageService';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../../css/App.css';
+import Header from '../Header/Header';
+
 var baseUrl = '/api';
 var swiped = true;
 
@@ -13,7 +15,9 @@ class PackageRecommender extends Component
     super(props);
     this.state = 
     {
-      is_loading: false,      
+      code1: '',
+      code2: '',
+      is_loading: false      
     };
   }
 
@@ -33,9 +37,9 @@ class PackageRecommender extends Component
     
   render() 
   {
-    var package_stack = [];
-    var best_match = [];
-    var final_packages = [];
+      var package_stack = [];
+      var best_match = [];
+      var final_packages = [];
 
     if (this.state.packages instanceof Array) 
     {
@@ -94,7 +98,7 @@ class PackageRecommender extends Component
               item_1 = object.package.specials.indexOf(choice1);
               if (item_1>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "ftfff")
@@ -102,7 +106,7 @@ class PackageRecommender extends Component
               item_1 = object.package.specials.indexOf(choice2);
               if (item_1>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "fftff")
@@ -110,7 +114,7 @@ class PackageRecommender extends Component
               item_1 = object.package.specials.indexOf(choice3);
               if (item_1>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "ffftf")
@@ -118,7 +122,7 @@ class PackageRecommender extends Component
               item_1 = object.package.specials.indexOf(choice4);
               if (item_1>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "fffft")
@@ -126,7 +130,7 @@ class PackageRecommender extends Component
               item_1 = object.package.specials.indexOf(choice5);
               if (item_1>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
 
@@ -139,11 +143,11 @@ class PackageRecommender extends Component
               console.log ("\n" + choice1 + " " + choice2 + " :: " + item_1 + " " + item_2)
               if (item_1>-1 && item_2>-1)
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "tftff")
@@ -154,11 +158,11 @@ class PackageRecommender extends Component
               console.log ("\n" + choice1 + " " + choice3 + " :: " + item_1 + " " + item_2)
               if (item_1>-1 && item_2>-1)
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "tfftf")
@@ -169,11 +173,11 @@ class PackageRecommender extends Component
               console.log ("\n" + choice1 + " " + choice4 + " :: " + item_1 + " " + item_2)
               if (item_1>-1 && item_2>-1)
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "tffft")
@@ -184,11 +188,12 @@ class PackageRecommender extends Component
               console.log ("\n" + choice1 + " " + choice5 + " :: " + item_1 + " " + item_2)
               if (item_1>-1 && item_2>-1)
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1)
               {
-                package_stack.push(object.package);
+                console.log(object.package._id);
+                package_stack.push(object._id);
               }
             }
 
@@ -200,11 +205,11 @@ class PackageRecommender extends Component
               console.log ("\n" + choice2 + " " + choice3 + " :: " + item_1 + " " + item_2)
               if (item_1>-1 && item_2>-1)
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "ftftf")
@@ -215,11 +220,11 @@ class PackageRecommender extends Component
               console.log ("\n" + choice2 + " " + choice4 + " :: " + item_1 + " " + item_2)
               if (item_1>-1 && item_2>-1)
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "ftfft")
@@ -230,11 +235,11 @@ class PackageRecommender extends Component
               console.log ("\n" + choice2 + " " + choice5 + " :: " + item_1 + " " + item_2)
               if (item_1>-1 && item_2>-1)
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "ffttf")
@@ -245,11 +250,11 @@ class PackageRecommender extends Component
               console.log ("\n" + choice3 + " " + choice4 + " :: " + item_1 + " " + item_2)
               if (item_1>-1 && item_2>-1)
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "fftft")
@@ -260,11 +265,11 @@ class PackageRecommender extends Component
               console.log ("\n" + choice3 + " " + choice5 + " :: " + item_1 + " " + item_2)
               if (item_1>-1 && item_2>-1)
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "ffftt")
@@ -275,11 +280,11 @@ class PackageRecommender extends Component
               console.log ("\n" + choice4 + " " + choice5 + " :: " + item_1 + " " + item_2)
               if (item_1>-1 && item_2>-1)
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
 
@@ -291,11 +296,11 @@ class PackageRecommender extends Component
               item_3 = object.package.specials.indexOf(choice3);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "ftttf")
@@ -305,11 +310,11 @@ class PackageRecommender extends Component
               item_3 = object.package.specials.indexOf(choice4);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "ffttt")
@@ -319,11 +324,11 @@ class PackageRecommender extends Component
               item_3 = object.package.specials.indexOf(choice5);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "tfftt")
@@ -333,11 +338,11 @@ class PackageRecommender extends Component
               item_3 = object.package.specials.indexOf(choice5);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "ttfft")
@@ -347,11 +352,11 @@ class PackageRecommender extends Component
               item_3 = object.package.specials.indexOf(choice5);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "fttft")
@@ -361,11 +366,11 @@ class PackageRecommender extends Component
               item_3 = object.package.specials.indexOf(choice5);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "tftft")
@@ -375,11 +380,11 @@ class PackageRecommender extends Component
               item_3 = object.package.specials.indexOf(choice5);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "ftftt")
@@ -389,11 +394,11 @@ class PackageRecommender extends Component
               item_3 = object.package.specials.indexOf(choice5);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "ttftf")
@@ -403,11 +408,11 @@ class PackageRecommender extends Component
               item_3 = object.package.specials.indexOf(choice4);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "tfttf")
@@ -417,11 +422,11 @@ class PackageRecommender extends Component
               item_3 = object.package.specials.indexOf(choice4);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
 
@@ -434,11 +439,11 @@ class PackageRecommender extends Component
               item_1 = object.package.specials.indexOf(choice5);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_4>-1) || (item_4>-1 && item_1>-1) || (item_1>-1 && item_3>-1) || (item_2>-1 && item_4>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1 || item_4>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "tfttt")
@@ -449,11 +454,11 @@ class PackageRecommender extends Component
               item_4 = object.package.specials.indexOf(choice5);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_4>-1) || (item_4>-1 && item_1>-1) || (item_1>-1 && item_3>-1) || (item_2>-1 && item_4>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1 || item_4>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "ttftt")
@@ -464,11 +469,11 @@ class PackageRecommender extends Component
               item_4 = object.package.specials.indexOf(choice5);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_4>-1) || (item_4>-1 && item_1>-1) || (item_1>-1 && item_3>-1) || (item_2>-1 && item_4>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1 || item_4>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "tttft")
@@ -479,11 +484,11 @@ class PackageRecommender extends Component
               item_4 = object.package.specials.indexOf(choice5);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_4>-1) || (item_4>-1 && item_1>-1) || (item_1>-1 && item_3>-1) || (item_2>-1 && item_4>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1 || item_4>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
             else if (chosen_shit === "ttttf")
@@ -494,11 +499,11 @@ class PackageRecommender extends Component
               item_4 = object.package.specials.indexOf(choice4);
               if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_4>-1) || (item_4>-1 && item_1>-1) || (item_1>-1 && item_3>-1) || (item_2>-1 && item_4>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1 || item_4>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
 
@@ -512,11 +517,11 @@ class PackageRecommender extends Component
               item_5 = object.package.specials.indexOf(choice5);
               if ((item_1>-1 && item_2>-1) || (item_1>-1 && item_3>-1) || (item_1>-1 && item_4>-1) || (item_1>-1 && item_5>-1) || (item_2>-1 && item_3>-1) || (item_2>-1 && item_4>-1) || (item_2>-1 && item_5>-1) || (item_3>-1 && item_4>-1) || (item_3>-1 && item_5>-1) || (item_4>-1 && item_5>-1))
               {
-                best_match.push(object.package);
+                best_match.push(object._id);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1 || item_4>-1 || item_5>-1)
               {
-                package_stack.push(object.package);
+                package_stack.push(object._id);
               }
             }
           }
@@ -525,57 +530,68 @@ class PackageRecommender extends Component
 
     if (best_match.length > 1)
     {
-      final_packages.push(best_match.pop());
-      final_packages.push(best_match.pop());
+      final_packages.push(best_match[0]);
+      console.log("\n\nFinal Package: " + final_packages, "\nBest Match: " + best_match + "\nPackage Stack" + package_stack);
+      final_packages.push(best_match[1]);
+      console.log("\n\nFinal Package: " + final_packages, "\nBest Match: " + best_match + "\nPackage Stack" + package_stack);
     }
-    else if (best_match.length == 1)
+    else if (best_match.length === 1)
     {
-      final_packages.push(best_match.pop());
-      final_packages.push(package_stack.pop());
+      final_packages.push(best_match[0]);
+      console.log("\n\nFinal Package: " + final_packages, "\nBest Match: " + best_match + "\nPackage Stack" + package_stack);
+      final_packages.push(package_stack[0]);
+      console.log("\n\nFinal Package: " + final_packages, "\nBest Match: " + best_match + "\nPackage Stack" + package_stack);
     }
     else
     {
-      final_packages.push(package_stack.pop());
-      final_packages.push(package_stack.pop());
+      final_packages.push(package_stack[0]);
+      console.log("\n\nFinal Package: " + final_packages, "\nBest Match: " + best_match + "\nPackage Stack" + package_stack);
+      final_packages.push(package_stack[1]);
+      console.log("\n\nFinal Package: " + final_packages, "\nBest Match: " + best_match + "\nPackage Stack" + package_stack);
     }
+    var pkg1 = package_stack.slice(0,1).toString();
+    var pkg2 = package_stack.slice(1,2).toString();
+    var act1 = best_match.slice(0,1).toString();
+    var act2 = best_match.slice(1,2).toString();
+    console.log(pkg1);
+    console.log(pkg2);
+    console.log(act1);
+    console.log(act2);
 
-    console.log("Best Match: " + best_match + "\n\nPackage Stack: " + package_stack);
+    var code_1, code_2;
+    if (this.state.packages instanceof Array) 
+    {
+      this
+        .state
+        .packages
+        .map(function (object, i) {
+          if(object._id === pkg1) {
+            code_1 =  '<div class="card"> <div class="card-image"> <figure class="image is-4by3"> <img src="'+object.package.pictures+'" alt="" /> </figure> </div> <div class="card-content"> <div class="media"> <div class="media-content has-text-centered has-text-justified"> <p class="title is-4 has-text-weight-bold">'+ object.package.p_name +'</p> <p class="subtitle is-6">'+object.package.location+'</p> </div> </div> <div class="content has-text-left"> <strong>Activity</strong>:'+ object.package.p_type + '<br /> <strong>Duration:</strong>' + object.package.duration +'<br /> <strong>Cost:</strong>' + object.package.cost + '<br /> </div> </div> <footer class="card-footer"><a src="/user/buy/'+ object._id +'" class="card-footer-item has-text-info">Buy</a> </footer> </div>';           
+          }
+          if(object._id === pkg2) {
+            code_1 =  '<div class="card"> <div class="card-image"> <figure class="image is-4by3"> <img src="'+object.package.pictures+'" alt="" /> </figure> </div> <div class="card-content"> <div class="media"> <div class="media-content has-text-centered has-text-justified"> <p class="title is-4 has-text-weight-bold">'+ object.package.p_name +'</p> <p class="subtitle is-6">'+object.package.location+'</p> </div> </div> <div class="content has-text-left"> <strong>Activity</strong>:'+ object.package.p_type + '<br /> <strong>Duration:</strong>' + object.package.duration +'<br /> <strong>Cost:</strong>' + object.package.cost + '<br /> </div> </div> <footer class="card-footer"><a src="/user/buy/'+ object._id +'" class="card-footer-item has-text-info">Buy</a> </footer> </div>';     
+          }
+        });
+      this.setState({ code1: code_1, code2: code_2 });
+    }
+    
 
     return (
       <div className="App">
-        Following are the recommendations <br/><br/><br/>
-        { 
-          localStorage.choice
-        }
-        <div class="card">      
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src={final_packages[0].pictures} alt="" />
-            </figure>
-           </div>
-
-          <div class="card-content">
-            <div class="media">
-              <div class="media-content has-text-centered has-text-justified">
-                <p class="title is-4 has-text-weight-bold">{final_packages[0].name}</p>
-                <p class="subtitle is-6">  {final_packages[0].location}</p>
-              </div>
-            </div>
-          
-            <div class="content has-text-left">
-              <strong>Dining</strong>:{final_packages[0].activity} 
-              <br />
-              <strong>Duration:</strong>{final_packages[0].duration} 
-              <br />         
-              <strong>Cost:</strong>{final_packages[0].cost} 
-              <br />
+        <Header location={this.props.location} />
+        <div className="hero is-light">
+          <div className="hero-body">
+            <div className="title is-1 has-text-weight-light">  
+              Following are the recommendations
             </div>
           </div>
-
-          <footer class="card-footer">
-            <Link to={"/user/buy/"+this.props.obj._id} className="card-footer-item has-text-info">Buy</Link>
-          </footer>
         </div>
+        <div className="columns">
+          <div className="column is-4 is-offset-4">
+            <div dangerouslySetInnerHTML={{ __html: this.state.code1 }} />
+            <div dangerouslySetInnerHTML={{ __html: this.state.code2 }} />
+          </div>
+        </div>      
       </div>
       
     );
