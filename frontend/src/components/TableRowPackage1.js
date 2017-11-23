@@ -16,16 +16,14 @@ class TableRowPackage extends Component {
         <div class="media">
 
           <div class="media-content has-text-centered has-text-justified">
-            <p class="title is-4 has-text-weight-bold">{this.props.obj.package.name}</p>
+            <p class="title is-4 has-text-weight-bold">{this.props.obj.package.p_name}</p>
             <p class="subtitle is-6">  {this.props.obj.package.location}</p>
           </div>
         </div>
     
         <div class="content has-text-left">
-         <strong>Activity</strong>:{this.props.obj.package.activity} 
-         <br />
-         <strong>Duration:</strong>{this.props.obj.package.duration} 
-        <br />         
+         <strong>Specials:</strong>:{this.props.obj.package.specials} 
+         <br />       
         <strong>Cost:</strong>{this.props.obj.package.cost} 
          <br />
 {/*          {this.props.obj.package.food_specials} 

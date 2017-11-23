@@ -103,20 +103,19 @@ class PackageIndex extends Component {
     if (localStorage.isLoggedIn === 'yes') {
       return (
         <div>
-
           <Header location={this.props.location} />
           <div className="hero is-light">
             <div className="hero-body">
               <div className="container has-text-centered">
               <div className="columns">
                 <div className="column is-4">
-                  <button className="dining-button" onClick={this.selectDining}>Dining</button>
+                  <button className="dining-button" onClick={this.selectDining}></button>
                 </div>
                 <div className="column is-4">
-                  <button className="travel-button" onClick={this.selectTravel}>Travel</button>
+                  <button className="travel-button" onClick={this.selectTravel}></button>
                 </div>
                 <div className="column is-4">
-                  <button className="activity-button" onClick={this.selectActivity}>Activity</button>
+                  <button className="activity-button" onClick={this.selectActivity}></button>
                 </div>
               </div>
               <br/>
