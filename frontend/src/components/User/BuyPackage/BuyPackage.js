@@ -79,16 +79,16 @@ class BuyPackage extends Component {
       <div>
         { this.state.is_loading && <IsLoading /> }
         <Header location={'/user/buy'} />
-        <div className="title is-1 has-text-weight-light">{this.state.package.combo_name}</div>
+        <div className="title is-1 has-text-weight-light">{this.state.package.p_name}</div>
         <div className="columns">
           <div className="column is-6 is-offset-3 has-text-left">
             <div className="content has-text-centered">
             { this.state.package.ptype === 'activity' ? 
               <div>
-                <p> {this.state.package.name} </p>
-                <p> {this.state.package.brochure} </p>
+                <p> {this.state.package.p_name} </p>
+                <p> {this.state.package.pictures} </p>
                 <p> {this.state.package.location} </p>
-                <p> {this.state.package.activty} </p>
+                <p> {this.state.package.specials} </p>
                 <p> {this.state.package.cost} </p>
               </div>
             : null }
@@ -101,11 +101,10 @@ class BuyPackage extends Component {
                  <div class="column is-half is-narrow">
                      <p class="bd-notification is-info">
                      <img src= {this.state.package.pictures} alt=""/>
-                     <p class="title is-4">{this.state.package.combo_name}</p>
-                     <p class="subtitle is-6">  {this.state.package.brochure}</p>
+                     <p class="title is-4">{this.state.package.p_name}</p>
+                     <p class="subtitle is-6">  {this.state.package.pictures}</p>
                      <p> <strong>Food:</strong>{this.state.package.specials} </p>
-                     <p> <strong>Image:</strong>{this.state.package.menu_image} </p>
-                     <p> <strong>Cost:</strong>{this.state.package.cost_for_two} </p>
+                     <p> <strong>Cost:</strong>{this.state.package.cost} </p>
                       </p>
                   </div>
               </div>
@@ -118,9 +117,9 @@ class BuyPackage extends Component {
                  <div class="column is-half is-narrow">
                      <p class="bd-notification is-info">
                      <img src= {this.state.package.pictures} alt=""/>
-                     <p class="title is-4">{this.state.package.location}</p>
-                     <p class="subtitle is-6">  {this.state.package.brochure}</p>
-                     <p> <strong>Food:</strong>{this.state.package.food_specials} </p>
+                     <p class="title is-4">{this.state.package.p_name}</p>
+                     <p> <strong>Food:</strong>{this.state.package.specials} </p>
+                     <p> <strong>Location:</strong>{this.state.package.location} </p>
                      <p> <strong>Duration:</strong>{this.state.package.duration} </p>
                      <p> <strong>Cost:</strong>{this.state.package.cost} </p>
                       </p>

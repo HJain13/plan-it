@@ -566,10 +566,10 @@ class PackageRecommender extends Component
         .packages
         .map(function (object, i) {
           if(object._id === pkg1) {
-            code_1 =  '<div class="card"> <div class="card-image"> <figure class="image is-4by3"> <img src="'+object.package.pictures+'" alt="" /> </figure> </div> <div class="card-content"> <div class="media"> <div class="media-content has-text-centered has-text-justified"> <p class="title is-4 has-text-weight-bold">'+ object.package.p_name +'</p> <p class="subtitle is-6">'+object.package.location+'</p> </div> </div> <div class="content has-text-left"> <strong>Specials</strong>:'+ object.package.specials + '<br /> <strong>Cost:</strong>' + object.package.cost + '<br /> </div> </div> <footer class="card-footer"><a src="/user/buy/'+ object._id +'" class="card-footer-item has-text-info">Buy</a> </footer> </div>';
+            code_1 =  '<div class="card"> <div class="card-image"> <figure class="image is-4by3"> <img src="'+object.package.pictures+'" alt="" /> </figure> </div> <div class="card-content"> <div class="media"> <div class="media-content has-text-centered has-text-justified"> <p class="title is-4 has-text-weight-bold">'+ object.package.p_name +'</p> <p class="subtitle is-6">'+object.package.location+'</p> </div> </div> <div class="content has-text-left"> <strong>Specials</strong>:'+ object.package.specials + '<br /> <strong>Cost:</strong>' + object.package.cost + '<br /> </div> </div> <footer class="card-footer"><a href="/user/buy/'+ object._id +'" class="card-footer-item has-text-info">Buy</a> </footer> </div>';
           }
           if(object._id === pkg2) {
-            code_2 =  '<div class="card"> <div class="card-image"> <figure class="image is-4by3"> <img src="'+object.package.pictures+'" alt="" /> </figure> </div> <div class="card-content"> <div class="media"> <div class="media-content has-text-centered has-text-justified"> <p class="title is-4 has-text-weight-bold">'+ object.package.p_name +'</p> <p class="subtitle is-6">'+object.package.location+'</p> </div> </div> <div class="content has-text-left"> <strong>Specials</strong>:'+ object.package.specials + '<br /> <strong>Cost:</strong>' + object.package.cost + '<br /> </div> </div> <footer class="card-footer"><a src="/user/buy/'+ object._id +'" class="card-footer-item has-text-info">Buy</a> </footer> </div>';
+            code_2 =  '<div class="card"> <div class="card-image"> <figure class="image is-4by3"> <img src="'+object.package.pictures+'" alt="" /> </figure> </div> <div class="card-content"> <div class="media"> <div class="media-content has-text-centered has-text-justified"> <p class="title is-4 has-text-weight-bold">'+ object.package.p_name +'</p> <p class="subtitle is-6">'+object.package.location+'</p> </div> </div> <div class="content has-text-left"> <strong>Specials</strong>:'+ object.package.specials + '<br /> <strong>Cost:</strong>' + object.package.cost + '<br /> </div> </div> <footer class="card-footer"><a href="/user/buy/'+ object._id +'" class="card-footer-item has-text-info">Buy</a> </footer> </div>';
           }
         });
       this.setState({ code1: code_1, code2: code_2 });
@@ -587,8 +587,10 @@ class PackageRecommender extends Component
           </div>
         </div>
         <div className="columns">
-          <div className="column is-4 is-offset-4">
+          <div className="column is-4 is-offset-2">
             <div dangerouslySetInnerHTML={{ __html: this.state.code1 }} />
+          </div>
+          <div className="column is-4">
             <div dangerouslySetInnerHTML={{ __html: this.state.code2 }} />
           </div>
         </div>      
