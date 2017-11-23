@@ -64,7 +64,7 @@ class BuyPackage extends Component {
     event.preventDefault();
     const order = this.state.order;
     order['uemail'] = localStorage.email;
-    order['bemail'] = this.state.package.bemail;
+    order['bemail'] = this.state.package.b_email;
     order['cost'] = this.state.package.cost;
     order['pid'] = this.state.pid;
     this.setState({
