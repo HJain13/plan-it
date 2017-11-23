@@ -14,30 +14,32 @@ class AddPackage extends Component {
 				ptype: 'dining'
 			},
 			Dining_package:{
-				combo_name: '',
-				menu_image: '',
+				p_name: '',
+				pictures: '',
 				specials: [],
-				pictures: [],
-				cost_for_two: '',
-				ptype: 'dining'
+				cost: '',
+				location: 'Jaipur',
+				ptype: 'dining',
+				b_email: localStorage.email
 			},
 			Activity_package:{
-				name: '',
-				brochure: '',
-				location: '',
-				activity: [],
+				p_name: '',
+				pictures: '',
+				specials: [],		//Change this to specials
 				cost: '',
-				ptype: 'activity'
+				location: 'Jaipur',
+				ptype: 'activity',
+				b_email: localStorage.email
 			},
 			Travel_package:{
-				brochure: '',
-				location: '',
-				activity: [],
-				food_specials: [],
+				p_name: '',
+				pictures: '',
+				specials: [],
 				duration: '',
 				cost: '',
-				pictures: [],
-				ptype: 'travel'
+				location: 'Jaipur',
+				ptype: 'travel',
+				b_email: localStorage.email
 			}
 		};
 		this.addUserService = new PackageService();
@@ -110,11 +112,11 @@ class AddPackage extends Component {
 	handleChangeActivity(event) {
 		const field = event.target.name;
 		const Activity_p= this.state.Activity_package;
-		var activity = Activity_p['activity'].slice(0);		
+		var specials = Activity_p['activity'].slice(0);		
 		if(field.substring(0,4) === 'list'){
 			var str = event.target.value;
-			activity = str.split(",");
-			Activity_p.activity=activity;
+			specials = str.split(",");
+			Activity_p.specials=specials;
 		}
 		else
 			Activity_p[field] = event.target.value;
@@ -127,15 +129,13 @@ class AddPackage extends Component {
 		const field = event.target.name;
 		const Travel_p= this.state.Travel_package;
 		var activity= Travel_p['activity'].slice(0);
-		var food_specials=Travel_p['food_specials'].slice(0);
+
 		var pictures=Travel_p['pictures'].slice(0);
 		if(field.substring(0,4) === 'list'){
 			var str = event.target.value;
 			activity = str.split(",");
-			food_specials = str.split(",");			
 			pictures = str.split(",");
 			if (field.substring(4,5) === '0')	Travel_p.activity=activity;
-			if (field.substring(4,5) === '1')	Travel_p.food_specials=food_specials;
 			if (field.substring(4,5) === '2')	Travel_p.pictures=pictures;
 		}
 		else
@@ -174,12 +174,14 @@ class AddPackage extends Component {
 							  </div>
 								</div>
 							</div>	
+
+
 							{this.state.business.ptype==='dining'?
 								<div className="columns">
 									<div className="column is-6 is-offset-3">
 										<div className="field">
 											<p className="control has-icons-left has-icons-right">
-												<input onChange={this.handleChangeDining} name="combo_name" className="input" type="input" placeholder="Combo Name"/>
+												<input onChange={this.handleChangeDining} name="p_name" className="input" type="input" placeholder="Combo Name"/>
 												<span class="icon is-small is-left">
 													<i class="fa fa-tag"></i>
 												</span>
@@ -187,7 +189,7 @@ class AddPackage extends Component {
 									  </div>
 		 							 	<div className="field">
 											<p className="control has-icons-left has-icons-right">
-												<input onChange={this.handleChangeDining} name="menu_image" className="input" type="input" placeholder="Menu Image"/>
+												<input onChange={this.handleChangeDining} name="pictures" className="input" type="input" placeholder="Menu Image"/>
 												<span class="icon is-small is-left">
 													<i class="fa fa-camera"></i>
 												</span>
@@ -203,15 +205,7 @@ class AddPackage extends Component {
 										</div>
 										<div className="field">
 											<p className="control has-icons-left">
-												<input onChange={this.handleChangeDining} name="list1" className="input" type="input" placeholder="Food Images"/>
-												<span class="icon is-small is-left">
-														<i class="fa fa-camera"></i>
-													</span>
-											</p>                    
-										</div>
-										<div className="field">
-											<p className="control has-icons-left">
-												<input onChange={this.handleChangeDining} name="cost_for_two" className="input" type="input" placeholder="Cost For Two"/>
+												<input onChange={this.handleChangeDining} name="cost" className="input" type="input" placeholder="Cost"/>
 												<span class="icon is-small is-left">
 														<i class="fa fa-camera"></i>
 													</span>
@@ -230,13 +224,15 @@ class AddPackage extends Component {
                     </div>										
 									</div>
 	 					 		</div>
-						  :null}
+							:null}
+							
+
 						  {this.state.business.ptype==='activity_center'?
 							<div className="columns">
 								<div className="column is-6 is-offset-3">
 									<div className="field">
 										<p className="control has-icons-left has-icons-right">
-											<input onChange={this.handleChangeActivity} name="name" className="input" type="input" placeholder="Name"/>
+											<input onChange={this.handleChangeActivity} name="p_name" className="input" type="input" placeholder="Name"/>
 											<span class="icon is-small is-left">
 													<i class="fa fa-users"></i>
 											</span>											
@@ -244,7 +240,7 @@ class AddPackage extends Component {
 									</div>
 									<div className="field">
 										<p className="control has-icons-left">
-											<input onChange={this.handleChangeActivity} name="brochure" className="input" type="input" placeholder="Brocher"/>
+											<input onChange={this.handleChangeActivity} name="pictures" className="input" type="input" placeholder="Brochure"/>
 											<span class="icon is-small is-left">
 													<i class="fa fa-bars"></i>
 											</span>													
@@ -252,15 +248,7 @@ class AddPackage extends Component {
 									</div>
 									<div className="field">
 										<p className="control has-icons-left">
-											<input onChange={this.handleChangeActivity} name="location" className="input" type="input" placeholder="Location"/>
-											<span class="icon is-small is-left">
-													<i class="fa fa-location-arrow"></i>
-											</span>													
-										</p>                    
-									</div>
-									<div className="field">
-										<p className="control has-icons-left">
-											<input onChange={this.handleChangeActivity} name="list0" className="input" type="input" placeholder="Activity"/>
+											<input onChange={this.handleChangeActivity} name="list0" className="input" type="input" placeholder="Activities"/>
 											<span class="icon is-small is-left">
 													<i class="fa fa-calendar-check-o"></i>
 											</span>													
@@ -293,7 +281,7 @@ class AddPackage extends Component {
 							<div className="column is-6 is-offset-3">
 							<div className="field">
 							<p className="control has-icons-left">
-								<input onChange={this.handleChangeTravel} name="brochure" className="input" type="input" placeholder="Brocher"/>
+								<input onChange={this.handleChangeTravel} name="pictures" className="input" type="input" placeholder="Brochure"/>
 								<span class="icon is-small is-left">
 										<i class="fa fa-bars"></i>
 								</span>													
@@ -301,7 +289,7 @@ class AddPackage extends Component {
 						</div>
 						<div className="field">
 						<p className="control has-icons-left">
-							<input onChange={this.handleChangeTravel} name="location" className="input" type="input" placeholder="Location"/>
+							<input onChange={this.handleChangeTravel} name="p_name" className="input" type="input" placeholder="Name"/>
 							<span class="icon is-small is-left">
 									<i class="fa fa-location-arrow"></i>
 							</span>													
@@ -309,20 +297,13 @@ class AddPackage extends Component {
 						</div>
 								<div className="field">
 										<p className="control has-icons-left">
-											<input onChange={this.handleChangeTravel} name="list0" className="input" type="input" placeholder="Activity"/>
+											<input onChange={this.handleChangeTravel} name="list0" className="input" type="input" placeholder="Specials"/>
 											<span class="icon is-small is-left">
 													<i class="fa fa-calendar-check-o"></i>
 											</span>													
 										</p>                    
 									</div>	
-									<div className="field">
-										<p className="control has-icons-left">
-											<input onChange={this.handleChangeTravel} name="list1" className="input" type="input" placeholder="Special Food"/>
-											<span class="icon is-small is-left">
-													<i class="fa fa-cutlery"></i>
-											</span>													
-										</p>                    
-									</div>																		
+
 								<div className="field">
 								<p className="control has-icons-left">
 									<input onChange={this.handleChangeTravel} name="duration" className="input" type="input" placeholder="Duration"/>
@@ -338,15 +319,8 @@ class AddPackage extends Component {
 											<i class="fa fa-money"></i>
 									</span>													
 								</p>                    
-							</div>	
-								<div className="field">
-										<p className="control has-icons-left">
-											<input onChange={this.handleChangeTravel} name="list2" className="input" type="input" placeholder="Pictures"/>
-											<span class="icon is-small is-left">
-													<i class="fa fa-picture-o"></i>
-											</span>													
-										</p>                    
-									</div>	
+							</div>
+
 									<div className="field is-horizontal">
                       <div className="field-body">
                         <div className="field">
