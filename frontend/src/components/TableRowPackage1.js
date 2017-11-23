@@ -16,8 +16,8 @@ class TableRowPackage extends Component {
         <div class="media">
 
           <div class="media-content has-text-centered has-text-justified">
-            <p class="title is-4 has-text-weight-bold">{this.props.obj.package.location}</p>
-            <p class="subtitle is-6">  {this.props.obj.package.brochure}</p>
+            <p class="title is-4 has-text-weight-bold">{this.props.obj.package.name}</p>
+            <p class="subtitle is-6">  {this.props.obj.package.location}</p>
           </div>
         </div>
     

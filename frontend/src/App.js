@@ -5,6 +5,7 @@ import Admin from './components/Admin/Admin';
 import Business from './components/Business/Business';
 import User from './components/User/User';
 import ApproveBusiness from './components/ApproveBusiness/ApproveBusiness';
+import PackageRecommender from './components/PackageRecommender/PackageRecommender';
 import PostComplaint from './components/User/PostComplaint/PostComplaint';
 import BuyPackage from './components/User/BuyPackage/BuyPackage';
 import SwipeBuy from './components/User/SwipeBuy/SwipeBuy';
@@ -38,6 +39,7 @@ class App extends Component {
           <Route path='/business' component={Business} />
           <Route path='/user/swipe-buy' component={SwipeBuy} />
           <Route path='/user/buy/:id' component={BuyPackage} />
+          <Route path='/user/recommendations' component={PackageRecommender} />
           <Route path='/user/post-complaint' component={PostComplaint} />
           <Route path='/user' component={User} />
           <Route path='/approve/:id' component={ApproveBusiness} />

@@ -133,11 +133,11 @@ mongoose.connect(mongoUrl, {
       .then(() => {
         //Adding Businesses to System
         var businesses = new Array(10);
-        businesses[0] = new Business({"business": {"name": "Kwimbee", "email": "manager@Kwimbee.com", "password": "abcd1234", "address": "167 Malviya Nagar, Jaipur", "bank_acc": "30218430182121", "manager_name": "Abhishek Agarwal", "phone_no": "+91 9812736452", "approved": "false"}});
-        businesses[1] = new Business({"business": {"name": "DabZ", "email": "manager@DabZ.com", "password": "abcd1234", "address": "15/89 Mansarovar, Jaipur", "bank_acc": "19378430182129", "manager_name": "Yash Sharma", "phone_no": "+91 8174623512", "approved": "false"}});
-        businesses[2] = new Business({"business": {"name": "Noriel", "email": "manager@Noriel.com", "password": "abcd1234", "address": "A012 Shantanu Nagar, Jaipur", "bank_acc": "49188430182123", "manager_name": "Varun Goyal", "phone_no": "+91 8762384712", "approved": "false"}});
-        businesses[3] = new Business({"business": {"name": "Roodel", "email": "manager@Roodel.com", "password": "abcd1234", "address": "188/230 Transport Nagar, Jaipur", "bank_acc": "10298430182120", "manager_name": "Avinash Mathur", "phone_no": "+91 9273648162", "approved": "false"}});
-        businesses[4] = new Business({"business": {"name": "TomoNow", "email": "manager@TomoNow.com", "password": "abcd1234", "address": "10 Arravali Nagar, Jaipur", "bank_acc": "31294301821232", "manager_name": "Riya Shrivastava", "phone_no": "+91 9876253614", "approved": "false"}});
+        businesses[0] = new Business({"business": {"name": "Kwimbee", "email": "manager@Kwimbee.com", "pass": "abcd1234", "address": "167 Malviya Nagar, Jaipur", "bank_acc": "30218430182121", "manager_name": "Abhishek Agarwal", "phone_no": "+91 9812736452", "approved": "false"}});
+        businesses[1] = new Business({"business": {"name": "DabZ", "email": "manager@DabZ.com", "pass": "abcd1234", "address": "15/89 Mansarovar, Jaipur", "bank_acc": "19378430182129", "manager_name": "Yash Sharma", "phone_no": "+91 8174623512", "approved": "false"}});
+        businesses[2] = new Business({"business": {"name": "Noriel", "email": "manager@Noriel.com", "pass": "abcd1234", "address": "A012 Shantanu Nagar, Jaipur", "bank_acc": "49188430182123", "manager_name": "Varun Goyal", "phone_no": "+91 8762384712", "approved": "false"}});
+        businesses[3] = new Business({"business": {"name": "Roodel", "email": "manager@Roodel.com", "pass": "abcd1234", "address": "188/230 Transport Nagar, Jaipur", "bank_acc": "10298430182120", "manager_name": "Avinash Mathur", "phone_no": "+91 9273648162", "approved": "false"}});
+        businesses[4] = new Business({"business": {"name": "TomoNow", "email": "manager@TomoNow.com", "pass": "abcd1234", "address": "10 Arravali Nagar, Jaipur", "bank_acc": "31294301821232", "manager_name": "Riya Shrivastava", "phone_no": "+91 9876253614", "approved": "false"}});
         businesses.forEach(function (business, index, array) {
           business.save().then(business => {
               console.log('+++ Business['+index+'] added successfully +++');
@@ -171,11 +171,11 @@ mongoose.connect(mongoUrl, {
       .then(() => {
         //Adding Users to System
         var users = new Array(10);
-        users[0] = new User({"user": {"name": "Chaitanya Maheshwari", "email": "maheshwari@gmail.com", "password": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 9715267283", "age": "22", "gender": "Male"}});
-        users[1] = new User({"user": {"name": "Marut Lahoty", "email": "lahoty@gmail.com", "password": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 7763849102", "age": "21", "gender": "Male"}});
-        users[2] = new User({"user": {"name": "Namish Narayan", "email": "narayan@gmail.com", "password": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 8876941323", "age": "22", "gender": "Male"}});
-        users[3] = new User({"user": {"name": "Vishal Jadoun", "email": "jadoun@gmail.com", "password": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 9746500091", "age": "20", "gender": "Male"}});
-        users[4] = new User({"user": {"name": "Akash Negi", "email": "negi@gmail.com", "password": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 9746543256", "age": "18", "gender": "Male"}});
+        users[0] = new User({"user": {"name": "Chaitanya Maheshwari", "email": "maheshwari@gmail.com", "pass": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 9715267283", "age": "22", "gender": "Male"}});
+        users[1] = new User({"user": {"name": "Marut Lahoty", "email": "lahoty@gmail.com", "pass": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 7763849102", "age": "21", "gender": "Male"}});
+        users[2] = new User({"user": {"name": "Namish Narayan", "email": "narayan@gmail.com", "pass": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 8876941323", "age": "22", "gender": "Male"}});
+        users[3] = new User({"user": {"name": "Vishal Jadoun", "email": "jadoun@gmail.com", "pass": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 9746500091", "age": "20", "gender": "Male"}});
+        users[4] = new User({"user": {"name": "Akash Negi", "email": "negi@gmail.com", "pass": "abcd1234", "address": "88/23 Triveni Nagar, Jaipur", "phone_no": "+91 9746543256", "age": "18", "gender": "Male"}});
         users.forEach(function (user, index, array) {
           user.save().then(user => {
               console.log('+++ User['+index+'] added successfully +++');
@@ -212,7 +212,7 @@ mongoose.connect(mongoUrl, {
 
             //Dining
             packages[0] = new Package({"package": {
-                                        "p_type": "Dining",
+                                        "ptype": "dining",
                                         "b_email": "manager@noriel.com",
                                         "p_name": "Burger Shot",
                                         "location": "Jaipur",
@@ -222,7 +222,7 @@ mongoose.connect(mongoUrl, {
                                       });
 
             packages[1] = new Package({"package": {
-                                        "p_type": "Dining",
+                                        "ptype": "dining",
                                         "b_email": "manager@TomoNow.com",
                                         "p_name": "Eat It!",
                                         "location": "Jaipur",
@@ -232,7 +232,7 @@ mongoose.connect(mongoUrl, {
                                       });
 
             packages[2] = new Package({"package": {
-                                        "p_type": "Dining",
+                                        "ptype": "dining",
                                         "b_email": "manager@TomoNow.com",
                                         "p_name": "Slingy Shot",
                                         "location": "Jaipur",
@@ -242,7 +242,7 @@ mongoose.connect(mongoUrl, {
                                       });
                                       
             packages[3] = new Package({"package": {
-                                        "p_type": "Dining",
+                                        "ptype": "dining",
                                         "b_email": "manager@TomoNow.com",
                                         "p_name": "South Attack!",
                                         "location": "Jaipur",
@@ -252,7 +252,7 @@ mongoose.connect(mongoUrl, {
                                       });
 
             packages[4] = new Package({"package": {
-                                        "p_type": "Dining",
+                                        "ptype": "dining",
                                         "b_email": "manager@Roodel.com",
                                         "p_name": "Modern Desi Delicious",
                                         "location": "Jaipur",
@@ -261,9 +261,9 @@ mongoose.connect(mongoUrl, {
                                         "cost": "640"}
                                       });
 
-            //Activity
+            //activity
             packages[5] = new Package({"package": {
-                                          "p_type": "Activity",
+                                          "ptype": "activity",
                                           "b_email": "manager@Kwimbee.com",
                                           "p_name": "Adventurous Shoot",
                                           "location": "Jaipur",
@@ -273,7 +273,7 @@ mongoose.connect(mongoUrl, {
                                       });
             
             packages[6] = new Package({"package": {
-                                        "p_type": "Activity",
+                                        "ptype": "activity",
                                         "b_email": "manager@DabZ.com",
                                         "p_name": "Jump of a Lifetime",
                                         "location": "Jaipur",
@@ -283,7 +283,7 @@ mongoose.connect(mongoUrl, {
                                       });
 
             packages[7] = new Package({"package": {
-                                        "p_type": "Activity",
+                                        "ptype": "activity",
                                         "b_email": "manager@DabZ.com",
                                         "p_name": "Water Love",
                                         "location": "Jaipur",
@@ -293,7 +293,7 @@ mongoose.connect(mongoUrl, {
                                       });
             
             packages[8] = new Package({"package": {
-                                        "p_type": "Activity",
+                                        "ptype": "activity",
                                         "b_email": "manager@Kwimbee.com",
                                         "p_name": "Feel the Nature",
                                         "location": "Jaipur",
@@ -303,7 +303,7 @@ mongoose.connect(mongoUrl, {
                                       });
             
             packages[9] = new Package({"package": {
-                                        "p_type": "Activity",
+                                        "ptype": "activity",
                                         "b_email": "manager@TomoNow.com",
                                         "p_name": "Adrenaline Junkie",
                                         "location": "Jaipur",
@@ -311,9 +311,9 @@ mongoose.connect(mongoUrl, {
                                         "pictures": "https://i.imgur.com/bjTQoOw.jpg",
                                         "cost": "4500"}
                                       });
-            //Travel
+            //travel
             packages[10] = new Package({"package": {
-                                        "p_type": "Travel",
+                                        "ptype": "travel",
                                         "b_email": "manager@Kwimbee.com",
                                         "p_name": "Singapore Trip",
                                         "location": "Jaipur",
@@ -324,7 +324,7 @@ mongoose.connect(mongoUrl, {
                                       });
 
             packages[11] = new Package({"package": {
-                                        "p_type": "Travel",
+                                        "ptype": "travel",
                                         "b_email": "manager@Kwimbee.com",
                                         "p_name": "Rishikesh Trip",
                                         "location": "Jaipur",
@@ -335,7 +335,7 @@ mongoose.connect(mongoUrl, {
                                       });
 
             packages[12] = new Package({"package": {
-                                        "p_type": "Travel",
+                                        "ptype": "travel",
                                         "b_email": "manager@DabZ.com",
                                         "p_name": "Paris Trip",
                                         "location": "Jaipur",
@@ -346,7 +346,7 @@ mongoose.connect(mongoUrl, {
                                       });
 
             packages[13] = new Package({"package": {
-                                        "p_type": "Travel",
+                                        "ptype": "travel",
                                         "b_email": "manager@DabZ.com",
                                         "p_name": "Dubai Trip",
                                         "location": "Jaipur",
@@ -357,7 +357,7 @@ mongoose.connect(mongoUrl, {
                                       });
 
             packages[14] = new Package({"package": {
-                                        "p_type": "Travel",
+                                        "ptype": "travel",
                                         "b_email": "manager@Noriel.com",
                                         "p_name": "Udaipur Trip",
                                         "location": "Jaipur",

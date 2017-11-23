@@ -6,39 +6,35 @@ class TableRowPackage extends Component {
     return (
       this.props.obj.package.ptype==='activity'?
         <div class="column  is-one-quarter">
-        <div class="card">
-        <header class="card-header">
-          <p class="card-header-title">
-         {this.props.obj.package.name}
-          </p>
-          <a href="" class="card-header-icon" aria-label="more options">
-            {/* <span class="ic">
-              <i class="fa fa-angle-down" aria-hidden="true"></i>
-            </span> */}
-          </a>
-        </header>
+        <div class="card">      
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src={this.props.obj.package.pictures} alt="" />
+            </figure>
+          </div>
         <div class="card-content">
-          <div class="content ">
-          <strong>Brocher: </strong>{this.props.obj.package.brochure} 
-          <br />
-          <strong>Location: </strong>{this.props.obj.package.location}
-          <br />
-          <strong>Activity</strong> {this.props.obj.package.activity}
-          <br />
-          <strong>Cost: </strong>{this.props.obj.package.cost}
-          <br />
-          <strong>Package Type:</strong> {this.props.obj.package.ptype}  
-          <br />
-          
-
+          <div class="media">
+            <div class="media-content has-text-centered has-text-justified">
+              <p class="title is-4 has-text-weight-bold">{this.props.obj.package.name}</p>
+              <p class="subtitle is-6">  {this.props.obj.package.location}</p>
+            </div>
+          </div>
+      
+          <div class="content has-text-left">
+            <strong>Dining</strong>:{this.props.obj.package.activity} 
+            <br />
+            <strong>Duration:</strong>{this.props.obj.package.duration} 
+            <br />         
+            <strong>Cost:</strong>{this.props.obj.package.cost} 
+            <br />
           </div>
         </div>
         <footer class="card-footer">
-        <Link to={"/user/buy/"+this.props.obj._id} className="card-footer-item has-text-info">Buy</Link>
+          <Link to={"/user/buy/"+this.props.obj._id} className="card-footer-item has-text-info">Buy</Link>
         </footer>
       </div>
-      </div>
-        : null
+    </div>
+    : null
     );
   }
 }

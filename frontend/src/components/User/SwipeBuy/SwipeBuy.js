@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import PackageService from '../PackageService';
+import PackageService from '../../PackageService';
 import axios from 'axios';
-import Header from '../Header/Header';
+import { Link } from 'react-router-dom';
+import Header from '../../Header/Header';
 var baseUrl = '/api';
 
 class SwipeBuy extends Component {
@@ -10,21 +11,21 @@ class SwipeBuy extends Component {
     this.state = {
       ptype : '',
       swipe_count: 0,
-      a_choice1: false,
-      a_choice2: false,
-      a_choice3: false,
-      a_choice4: false,
-      a_choice5: false,      
-      d_choice1: false,
-      d_choice2: false,
-      d_choice3: false,
-      d_choice4: false,
-      d_choice5: false,
-      t_choice1: false,
-      t_choice2: false,
-      t_choice3: false,
-      t_choice4: false,
-      t_choice5: false,
+      a_choice1: '',
+      a_choice2: '',
+      a_choice3: '',
+      a_choice4: '',
+      a_choice5: '',      
+      d_choice1: '',
+      d_choice2: '',
+      d_choice3: '',
+      d_choice4: '',
+      d_choice5: '',
+      t_choice1: '',
+      t_choice2: '',
+      t_choice3: '',
+      t_choice4: '',
+      t_choice5: '',
       is_loading: false
     };
     this.addPackageService = new PackageService();
@@ -38,38 +39,44 @@ class SwipeBuy extends Component {
   selectActivity(event) {
     event.preventDefault();
     this.setState({ ptype: 'activity' });
+    console.log(this.state);    
   }
 
   selectDining(event) {
     event.preventDefault();
     this.setState({ ptype: 'dining' });
+    console.log(this.state);
   }
   
   selectTravel(event) {
     event.preventDefault();
     this.setState({ ptype: 'travel' });
+    console.log(this.state);
   }
 
   selectYes(event) {
     event.preventDefault();
     var stateObject = function() {
-      returnObj = {};
+      var returnObj = {};
       returnObj[this.target.name] = true;
       returnObj['swipe_count'] = returnObj['swipe_count'] + 1;
+      console.log(returnObj);
          return returnObj;
     }.bind(event)();    
     this.setState( stateObject );   
+    console.log(this.state);
   }
 
   selectNo(event) {
     event.preventDefault();
     var stateObject = function() {
-      returnObj = {};
+      var returnObj = {};
       returnObj[this.target.name] = false;
       returnObj['swipe_count'] = returnObj['swipe_count'] + 1;      
          return returnObj;
     }.bind(event)();    
     this.setState( stateObject );   
+    console.log(this.state);
   }
 
   componentWillMount() {
@@ -83,6 +90,25 @@ class SwipeBuy extends Component {
       })
   }
 
+  componentDidUpdate() {
+    localStorage.d_choice1 = this.state.d_choice1;
+    localStorage.d_choice2 = this.state.d_choice2;
+    localStorage.d_choice3 = this.state.d_choice3;
+    localStorage.d_choice4 = this.state.d_choice4;
+    localStorage.d_choice5 = this.state.d_choice5;
+    localStorage.a_choice1 = this.state.a_choice1;
+    localStorage.a_choice2 = this.state.a_choice2;
+    localStorage.a_choice3 = this.state.a_choice3;    
+    localStorage.a_choice4 = this.state.a_choice4;    
+    localStorage.a_choice5 = this.state.a_choice5;    
+    localStorage.t_choice1 = this.state.t_choice1;
+    localStorage.t_choice2 = this.state.t_choice2;
+    localStorage.t_choice3 = this.state.t_choice3;    
+    localStorage.t_choice4 = this.state.t_choice4;    
+    localStorage.t_choice5 = this.state.t_choice5; 
+    localStorage.choice = this.state.ptype;    
+  }
+  
   render() {
     if (localStorage.isLoggedIn === 'yes' && localStorage.userType === 'user') {
       return (
@@ -105,7 +131,7 @@ class SwipeBuy extends Component {
               </div>
               : null }
               <br/>
-              { this.state.diningIsSelected === true && this.state.swipe_count === 0 ?
+              { this.state.ptype === 'dining' && this.state.d_choice1 === ''  ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -120,7 +146,7 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }
-              { this.state.diningIsSelected === true && this.state.swipe_count === 1 ?
+              { this.state.ptype === 'dining' && this.state.d_choice1 !== '' && this.state.d_choice2 === '' ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -135,7 +161,7 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }
-              { this.state.diningIsSelected === true && this.state.swipe_count === 2 ?
+              { this.state.ptype === 'dining' && this.state.d_choice2 !== '' && this.state.d_choice3 === '' ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -150,7 +176,7 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }
-              { this.state.diningIsSelected === true && this.state.swipe_count === 3 ?
+              { this.state.ptype === 'dining' && this.state.d_choice3 !== '' && this.state.d_choice4 === '' ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -165,7 +191,7 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }
-              { this.state.diningIsSelected === true && this.state.swipe_count === 4 ?
+              { this.state.ptype === 'dining' && this.state.d_choice4 !== '' && this.state.d_choice5 === '' ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -180,7 +206,7 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }
-              { this.state.travelIsSelected === true && this.state.swipe_count === 0 ?
+              { this.state.ptype === 'travel' && this.state.t_choice1 === '' ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -195,7 +221,7 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }
-              { this.state.travelIsSelected === true && this.state.swipe_count === 1 ?
+              { this.state.ptype === 'travel' && this.state.t_choice1 !== '' && this.state.t_choice2 === '' ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -210,7 +236,7 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }
-              { this.state.travelIsSelected === true && this.state.swipe_count === 2 ?
+              { this.state.ptype === 'travel' && this.state.t_choice2 !== '' && this.state.t_choice3 === '' ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -225,7 +251,7 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }
-              { this.state.travelIsSelected === true && this.state.swipe_count === 3 ?
+              { this.state.ptype === 'travel' && this.state.t_choice3 !== '' && this.state.t_choice4 === '' ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -240,7 +266,7 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }
-              { this.state.travelIsSelected === true && this.state.swipe_count === 4 ?
+              { this.state.ptype === 'travel' && this.state.t_choice4 !== '' && this.state.t_choice5 === '' ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -255,7 +281,7 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }              
-              { this.state.activityIsSelected === true && this.state.swipe_count === 0 ?
+              { this.state.ptype === 'activity' && this.state.a_choice1 === '' ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -270,7 +296,7 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }              
-              { this.state.activityIsSelected === true && this.state.swipe_count === 1 ?
+              { this.state.ptype === 'activity' && this.state.a_choice1 !== '' && this.state.a_choice2 === '' ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -285,7 +311,7 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }              
-              { this.state.activityIsSelected === true && this.state.swipe_count === 2 ?
+              { this.state.ptype === 'activity' && this.state.a_choice2 !== '' && this.state.a_choice3 === '' ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -300,7 +326,7 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }              
-              { this.state.activityIsSelected === true && this.state.swipe_count === 3 ?
+              { this.state.ptype === 'activity' && this.state.a_choice3 !== '' && this.state.a_choice4 === '' ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -315,7 +341,7 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }              
-              { this.state.activityIsSelected === true && this.state.swipe_count === 4 ?
+              { this.state.ptype === 'activity' && this.state.a_choice4 !== '' && this.state.a_choice5 === '' ?
                 <div class="column is-4 is-offset-4">
                   <div class="card">
                   <div class="card-image">
@@ -330,7 +356,10 @@ class SwipeBuy extends Component {
                 </div>
               </div>              
               : null }              
-              { this.state.swipe_count === 5 ?
+              { this.state.d_choice5 !== '' || this.state.t_choice5 !== '' || this.state.a_choice5 !== '' ?
+                <span className="title is-3 has-text-weight-light">
+                  <Link to="/user/recommendations" className="button is-success">View My Recommendations</Link>
+                </span>      
               :null }
             </div>
           </div>
