@@ -79,11 +79,13 @@ class PackageRecommender extends Component
 
             //Narrowing Down Search
             var item_1, item_2, item_3, item_4, item_5;
+            
             //0 True
             if (chosen_shit === "fffff")
             {
               console.log("\nNothing Chosen!");
             }
+
             //1 True
             else if (chosen_shit === "tffff")
             {
@@ -294,8 +296,194 @@ class PackageRecommender extends Component
                 package_stack.push(object.package);
               }
             }
+            else if (chosen_shit === "ftttf")
+            {
+              item_1 = object.package.specials.indexOf(choice2);
+              item_2 = object.package.specials.indexOf(choice3);
+              item_3 = object.package.specials.indexOf(choice4);
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1 || item_3>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "ffttt")
+            {
+              item_1 = object.package.specials.indexOf(choice3);
+              item_2 = object.package.specials.indexOf(choice4);
+              item_3 = object.package.specials.indexOf(choice5);
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1 || item_3>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "tfftt")
+            {
+              item_1 = object.package.specials.indexOf(choice1);
+              item_2 = object.package.specials.indexOf(choice4);
+              item_3 = object.package.specials.indexOf(choice5);
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1 || item_3>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "ttfft")
+            {
+              item_1 = object.package.specials.indexOf(choice1);
+              item_2 = object.package.specials.indexOf(choice2);
+              item_3 = object.package.specials.indexOf(choice5);
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1 || item_3>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "fttft")
+            {
+              item_1 = object.package.specials.indexOf(choice2);
+              item_2 = object.package.specials.indexOf(choice3);
+              item_3 = object.package.specials.indexOf(choice5);
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1 || item_3>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "tftft")
+            {
+              item_1 = object.package.specials.indexOf(choice1);
+              item_2 = object.package.specials.indexOf(choice3);
+              item_3 = object.package.specials.indexOf(choice5);
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1 || item_3>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "ftftt")
+            {
+              item_1 = object.package.specials.indexOf(choice2);
+              item_2 = object.package.specials.indexOf(choice4);
+              item_3 = object.package.specials.indexOf(choice5);
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1 || item_3>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "ttftf")
+            {
+              item_1 = object.package.specials.indexOf(choice1);
+              item_2 = object.package.specials.indexOf(choice2);
+              item_3 = object.package.specials.indexOf(choice4);
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1 || item_3>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "tfttf")
+            {
+              item_1 = object.package.specials.indexOf(choice1);
+              item_2 = object.package.specials.indexOf(choice3);
+              item_3 = object.package.specials.indexOf(choice4);
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1 || item_3>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
 
             //4 True
+            else if (chosen_shit === "ftttt")
+            {
+              item_2 = object.package.specials.indexOf(choice2);
+              item_3 = object.package.specials.indexOf(choice3);
+              item_4 = object.package.specials.indexOf(choice4);
+              item_1 = object.package.specials.indexOf(choice5);
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_4>-1) || (item_4>-1 && item_1>-1) || (item_1>-1 && item_3>-1) || (item_2>-1 && item_4>-1))
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1 || item_3>-1 || item_4>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "tfttt")
+            {
+              item_1 = object.package.specials.indexOf(choice1);
+              item_2 = object.package.specials.indexOf(choice3);
+              item_3 = object.package.specials.indexOf(choice4);
+              item_4 = object.package.specials.indexOf(choice5);
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_4>-1) || (item_4>-1 && item_1>-1) || (item_1>-1 && item_3>-1) || (item_2>-1 && item_4>-1))
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1 || item_3>-1 || item_4>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "ttftt")
+            {
+              item_1 = object.package.specials.indexOf(choice1);
+              item_2 = object.package.specials.indexOf(choice2);
+              item_3 = object.package.specials.indexOf(choice4);
+              item_4 = object.package.specials.indexOf(choice5);
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_4>-1) || (item_4>-1 && item_1>-1) || (item_1>-1 && item_3>-1) || (item_2>-1 && item_4>-1))
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1 || item_3>-1 || item_4>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
+            else if (chosen_shit === "tttft")
+            {
+              item_1 = object.package.specials.indexOf(choice1);
+              item_2 = object.package.specials.indexOf(choice2);
+              item_3 = object.package.specials.indexOf(choice3);
+              item_4 = object.package.specials.indexOf(choice5);
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_4>-1) || (item_4>-1 && item_1>-1) || (item_1>-1 && item_3>-1) || (item_2>-1 && item_4>-1))
+              {
+                best_match.push(object.package);
+              }
+              else if (item_1>-1 || item_2>-1 || item_3>-1 || item_4>-1)
+              {
+                package_stack.push(object.package);
+              }
+            }
             else if (chosen_shit === "ttttf")
             {
               item_1 = object.package.specials.indexOf(choice1);
