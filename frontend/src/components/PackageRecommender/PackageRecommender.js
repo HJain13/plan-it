@@ -78,92 +78,89 @@ class PackageRecommender extends Component
             }
 
             //Narrowing Down Search
+            var item_1, item_2, item_3, item_4, item_5;
 
             //1 True
-            if (chosen_shit = "tffff")
+            if (chosen_shit === "tffff")
             {
               item_1 = object.package.specials.indexOf(choice1);
               if (item_1>-1)
               {
-                package_stack.push(object);
+                package_stack.push(object.package);
               }
             }
 
             //2 True
-            if (chosen_shit = "ttfff")
+            else if (chosen_shit === "ttfff")
             {
               item_1 = object.package.specials.indexOf(choice1);
               item_2 = object.package.specials.indexOf(choice2);
+
+              console.log ("\n" + choice1 + " " + choice2 + " :: " + item_1 + " " + item_2)
               if (item_1>-1 && item_2>-1)
               {
-                best_match.push(object);
+                best_match.push(object.package);
               }
-              else if (item_1>-1 || item_1==-1)
+              else if (item_1>-1 || item_2>-1)
               {
-                package_stack.push(object);
+                package_stack.push(object.package);
               }
             }
 
             //3 True
-            if (chosen_shit = "tttff")
+            else if (chosen_shit === "tttff")
             {
               item_1 = object.package.specials.indexOf(choice1);
               item_2 = object.package.specials.indexOf(choice2);
               item_3 = object.package.specials.indexOf(choice3);
-              if (item_1>-1 && item_2>-1 || item_2>-1 && item_3>-1 || item_3>-1 && item_1>-1)
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_1>-1))
               {
-                best_match.push(object);
+                best_match.push(object.package);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1)
               {
-                package_stack.push(object);
+                package_stack.push(object.package);
               }
             }
 
             //4 True
-            if (chosen_shit = "ttttf")
+            else if (chosen_shit === "ttttf")
             {
               item_1 = object.package.specials.indexOf(choice1);
               item_2 = object.package.specials.indexOf(choice2);
               item_3 = object.package.specials.indexOf(choice3);
               item_4 = object.package.specials.indexOf(choice4);
-              if (item_1>-1 && item_2>-1 || item_2>-1 && item_3>-1 || item_3>-1 && item_4>-1 || item_4>-1 && item_1>-1 || item_1>-1 && item_3>-1 || item_2>-1 && item_4>-1)
+              if ((item_1>-1 && item_2>-1) || (item_2>-1 && item_3>-1) || (item_3>-1 && item_4>-1) || (item_4>-1 && item_1>-1) || (item_1>-1 && item_3>-1) || (item_2>-1 && item_4>-1))
               {
-                best_match.push(object);
+                best_match.push(object.package);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1 || item_4>-1)
               {
-                package_stack.push(object);
+                package_stack.push(object.package);
               }
             }
 
             //5 True
-            if (chosen_shit = "ttttt")
+            else if (chosen_shit === "ttttt")
             {
               item_1 = object.package.specials.indexOf(choice1);
               item_2 = object.package.specials.indexOf(choice2);
               item_3 = object.package.specials.indexOf(choice3);
               item_4 = object.package.specials.indexOf(choice4);
               item_5 = object.package.specials.indexOf(choice5);
-              if (item_1>-1 && item_2>-1 || item_1>-1 && item_3>-1 || item_1>-1 && item_4>-1 || item_1>-1 && item_5>-1 || item_2>-1 && item_3>-1 || item_2>-1 && item_4>-1 || item_2>-1 && item_5>-1 || item_3>-1 && item_4>-1 || item_3>-1 && item_5>-1 || item_4>-1 && item_5>-1)
+              if ((item_1>-1 && item_2>-1) || (item_1>-1 && item_3>-1) || (item_1>-1 && item_4>-1) || (item_1>-1 && item_5>-1) || (item_2>-1 && item_3>-1) || (item_2>-1 && item_4>-1) || (item_2>-1 && item_5>-1) || (item_3>-1 && item_4>-1) || (item_3>-1 && item_5>-1) || (item_4>-1 && item_5>-1))
               {
-                best_match.push(object);
+                best_match.push(object.package);
               }
               else if (item_1>-1 || item_2>-1 || item_3>-1 || item_4>-1 || item_5>-1)
               {
-                package_stack.push(object);
+                package_stack.push(object.package);
               }
             }
-
-
-
-
-
           }
-
         })
-
     }
+
     console.log("Best Match: " + best_match + "\n\nPackage Stack: " + package_stack);
 
     return (
