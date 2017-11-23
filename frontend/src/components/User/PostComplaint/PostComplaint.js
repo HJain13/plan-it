@@ -50,6 +50,7 @@ class PostComplaint extends Component {
 							<div className="columns">
 								<div className="column is-6 is-offset-3">
 									<textarea onChange={this.handleChange} value={this.state.complaint.query} name="query" className="textarea" placeholder="Query"></textarea>
+									<br/>
 									<div className="field is-horizontal">
 										<div className="field-body">
 											<div className="field">
