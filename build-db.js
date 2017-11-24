@@ -18,7 +18,7 @@ function sleep(ms) {
 var mongoUrl = '';
 mongoose.Promise = require('bluebird');
 if (process.env.environment === 'development') {
-  mongoUrl = 'mongodb://hjain13:Adroopit13@ds147544.mlab.com:47544/plan-it';  
+  mongoUrl = 'mongodb://localhost:27017/plan-it';  
 } else if (process.env.environment === 'development-riya') {
   mongoUrl = 'mongodb://localhost:27016/plan-it';
 }
