@@ -18,7 +18,7 @@ function sleep(ms) {
 var mongoUrl = '';
 mongoose.Promise = require('bluebird');
 if (process.env.environment === 'development') {
-  mongoUrl = 'mongodb://localhost:27017/plan-it';
+  mongoUrl = 'mongodb://hjain13:Adroopit13@ds147544.mlab.com:47544/plan-it';  
 } else if (process.env.environment === 'development-riya') {
   mongoUrl = 'mongodb://localhost:27016/plan-it';
 }
@@ -98,6 +98,43 @@ mongoose.connect(mongoUrl, {
           helpline.save().then(helpline => {
               console.log('+++ Helpline['+index+'] added successfully +++');
               resolve(helpline);
+              count++;
+            })
+          .catch(err => {
+            console.error("Unable to save to database: ", err.stack);
+          });
+        });
+      })
+      resolve(count);
+    });
+  }
+
+
+//=========================================
+  //               Order Tasks
+  //=========================================
+  function buildOrder() {
+    count++;
+    return new Promise((resolve, reject) => {
+      console.log('+++ Building Order staff Table +++');
+      // Removing existing order staff Data
+      Order.remove({}, function (err, row) {
+        if (err) {
+          console.log("Collection couldn't be removed" + err);
+          return;
+        }
+        console.log("--- Removing exisiting order Data ---");
+      })
+      .then( () => {
+        //Adding an order to System
+        var orders = new Array(2);
+        orders[0] = new Order({"order": { "bemail":"manager@Kwimbee.com", "uemail":"maheshwari@gmail.com", "cost":"400" }});
+        orders[1] = new Order({"order": { "bemail":"manager@Kwimbee.com", "uemail":"maheshwari@gmail.com", "cost":"400" }});
+
+        orders.forEach(function (order, index, array) {
+          order.save().then(order => {
+              console.log('+++ Order['+index+'] added successfully +++');
+              resolve(order);
               count++;
             })
           .catch(err => {
@@ -395,6 +432,9 @@ mongoose.connect(mongoUrl, {
         buildPackage()
         .then( () => {
           buildHelpline()
+          .then( () => {
+            buildOrder()
+          })  
         })
       })
     })
