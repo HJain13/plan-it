@@ -14,19 +14,19 @@ class User extends Component {
 							<div className="container has-text-centered">
 								<div className="columns">
 									<div className="column is-4 has-text-centered">
-										<img src="https://i.imgur.com/ksXtNm6.jpg" alt="All Packages"/>
+										<img src="https://i.imgur.com/S7S3w94.png" alt="All Packages"/>
 										<Link to="/package-index" className="navbar-item button is-primary">
 											&nbsp;<strong>View All Packages</strong>
 										</Link>
 									</div>
 									<div className="column is-4 has-text-centered">
-										<img src="https://i.imgur.com/6w7hur8.jpg" alt="Get Recommendation"/>
+										<img src="https://i.imgur.com/SKcep1e.png" alt="Get Recommendation"/>
 										<Link to="/user/swipe-buy" className="navbar-item button is-primary">
 											&nbsp;<strong>Get Recommendations</strong>
 										</Link>
 									</div>
 									<div className="column is-4 has-text-centered">
-										<img src="https://i.imgur.com/D6Ugqsf.jpg" alt="Contact Support"/>
+										<img src="https://i.imgur.com/CjBGAKf.png" alt="Contact Support"/>
 										<Link to="/user/post-complaint" className="navbar-item button is-primary">
 											&nbsp;<strong>Need Support?</strong>
 										</Link>
