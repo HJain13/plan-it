@@ -8,6 +8,7 @@ var Business = require('./src/models/Business');
 var User = require('./src/models/User');
 var Helpline = require('./src/models/Helpline');
 var Package = require('./src/models/Package');
+var Order = require('./src/models/Order');
 
 var count = 0;
 function sleep(ms) {
@@ -116,7 +117,7 @@ mongoose.connect(mongoUrl, {
   function buildOrder() {
     count++;
     return new Promise((resolve, reject) => {
-      console.log('+++ Building Order staff Table +++');
+      console.log('+++ Building Order Table +++');
       // Removing existing order staff Data
       Order.remove({}, function (err, row) {
         if (err) {
@@ -431,9 +432,9 @@ mongoose.connect(mongoUrl, {
       .then( () => {
         buildPackage()
         .then( () => {
-          buildHelpline()
+          buildOrder()
           .then( () => {
-            buildOrder()
+            buildHelpline()
           })  
         })
       })

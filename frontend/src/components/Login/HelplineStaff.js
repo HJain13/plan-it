@@ -48,6 +48,7 @@ class HelplineLogin extends Component {
     this.setState({
       user
     });
+    console.log(this.state.user);
   }
 
   handleSubmit(event) {

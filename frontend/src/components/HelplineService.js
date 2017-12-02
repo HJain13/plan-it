@@ -14,8 +14,9 @@ class HelplineService {
 
   login(data) {
     axios
-      .post(baseUrl + '/helpline/auth', {helpline: data})
+      .post(baseUrl + '/helplines/auth', {helpline: data})
       .then(response => {
+        console.log(data);
         var result;
         if (response.data !== null) {
           console.log(response.data.helpline.name);

@@ -1,38 +1,28 @@
 import React, { Component } from 'react';
-import PackageService from '../PackageService';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import '../../css/App.css';
 import Header from '../Header/Header';
 
 var baseUrl = '/api';
 var swiped = true;
 
-class PackageRecommender extends Component 
-{
-  constructor(props) 
-  {
+class PackageRecommender extends Component {
+  constructor(props) {
     super(props);
-    this.state = 
-    {
+    this.state = {
       code1: '',
       code2: '',
       is_loading: false      
     };
   }
 
-  componentWillMount() 
-  {
-    axios
-      .get(baseUrl + '/packages')
-      .then(response => 
-        {
+  componentWillMount() {
+    axios.get(baseUrl + '/packages').then(response => {
         this.setState({packages: response.data});
       })
-      .catch(function (error) 
-      {
-        console.log(error);
-      })
+    .catch(function (error) {
+      console.log(error);
+    })
   }
     
   render() 
@@ -43,16 +33,10 @@ class PackageRecommender extends Component
 
     if (this.state.packages instanceof Array) 
     {
-      this
-        .state
-        .packages
-        .map(function (object, i) 
-        {
-          if (object.package.ptype === localStorage.choice)
-          {
+      this.state.packages.map(function (object, i) {
+          if (object.package.ptype === localStorage.choice) {
             var choice1, choice2, choice3, choice4, choice5;
             var chosen_shit;
-
             //Setting Specificity
             if (localStorage.choice === "dining")
             {
@@ -559,12 +543,8 @@ class PackageRecommender extends Component
     console.log(act2);
 
     var code_1, code_2;
-    if (this.state.packages instanceof Array) 
-    {
-      this
-        .state
-        .packages
-        .map(function (object, i) {
+    if (this.state.packages instanceof Array) {
+      this.state.packages.map(function (object, i) {
           if(object._id === pkg1) {
             code_1 =  '<div class="card"> <div class="card-image"> <figure class="image is-4by3"> <img src="'+object.package.pictures+'" alt="" /> </figure> </div> <div class="card-content"> <div class="media"> <div class="media-content has-text-centered has-text-justified"> <p class="title is-4 has-text-weight-bold">'+ object.package.p_name +'</p> <p class="subtitle is-6">'+object.package.location+'</p> </div> </div> <div class="content has-text-left"> <strong>Specials</strong>:'+ object.package.specials + '<br /> <strong>Cost:</strong>' + object.package.cost + '<br /> </div> </div> <footer class="card-footer"><a href="/user/buy/'+ object._id +'" class="card-footer-item has-text-info">Buy</a> </footer> </div>';
           }

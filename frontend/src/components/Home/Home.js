@@ -22,9 +22,25 @@ class Home extends Component {
                       <li><Link to="/login/admin">Admin Login</Link><br/>
                         use credentials:
                         <br/>
-                        <strong>username:</strong>&nbsp;himeshjain13@gmail.com
+                        <strong>username:</strong>&nbsp;15ucs172@lnmiit.ac.in
                         <br/><strong>password:</strong>&nbsp;qwerty
+                        <br/> alternate credentials:
+                        <br/>
+                        <strong>username:</strong>&nbsp;15ucs173@lnmiit.ac.in
+                        <br/><strong>password:</strong>&nbsp;temp1234
                       </li>
+                      <li><Link to="/login">User Login</Link><br/>
+                        use credentials:
+                        <br/>
+                        <strong>username:</strong>&nbsp;negi@gmail.com
+                        <br/><strong>password:</strong>&nbsp;abcd1234
+                      </li>                    
+                      <li><Link to="/login/business">Business Login</Link><br/>
+                        use credentials:
+                        <br/>
+                        <strong>username:</strong>&nbsp;manager@Kwimbee.com
+                        <br/><strong>password:</strong>&nbsp;abcd1234
+                      </li>                            
                     </ul>
                   </div>
                 </div>

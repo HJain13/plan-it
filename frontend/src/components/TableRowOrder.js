@@ -5,7 +5,7 @@ class TableRowOrder extends Component {
     return (
       <tr>
         <td>
-          {this.props.obj.order.pid}
+          {this.props.obj._id}
         </td>
         <td>
           {this.props.obj.order.uemail}

@@ -5,6 +5,7 @@ import Admin from './components/Admin/Admin';
 import Business from './components/Business/Business';
 import OrderIndex from './components/OrderIndex/OrderIndex';
 import User from './components/User/User';
+import Helpline from './components/Helpline/Helpline';
 import ApproveBusiness from './components/ApproveBusiness/ApproveBusiness';
 import PackageRecommender from './components/PackageRecommender/PackageRecommender';
 import PostComplaint from './components/User/PostComplaint/PostComplaint';
@@ -20,8 +21,10 @@ import StaffDetails from './components/StaffDetails/StaffDetails';
 import ViewPackage from './components/ViewPackage/ViewPackage';
 import UserIndex from './components/UserIndex/UserIndex';
 import PackageIndex from './components/PackageIndex/PackageIndex';
+import ComplaintIndex from './components/ComplaintIndex/ComplaintIndex';
 import BusinessIndex from './components/BusinessIndex/BusinessIndex';
 import AddPackage from './components/Business/AddPackage/AddPackage';
+import ViewStats from './components/Business/ViewStats/ViewStats';
 import { Route, Switch } from 'react-router-dom';
 
 //Importing App Specific Css
@@ -38,12 +41,14 @@ class App extends Component {
           <Route exact={true} path="/" component={Home} />
           <Route path='/admin' component={Admin} />
           <Route path='/business/orders-index' component={OrderIndex} />
+          <Route path='/business/stats' component={ViewStats} />
           <Route path='/business' component={Business} />
           <Route path='/user/swipe-buy' component={SwipeBuy} />
           <Route path='/user/buy/:id' component={BuyPackage} />
           <Route path='/user/recommendations' component={PackageRecommender} />
           <Route path='/user/post-complaint' component={PostComplaint} />
           <Route path='/user' component={User} />
+          <Route path='/helpline' component={Helpline} />
           <Route path='/approve/:id' component={ApproveBusiness} />
           <Route path='/login/business' component={BusinessLogin} />
           <Route path='/login/admin' component={AdminLogin} />
@@ -52,6 +57,7 @@ class App extends Component {
           <Route path='/register/business' component={BusinessRegister} />
           <Route path='/register' component={UserRegister} />
           <Route path='/user-index' component={UserIndex} />
+          <Route path='/complaint-index' component={ComplaintIndex} />
           <Route path='/package-index' component={PackageIndex} />
           <Route path='/business-index' component={BusinessIndex} />
           <Route path="/add-verify-business" component={AddBusiness} />
